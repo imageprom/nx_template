@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>"> <![endif]-->
+<!--[if false]> --><html class="no-js" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>">  <!-- <![endif]-->
+<head>
+<!--При интеграции с bitrix этот метатег выкинуть -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!------------------------------------>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><!<![endif]-->
+
+<title><?=$APPLICATION->ShowTitle();?></title>
+
+<!--При интеграции с bitrix заменить конструкции на <?$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/имя_скрипта.js');?>-->
+<script type="text/javascript" src="jquery-3.3.1.min.js" ></script>
+<script type="text/javascript" src="jquery-ui-1.12.1.min.js"></script>
+<script type="text/javascript" src="jquery-migrate-1.4.1.min.js" ></script>
+<script type="text/javascript" src="jquery-migrate-3.0.0.min.js" ></script>
+<script type="text/javascript" src="modernizr.js"></script>
+<script type="text/javascript" src="nx_plugins.js"></script>
+<script type="text/javascript" src="hyphenate.js"></script>
+
+<!--<?=$APPLICATION->ShowHead();?>-->
+
+<!--Если нужен bootsrap и font awessome в Битриксе они уже есть - подключаются так   -->
+
+<!--<?
+	#$APPLICATION->SetAdditionalCSS("/bitrix/css/main/bootstrap.css");
+	#$APPLICATION->SetAdditionalCSS("/bitrix/css/main/font-awesome.css");
+?>-->
+<!--На момент разработки подключаются так   -->
+<!--<link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/font-awesome.css" rel="stylesheet" type="text/css" />-->
+
+<!--При интеграции с bitrix выкинуть явное обьявление стилей -->
+<!--<link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/font-awesome.css" rel="stylesheet" type="text/css" />-->
+
+<link href="template_styles.css" rel="stylesheet" type="text/css" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<!-- -------------------------------- -->
+
+<!--Сгенерить из svg всю пачку через https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="<?=SITE_TEMPLATE_PATH?>/icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="<?=SITE_TEMPLATE_PATH?>/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="<?=SITE_TEMPLATE_PATH?>/icon/favicon-16x16.png">
+<link rel="manifest" href="<?=SITE_TEMPLATE_PATH?>/icon/site.webmanifest">
+<link rel="mask-icon" href="<?=SITE_TEMPLATE_PATH?>/icon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- конец favico --->
+
+</head>
+
+<body>
+<!--При интеграции с bitrix убрать комментарий с панельки -->
+<!--<div class="panel"><?=$APPLICATION->ShowPanel();?></div>-->
+
+<div class="container">
+	<!-- HEADER --> 
+	<header class="header">
+		<a href="/"  class="logo" data-tel="+7 (831) 2960-920">Имиджпром</a>
+		<div class="slogan">Универсальный адаптивный макет</div>	
+	</header>
+
+	<!-- CENTRAL BLOCK -->	
+	<div class="main-outer">
+
+	<!-- MAIN -->
+		<main class="main">
+
+			<article>
+			<h1>Инструкции <small>(это - заголовок I уровня)</small></h1>
+			<!-- Заменить на <h1><?=$APPLICATION->ShowTitle(false);?></h1> -->
+			
+			<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сатйы были действительно хороши нужно многое учесть</p>
+
+			<h2>Оформление элементов <small>(это - заголовок II уровня)</small></h2>
+			<p>В тесте может встречаться много разного - картинки, ьексты. цитаты, таблицы и для всего у нас уже сложились некоторые стадарты</p>
+
+			<figure class="toright">
+				<img src="http://bmnn.ru/tuning/422/GM_img_01.jpg" alt="Картинка выроненная по левому краю"  class="with_big" data-big="http://bmnn.ru/tuning/422/img_01.jpg?246925215.87240747"/> 
+				<figcaption>Клевая тачка</figcaption>
+			</figure>
+			
+
+			<h3>Вставка изображений (это - заголовок III уровня)</h3>
+			
+
+			<p>В тексте должны быть иллюстарации. Чтобы выравнивать картинки влево или вправо нужно пользоваться классами toleft и toright</p>
+			<p>У картнок обязательно нужно прописывать alt и если нужно title</p>
+			<p>Для логического разбиения текстов на абзацы стоит параграфы   p , а не перенос строк br</p>
+			<blockquote>
+				Это - цитата. Если нам нужно выделить каой нибудь элемент в заметный блок можно и нужно воспользоваться этим элементом.  И соответсвенно не заыбть достойно оформить его в css
+				<p class="author">Так говорил Заратустра</p>
+			</blockquote>
+
+			<p>Вообще, в тексте может встречаться много разного текстовго оформления</p>
+			<ul>
+				<li><strong>Жирный текст</strong> &ndash; лучше использовать strong а не b</li>
+				<li><i>Курсив</i> &ndash; использовать i или em </li>
+				<li><ins>Особый</ins> &ndash; если не хватает курссива и жирного можно использовать ins </li>
+				<li><mark>Выделенный</mark> &ndash; а если и ins не зватает можно использовать  mark</li>
+				<li><dfn>Определение</dfn> &ndash; оформляется имеено так. </li>
+				<li><a href="#">Ссылки</a>  &ndash;  Просто ссылки в тексте</li>
+				<li><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a> &ndash; если это ссылка на файл то и офрмлять ее соотвествующе</li>
+				<li><s class="r">Р</s> &ndash; если нужен знак рубля  &lt;s class="r"&gt;Р&lt;/s&gt; буковку выбирать выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13">тут</a></li> 
+			</ul>
+
+			<img src="http://bmnn.ru/tuning/422/GM_img_02.jpg" alt="Картинка выроненная по правому краю"  class="toleft with_big" data-big="http://bmnn.ru/tuning/422/img_02.jpg?246925215.87240747" data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"  />
+
+			<h4>Динамические элементы (это - заголовок IV уровня)</h4>
+			<p>Времена статичного и скучного интернена прошли. В настоящее время элементы могут нести не только смысловую но и функциональную нагрузку. Например картинка, располложенаая справа может увеличивться.
+			В более старыйх сайтах вместо data-big использовался параметр big</p>
+			
+
+			<h5>Вкладки</h5>
+			<p>Некоторые элементы могут своачиваться и разворачиваться</p>
+			
+			<h2 class="tab_opened">Если нажать - свернется)</h2>
+			<div><p>Здесь лежит текст который нужно скрыть не забудьте окружающий div.</p></div>
+
+			<h2 class="tab">Если нажать - развернется</h2>
+			<div><p>Здесь лежит текст который скрыт сразу забудьте окружающий div.</p></div>
+
+
+			<h6>Таблицы (заголовк VI уровня)</h6>
+
+			<table class="tbl">
+			<caption>Таблица №5. Заголовок таблицы.</caption>
+			<thead>
+			<tr>
+				<td>Параметр</td>
+				<td>Показатель</td>
+				<td>Номер аттестата</td>
+				<td>Аттестат выдан</td>
+				<td>Действителен до</td>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+			  <th rowspan="2">Скидка на уторговывание %</th>
+			  <td>Скидки на цены коммерческих объектов недвижимости</td>
+			  <td>13%</td>
+			  <td>10.09.2012</td>
+
+			  <td>11.08.2013</td>      
+			</tr>
+			  <tr>
+			  <td>Скидки на цены коммерческих объектов недвижимости</td>
+			  <td>13%</td>
+			  <td>10.09.2012</td>
+			  <td>11.08.2013</td>
+
+			</tr>
+			<tr>
+			  <th rowspan="2">Скидка на уторговывание %</th>
+			  <td>Скидки на цены коммерческих объектов недвижимости</td>
+			  <td>13%</td>
+			  <td>10.09.2012</td>
+			  <td>11.08.2013</td>      
+
+			</tr>
+			  <tr>
+			  <td>Скидки на цены коммерческих объектов недвижимости</td>
+			  <td>13%</td>
+			  <td>10.09.2012</td>
+			  <td>11.08.2013</td>
+			</tr>
+			</tbody></table>
+			
+			
+			<section> 
+				<h6>Макет формы</h6>
+				E-mail<br />
+				<input type="text" placeholder="Ваш e-mail" class="inpt" /><br />
+				<textarea  class="clear-input inpt">Комментарий</textarea><br />
+				<input type="submit" value="Отправить" class="btn" />
+
+				<div class="radio">
+					<p><input id="r1" type="radio" name="gender" value="male"><label for="r1">Male</label></p>
+					<p><input id="r2" type="radio" name="gender" value="female"><label for="r2">Female</label></p>
+				</div>	
+
+				<div class="checkbox">
+					<p><input id="check1" type="checkbox" name="check" value="check1"><label for="check1">Checkbox No. 1</label></p>
+					<p><input id="check2" type="checkbox" name="check" value="check2"><label for="check2">Checkbox No. 2</label></p>
+				</div>	
+			</section>
+			
+			<h2>Иконки</h2>
+			<p class="nx-icon">F T В B L N О G Я V J D Y</p>
+			<p class="nx-icon">f t в b l n о g я v J d Y</p>
+			<p class="nx-icon">W w</p>
+			<p class="nx-icon">S I Т Ч</p>
+			<p class="nx-icon">Д E К П</p>
+			<p class="nx-icon">д e к П</p>
+			<p class="nx-icon">| # _ =</p>
+			<p class="nx-icon">< > ˄ ˅</p>
+			<p class="nx-icon">◀ ▶ ▼ ▲ ±</p>
+			<p class="nx-icon">↓ ← → ↑</p>
+			<p class="nx-icon">₠ Р р P p R r</p>
+			<p class="nx-icon">1 9 A Z a z</p>
+			<p class="nx-icon">? ! i C К U</p>
+			<p class="nx-icon">Ф X x Q с У + -</p>
+			<p class="nx-icon">■ ǁ { [ ] } △ ▷ </p>
+			<p><span class="nx-load">@</span> <span class="nx-load">O</span> <span class="nx-load">o</span></p>
+			</article>
+		</main>
+
+		<!-- LEFT -->
+		<div class="left">
+			<h2>Форма поиска</h2>
+			<!-- Обязательно указать ID NXsearchForm -->
+			<form action="/search/index.php" id="NXsearchForm">
+				<input type="text"   name="q"   placeholder="Поиск"  value="" />
+				<input type="submit" name="s"   class="sbtn" value="Поиск" />
+			</form>
+			
+			<h2>Меню</h2>
+			<!-- Только меню в контейнерах с классом to-nx-nav попадут в мобильную панель -->
+			<nav class="navigation to-nx-nav">
+			<ul class="nx-menu-bla-bla">
+			  <li><a href="#">Первая ссылка II меню</a>
+				  <ul>
+					  <li><a href="#">Первая ссылка с очень очень длинным названием II меню</a>
+						  <ul>
+							 <li><a href="#">Первая ссылка</a></li>
+							 <li><a href="#">Вторая ссылка с очень очень длинным названием</a></li>
+							 <li><a href="#">Третья ссылка</a></li>
+							 <li><a href="#">Четвертая ссылка</a></li>
+						  </ul>
+					  </li>
+					  <li><a href="#">Вторая ссылка с очень очень длинным названием II меню</a></li>
+					  <li><a href="#">Третья ссылка II меню</a></li>
+					  <li><a href="#">Четвертая ссылка II меню</a></li>
+				  </ul>
+			  </li>
+			  <li><a href="#">Вторая ссылка с очень очень длинным названием II меню</a></li>
+			  <li><a href="#">Третья ссылка II меню</a></li>
+			  <li><a href="#">Четвертая ссылка II меню</a></li>
+			</ul>
+			</nav>
+			
+			<p>Вышеуказанные ссылки демонстрируют базовую структуру навигации с использованием неупорядоченного списка, стилизованного при помощи CSS. Взяв ее за отправную точку и изменяя свойства, можно создать свой неповторимый дизайн. Если нужны выпадающие меню, их можно создать при помощи a Spry menu — мини-приложения menu из Adobe Exchange или ряда других инструментов javascript или CSS.</p>
+			<p>Если нужна навигация вдоль верха, просто перенесите ul.nav в верх страницы и заново создайте стиль.</p>
+			
+		</div>
+
+		<!-- RIGHT -->
+
+		<div class="right hyphenate" >
+			<aside>
+				<h6>Блок информации 1</h6>
+				<p> Данный текст красво переносится спомощью яваскрипта. Чтобы эффект сработал достаточно у родителя указать класс hyphenate. Переносы важны. Стоит учесть что если мы используем переносы то неплохо бы выровнять текст по ширише используя text-align:justify</p>
+				<p><u>Однако, если текст подчернут то выранивать по ширине нужно аккуратно, иначе получится некрасиво. Как-то вот так.</u></p>	
+			</aside>	
+			
+			<aside style="text-align:justify">
+				<h6>Блок информации 2</h6>
+				<p> Данный текст красво переносится спомощью яваскрипта. Чтобы эффект сработал достаточно у родителя указать класс hyphenate. Переносы важны. Стоит учесть что если мы используем переносы то неплохо бы выровнять текст по ширише используя text-align:justify</p>
+				<p><u>Однако, если текст подчернут то выранивать по ширине нужно аккуратно, иначе получится некрасиво. Как-то вот так.</u></p>	
+			</aside>	
+		</div>
+
+	</div>
+
+	<!-- FOOTER --> 
+	<footer class="footer bb" itemscope itemtype="http://schema.org/Organization">
+
+		<nav class="nav-social to-social-nav">
+			<a class="tw" title="Наш Twitter" href="/">Twitter</a>
+			<a class="vk" title="Мы ВКонтакте" href="/">ВКонтакте</a>
+			<a class="fb" title="Мы в Facebook" href="/">Facebook</a>
+			<a class="ok" title="Мы в Однокласниках" href="/">Однокласники</a>
+			<a class="yt" title="Мы на YouTube" href="/">YouTube</a>
+		</nav>
+
+		<address class="copy">
+			<a href="http://www.imageprom.com" target="_blank" class="ip"><strong>Имиджпром</strong> — разработка и поддержка сайтов</a>
+			<!--Дата для класса copy-data проставляется автоматически, от того что внутри теда до текущего года.  -->
+			<br />© <span class="copy-data">2011</span>, <span itemprop="name">Название компании</span><br />&nbsp;
+		</address>
+
+		<address class="tele" ><strong>Контакты:</strong> 
+			Тел.: <span class="tel" itemprop="telephone">+7 (831) 2960-920</span><br />
+			Факс: <span class="tel" itemprop="faxNumber">+7 (831) 2960-921</span><br />
+			<a class="email" href="mailto:admin@jcnn.ru" itemprop="email">admin@jcnn.ru</a>
+		</address>
+
+		<address class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><strong>Адрес клиента:</strong> 
+			<span itemprop="addressCountry">Россия</span>, <span itemprop="postalCode">603000</span>, <span itemprop="addressLocality">г. Нижний Новгород</span>,
+			<br /><span itemprop="streetAddress">ул. Горького 117, офис 1101.</span>
+		</address>
+	</footer> 
+</div>
+</body>
+</html>
