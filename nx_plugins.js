@@ -6,7 +6,7 @@ function AddNXAdaptiveNavication() {
     var nxNavlen = $('#NXadaptiveNavigation').length, 
         nxScreen = $(window).width(); 
 
-    if(nxNavlen == 0 && nxScreen < s_width) {
+    if(nxNavlen == 0 && nxScreen <= s_width) {
         var navTitle = $('.logo').text(),
             nxSearchForm = $('#NXsearchForm'),
             nxSocialLink = $('.to-social-nav'),
