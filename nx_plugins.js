@@ -1,7 +1,7 @@
 /*********************TOP MENU PLUGIN*********************/
 (function(){
 $(function(){
-var s_width = 1024;
+var s_width = 1025;
 function AddNXAdaptiveNavication() {
     var nxNavlen = $('#NXadaptiveNavigation').length, 
         nxScreen = $(window).width(); 
