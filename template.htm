@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>"> <![endif]-->
-<!--[if IE 9]>    <html class="no-js lt-ie10" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>"> <![endif]-->
-<!--[if false]> --><html class="no-js" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>">  <!-- <![endif]-->
+<html class="no-js" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>">
 <head>
 <!--При интеграции с bitrix этот метатег выкинуть -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,7 +31,8 @@
 <!--<link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/font-awesome.css" rel="stylesheet" type="text/css" />-->
 
-<!--При интеграции с bitrix выкинуть явное обьявление стилей -->
+<!--При интеграции с bitrix выкинуть явное обьявление стилей (!!!) -->
+
 <!--<link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/font-awesome.css" rel="stylesheet" type="text/css" />-->
 
@@ -41,17 +40,17 @@
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <!-- -------------------------------- -->
 
-<!--Сгенерить из svg всю пачку через https://realfavicongenerator.net/ -->
+<!--Сгенерить из svg всю пачку через https://realfavicongenerator.net/ при генерации указать папку /icon -->
 
-<link rel="apple-touch-icon" sizes="180x180" href="<?=SITE_TEMPLATE_PATH?>/icon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="<?=SITE_TEMPLATE_PATH?>/icon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="<?=SITE_TEMPLATE_PATH?>/icon/favicon-16x16.png">
-<link rel="manifest" href="<?=SITE_TEMPLATE_PATH?>/icon/site.webmanifest">
-<link rel="mask-icon" href="<?=SITE_TEMPLATE_PATH?>/icon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+<link rel="manifest" href="/icon/site.webmanifest">
+<link rel="mask-icon" href="/icon/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-<!-- конец favico --->
+<!-- конец favico -->
 
 </head>
 
@@ -62,7 +61,10 @@
 <div class="container">
 	<!-- HEADER --> 
 	<header class="header">
-		<a href="/"  class="logo" data-tel="+7 (831) 2960-920">Имиджпром</a>
+
+		<!--Если номер телефона выодится в другом блоке перенести туда кусок id = "NXTel" data-tel="+7 НОМЕР_ТЕЛЕФОНА" -->
+
+		<a class="logo" href="/" id = "NXTel" data-tel="+7 (831) 2960-920">Моя компания</a>
 		<div class="slogan">Универсальный адаптивный макет</div>	
 	</header>
 
@@ -74,153 +76,304 @@
 
 			<h1>Инструкции <small>(это - заголовок I уровня)</small></h1>
 			<!-- Заменить на <h1><?=$APPLICATION->ShowTitle(false);?></h1> -->
+
+			<!-- НАЧАЛО ТЕСТОВОГО КОНТЕНТА -->
 			
-			<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сатйы были действительно хороши нужно многое учесть</p>
+				<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сатйы были действительно хороши нужно многое учесть</p>
 
-			<h2>Оформление элементов <small>(это - заголовок II уровня)</small></h2>
-			<p>В тесте может встречаться много разного - картинки, ьексты. цитаты, таблицы и для всего у нас уже сложились некоторые стадарты</p>
+				<h2>Оформление элементов <small>(это - заголовок II уровня)</small></h2>
+				<p>В тесте может встречаться много разного - картинки, ьексты. цитаты, таблицы и для всего у нас уже сложились некоторые стадарты</p>
 
-			<figure class="toright">
-				<img src="http://bmnn.ru/tuning/422/GM_img_01.jpg" alt="Картинка выроненная по левому краю"  class="with_big" data-big="http://bmnn.ru/tuning/422/img_01.jpg?246925215.87240747"/> 
-				<figcaption>Клевая тачка</figcaption>
-			</figure>
-			
+				<figure class="toright">
+					<img src="http://bmnn.ru/tuning/422/GM_img_01.jpg" alt="Картинка выроненная по левому краю"  class="with_big" data-big="http://bmnn.ru/tuning/422/img_01.jpg?246925215.87240747"/> 
+					<figcaption>Клевая тачка</figcaption>
+				</figure>
+				
 
-			<h3>Вставка изображений (это - заголовок III уровня)</h3>
-			
+				<h3>Вставка изображений (это - заголовок III уровня)</h3>
+				
 
-			<p>В тексте должны быть иллюстарации. Чтобы выравнивать картинки влево или вправо нужно пользоваться классами toleft и toright</p>
-			<p>У картнок обязательно нужно прописывать alt и если нужно title</p>
-			<p>Для логического разбиения текстов на абзацы стоит параграфы   p , а не перенос строк br</p>
-			<blockquote>
-				Это - цитата. Если нам нужно выделить каой нибудь элемент в заметный блок можно и нужно воспользоваться этим элементом.  И соответсвенно не заыбть достойно оформить его в css
-				<p class="author">Так говорил Заратустра</p>
-			</blockquote>
+				<p>В тексте должны быть иллюстарации. Чтобы выравнивать картинки влево или вправо нужно пользоваться классами toleft и toright</p>
+				<p>У картнок обязательно нужно прописывать alt и если нужно title</p>
+				<p>Для логического разбиения текстов на абзацы стоит параграфы   p , а не перенос строк br</p>
+				<blockquote>
+					Это - цитата. Если нам нужно выделить каой нибудь элемент в заметный блок можно и нужно воспользоваться этим элементом.  И соответсвенно не заыбть достойно оформить его в css
+					<p class="author">Так говорил Заратустра</p>
+				</blockquote>
 
-			<p>Вообще, в тексте может встречаться много разного текстовго оформления</p>
-			<ul>
-				<li><strong>Жирный текст</strong> &ndash; лучше использовать strong а не b</li>
-				<li><i>Курсив</i> &ndash; использовать i или em </li>
-				<li><ins>Особый</ins> &ndash; если не хватает курссива и жирного можно использовать ins </li>
-				<li><mark>Выделенный</mark> &ndash; а если и ins не зватает можно использовать  mark</li>
-				<li><dfn>Определение</dfn> &ndash; оформляется имеено так. </li>
-				<li><a href="#">Ссылки</a>  &ndash;  Просто ссылки в тексте</li>
-				<li><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a> &ndash; если это ссылка на файл то и офрмлять ее соотвествующе</li>
-				<li><s class="r">Р</s> &ndash; если нужен знак рубля  &lt;s class="r"&gt;Р&lt;/s&gt; буковку выбирать выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13">тут</a></li> 
-			</ul>
+				<p>Вообще, в тексте может встречаться много разного текстовго оформления</p>
+				<ul>
+					<li><strong>Жирный текст</strong> &ndash; лучше использовать strong а не b</li>
+					<li><i>Курсив</i> &ndash; использовать i или em </li>
+					<li><ins>Особый</ins> &ndash; если не хватает курссива и жирного можно использовать ins </li>
+					<li><mark>Выделенный</mark> &ndash; а если и ins не зватает можно использовать  mark</li>
+					<li><dfn>Определение</dfn> &ndash; оформляется имеено так. </li>
+					<li><a href="#">Ссылки</a>  &ndash;  Просто ссылки в тексте</li>
+					<li><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a> &ndash; если это ссылка на файл то и офрмлять ее соотвествующе</li>
+					<li><s class="r">Р</s> &ndash; если нужен знак рубля  &lt;s class="r"&gt;Р&lt;/s&gt; буковку выбирать выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13">тут</a></li> 
+				</ul>
 
-			<img src="http://bmnn.ru/tuning/422/GM_img_02.jpg" alt="Картинка выроненная по правому краю"  class="toleft with_big" data-big="http://bmnn.ru/tuning/422/img_02.jpg?246925215.87240747" data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"  />
+				<img src="http://bmnn.ru/tuning/422/GM_img_02.jpg" alt="Картинка выроненная по правому краю"  class="toleft with_big" data-big="http://bmnn.ru/tuning/422/img_02.jpg?246925215.87240747" data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"  />
 
-			<h4>Динамические элементы (это - заголовок IV уровня)</h4>
-			<p>Времена статичного и скучного интернена прошли. В настоящее время элементы могут нести не только смысловую но и функциональную нагрузку. Например картинка, располложенаая справа может увеличивться.
-			В более старыйх сайтах вместо data-big использовался параметр big</p>
-			
+				<h4>Динамические элементы (это - заголовок IV уровня)</h4>
+				<p>Времена статичного и скучного интернена прошли. В настоящее время элементы могут нести не только смысловую но и функциональную нагрузку. Например картинка, располложенаая справа может увеличивться.
+				В более старыйх сайтах вместо data-big использовался параметр big</p>
+				
 
-			<h5>Вкладки</h5>
-			<p>Некоторые элементы могут своачиваться и разворачиваться</p>
-			
-			<h2 class="tab_opened">Если нажать - свернется)</h2>
-			<div><p>Здесь лежит текст который нужно скрыть не забудьте окружающий div.</p></div>
+				<h5>Вкладки</h5>
+				<p>Некоторые элементы могут своачиваться и разворачиваться</p>
+				
+				<h2 class="tab_opened">Если нажать - свернется)</h2>
+				<div><p>Здесь лежит текст который нужно скрыть не забудьте окружающий div.</p></div>
 
-			<h2 class="tab">Если нажать - развернется</h2>
-			<div><p>Здесь лежит текст который скрыт сразу забудьте окружающий div.</p></div>
+				<h2 class="tab">Если нажать - развернется</h2>
+				<div><p>Здесь лежит текст который скрыт сразу забудьте окружающий div.</p></div>
 
 
-			<h6>Таблицы (заголовк VI уровня)</h6>
+				<h6>Таблицы (заголовк VI уровня)</h6>
 
-			<table class="tbl">
-			<caption>Таблица №5. Заголовок таблицы.</caption>
-			<thead>
-			<tr>
-				<td>Параметр</td>
-				<td>Показатель</td>
-				<td>Номер аттестата</td>
-				<td>Аттестат выдан</td>
-				<td>Действителен до</td>
-			</tr>
-			</thead>
-			<tbody>
-			<tr>
-			  <th rowspan="2">Скидка на уторговывание %</th>
-			  <td>Скидки на цены коммерческих объектов недвижимости</td>
-			  <td>13%</td>
-			  <td>10.09.2012</td>
+				<table class="tbl">
+				<caption>Таблица №5. Заголовок таблицы.</caption>
+				<thead>
+				<tr>
+					<td>Параметр</td>
+					<td>Показатель</td>
+					<td>Номер аттестата</td>
+					<td>Аттестат выдан</td>
+					<td>Действителен до</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				  <th rowspan="2">Скидка на уторговывание %</th>
+				  <td>Скидки на цены коммерческих объектов недвижимости</td>
+				  <td>13%</td>
+				  <td>10.09.2012</td>
 
-			  <td>11.08.2013</td>      
-			</tr>
-			  <tr>
-			  <td>Скидки на цены коммерческих объектов недвижимости</td>
-			  <td>13%</td>
-			  <td>10.09.2012</td>
-			  <td>11.08.2013</td>
+				  <td>11.08.2013</td>      
+				</tr>
+				  <tr>
+				  <td>Скидки на цены коммерческих объектов недвижимости</td>
+				  <td>13%</td>
+				  <td>10.09.2012</td>
+				  <td>11.08.2013</td>
 
-			</tr>
-			<tr>
-			  <th rowspan="2">Скидка на уторговывание %</th>
-			  <td>Скидки на цены коммерческих объектов недвижимости</td>
-			  <td>13%</td>
-			  <td>10.09.2012</td>
-			  <td>11.08.2013</td>      
+				</tr>
+				<tr>
+				  <th rowspan="2">Скидка на уторговывание %</th>
+				  <td>Скидки на цены коммерческих объектов недвижимости</td>
+				  <td>13%</td>
+				  <td>10.09.2012</td>
+				  <td>11.08.2013</td>      
 
-			</tr>
-			  <tr>
-			  <td>Скидки на цены коммерческих объектов недвижимости</td>
-			  <td>13%</td>
-			  <td>10.09.2012</td>
-			  <td>11.08.2013</td>
-			</tr>
-			</tbody></table>
-			
-			
-			<section> 
-				<h6>Макет формы</h6>
-				E-mail<br />
-				<input type="text" placeholder="Ваш e-mail" class="inpt" /><br />
-				<textarea  class="clear-input inpt">Комментарий</textarea><br />
-				<input type="submit" value="Отправить" class="btn" />
+				</tr>
+				  <tr>
+				  <td>Скидки на цены коммерческих объектов недвижимости</td>
+				  <td>13%</td>
+				  <td>10.09.2012</td>
+				  <td>11.08.2013</td>
+				</tr>
+				</tbody></table>
+				
+				
+				<section> 
+					<h6>Макет формы</h6>
+					E-mail<br />
+					<input type="text" placeholder="Ваш e-mail" class="inpt" /><br />
+					<textarea  class="clear-input inpt">Комментарий</textarea><br />
+					<input type="submit" value="Отправить" class="btn" />
 
-				<div class="radio">
-					<p><input id="r1" type="radio" name="gender" value="male"><label for="r1">Male</label></p>
-					<p><input id="r2" type="radio" name="gender" value="female"><label for="r2">Female</label></p>
-				</div>	
+					<div class="radio">
+						<p><input id="r1" type="radio" name="gender" value="male"><label for="r1">Male</label></p>
+						<p><input id="r2" type="radio" name="gender" value="female"><label for="r2">Female</label></p>
+					</div>	
 
-				<div class="checkbox">
-					<p><input id="check1" type="checkbox" name="check" value="check1"><label for="check1">Checkbox No. 1</label></p>
-					<p><input id="check2" type="checkbox" name="check" value="check2"><label for="check2">Checkbox No. 2</label></p>
-				</div>	
-			</section>
-			
-			<h2>Иконки</h2>
-			<p class="nx-icon">F T В B L N О G Я V J D Y</p>
-			<p class="nx-icon">f t в b l n о g я v J d Y</p>
-			<p class="nx-icon">W w</p>
-			<p class="nx-icon">S I Т Ч</p>
-			<p class="nx-icon">Д E К П</p>
-			<p class="nx-icon">д e к П</p>
-			<p class="nx-icon">| # _ =</p>
-			<p class="nx-icon">< > ˄ ˅</p>
-			<p class="nx-icon">◀ ▶ ▼ ▲ ±</p>
-			<p class="nx-icon">↓ ← → ↑</p>
-			<p class="nx-icon">₠ Р р P p R r</p>
-			<p class="nx-icon">1 9 A Z a z</p>
-			<p class="nx-icon">? ! i C К U</p>
-			<p class="nx-icon">Ф X x Q с У + -</p>
-			<p class="nx-icon">■ ǁ { [ ] } △ ▷ </p>
-			<p><span class="nx-load">@</span> <span class="nx-load">O</span> <span class="nx-load">o</span></p>
+					<div class="checkbox">
+						<p><input id="check1" type="checkbox" name="check" value="check1"><label for="check1">Checkbox No. 1</label></p>
+						<p><input id="check2" type="checkbox" name="check" value="check2"><label for="check2">Checkbox No. 2</label></p>
+					</div>	
+				</section>
+				
+				<h2 class="tab">Иконки</h2>
+				<div>
+					<p>Сгенерить новый иконочный шрифт можно тут http://fontello.com</p>
+					<p class="nx-icon">F T В B L N О G Я V J D Y</p>
+					<p class="nx-icon">f t в b l n о g я v J d Y</p>
+					<p class="nx-icon">W w</p>
+					<p class="nx-icon">S I Т Ч</p>
+					<p class="nx-icon">Д E К П</p>
+					<p class="nx-icon">д e к П</p>
+					<p class="nx-icon">| # _ =</p>
+					<p class="nx-icon">< > ˄ ˅</p>
+					<p class="nx-icon">◀ ▶ ▼ ▲ ±</p>
+					<p class="nx-icon">↓ ← → ↑</p>
+					<p class="nx-icon">₠ Р р P p R r</p>
+					<p class="nx-icon">1 9 A Z a z</p>
+					<p class="nx-icon">? ! i C К U</p>
+					<p class="nx-icon">Ф X x Q с У + -</p>
+					<p class="nx-icon">■ ǁ { [ ] } △ ▷ </p>
+					<p><span class="nx-load">@</span> <span class="nx-load">O</span> <span class="nx-load">o</span></p>
+				</div>
+
+				
+
+				<h2 class="tab">Структурные блоки флексбоксов</h2>
+				<div>
+					<style>
+						.nx-flex-demo {border:1px solid #000; padding: 10px; margin-bottom: 10px; height: 200px;}
+						.nx-flex-demo > div { display: -ms-flexbox; display: -webkit-flex; display: flex; width:auto; background: #ccc; margin: 2px; padding: 10px;}
+					</style>
+					
+					<b>.nx-flex-row</b>
+					<div class="nx-flex-demo nx-flex-row" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+					
+					<b>.nx-flex-col</b>
+					<div class="nx-flex-demo nx-flex-col" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-st</b>
+					<div class="nx-flex-demo nx-flex-col-st" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-btw</b>
+					<div class="nx-flex-demo nx-flex-row-btw" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-btw</b>
+					<div class="nx-flex-demo nx-flex-col-btw" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-btw-st</b>
+					<div class="nx-flex-demo nx-flex-row-btw-st" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-btw-c</b>
+					<div class="nx-flex-demo nx-flex-row-btw-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+					
+					<b>.nx-flex-col-btw-st</b>
+					<div class="nx-flex-demo nx-flex-col-btw-st" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-c-c</b>
+					<div class="nx-flex-demo nx-flex-row-c-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+					
+					<b>.nx-flex-col-c-c</b>
+					<div class="nx-flex-demo nx-flex-col-c-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-b-c</b>
+					<div class="nx-flex-demo nx-flex-row-b-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-t-c</b>
+					<div class="nx-flex-demo nx-flex-row-t-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+					
+					<b>.nx-flex-col-t-c</b>
+					<div class="nx-flex-demo nx-flex-col-t-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+
+					<b>.nx-flex-row-t-r</b>
+					<div class="nx-flex-demo nx-flex-row-t-r" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+					
+					<b>.nx-flex-col-t-r</b>
+					<div class="nx-flex-demo nx-flex-col-t-r" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-l-c</b>
+					<div class="nx-flex-demo nx-flex-row-l-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+					
+					<b>.nx-flex-col-l-c</b>
+					<div class="nx-flex-demo nx-flex-col-l-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-r-c</b>
+					<div class="nx-flex-demo nx-flex-row-r-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+					
+					<b>.nx-flex-col-r-c</b>
+					<div class="nx-flex-demo nx-flex-col-r-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+				</div>
+
+			<!-- КОНЕЦ ТЕСТОВОГО КОНТЕНТА -->
 
 		</main>
 
 		<!-- LEFT -->
 		<div class="left">
 			<h2>Форма поиска</h2>
-			<!-- Обязательно указать ID NXsearchForm -->
+			<!-- Обязательно указать id="NXsearchForm" и заполнить action у формочки, а то в мобильное меню не попадет -->
 			<form action="/search/index.php" id="NXsearchForm">
 				<input type="text"   name="q"   placeholder="Поиск"  value="" />
 				<input type="submit" name="s"   class="sbtn" value="Поиск" />
 			</form>
 			
 			<h2>Меню</h2>
-			<!-- Только меню в контейнерах с классом to-nx-nav попадут в мобильную панель -->
+			<!-- Только меню в контейнерах с классом to-nx-nav попадут в мобильную панель (!!!!) -->
 			<nav class="navigation to-nx-nav">
 			<ul class="nx-menu-bla-bla">
 			  <li><a href="#">Первая ссылка II меню</a>
@@ -269,7 +422,8 @@
 
 	<!-- FOOTER --> 
 	<footer class="footer bb" itemscope itemtype="http://schema.org/Organization">
-
+		
+		<!-- Только ссылки в контейнерах с классом to-social-nav попадут в мобильную панель (!!!!) -->
 		<nav class="nav-social to-social-nav">
 			<a class="tw" title="Наш Twitter" href="/">Twitter</a>
 			<a class="vk" title="Мы ВКонтакте" href="/">ВКонтакте</a>
@@ -280,7 +434,7 @@
 
 		<address class="copy">
 			<a href="http://www.imageprom.com" target="_blank" class="ip"><strong>Имиджпром</strong> — разработка и поддержка сайтов</a>
-			<!--Дата для класса copy-data проставляется автоматически, от того что внутри теда до текущего года.  -->
+			<!-- Дата для класса copy-data проставляется автоматически, от года внутри до текущего года.  -->
 			<br />© <span class="copy-data">2011</span>, <span itemprop="name">Название компании</span><br />&nbsp;
 		</address>
 

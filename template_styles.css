@@ -1,6 +1,6 @@
 html {
 	font-size: 100%; 
-	font-family:sans-serif; 
+	font-family: sans-serif; 
 -webkit-text-size-adjust: 100%; 
 	-ms-text-size-adjust: 100%;
  -webkit-font-smoothing: antialiased;
@@ -30,31 +30,34 @@ body {
 	height:auto; 
 	min-height:1024px;
 	margin: 0 auto; 
-	position:relative;
+	position: relative;
 	background: transparent; 
 	font-size: 13px;
 }
 
+/*---------- Header Elements ----------*/
+
 .header {
 	display: block;  
-	padding:0; 
-	margin:0; 
+	padding: 0; 
+	margin: 0; 
 	height: 100px;
-	background:#fff;
+	background: #fff;
 	border: 1px solid #e1e1e1; 
-
-	position:relative; 
+	position: relative; 
 }
 
 .logo {
-	display:block;
+	display: block;
 	position: absolute;
-	top:0;
+	top: 0;
 	left: 0;
 	z-index: 30;  
-	width: 220px; height: 100px;  
-	overflow: hidden; text-indent: -1000px;
-	background: url(http://imageprom.com/bitrix/templates/imageprom/images/logo.png) left top no-repeat;
+	width: 220px; 
+	height: 100px;  
+	overflow: hidden; 
+	text-indent: -1000px;
+	background: url(images/logo.png) left top no-repeat;
 	-webkit-background-size: auto 100%;
 	   -moz-background-size: auto 100%;
 	        background-size: auto 100%;
@@ -66,6 +69,7 @@ body {
 	text-align: center;
 }
 
+/*---------- Main panel ----------*/
 
 .main-outer {
 	margin: 10px 0; 
@@ -91,10 +95,10 @@ body {
 
 .left {
 	display: block;  
-	width:250px;
+	width: 250px;
 	margin: 0;  
-	position:relative;  
-	padding:15px; 
+	position: relative;  
+	padding: 15px; 
 	background:#fff;
 	border: 1px solid #e1e1e1;
  -webkit-order: 0;
@@ -148,10 +152,12 @@ body {
     	 align-self: auto;
 }
 
+/*---------- Footet ----------*/
+
 .footer {
 	width: 100%;
 	height: auto;  
-	padding:20px 15px;  
+	padding: 20px 15px;  
 	position: relative; 
 	overflow: hidden; 
 	clear: both; 
@@ -177,7 +183,7 @@ body {
     	  align-items: stretch;
 }
 
-.footer  address {
+.footer address {
 	font-size:11px; 
 	display: inline-block; 
 	position: relative; 
@@ -187,7 +193,6 @@ body {
 	background: #fcfcfc;
 	border: 1px solid #ccc;  
 	font-style: normal;
-
     -webkit-flex: 0 1 auto;
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
@@ -200,10 +205,17 @@ body {
 
 .footer strong {display:block;}
 
-.footer a.ip {color:#767676; text-decoration:none;}
-.footer a.ip  strong {display:inline; text-decoration:underline; }
+.footer a.ip {
+	color:#767676; 
+	text-decoration:none;}
+.footer a.ip  strong {
+	display:inline; 
+	text-decoration:underline;
+}
 
 .footer address abbr {border:none;}
+
+/*---------- Social Buttons ----------*/
 
 .nav-social {
 	display:block;
@@ -213,10 +225,11 @@ body {
 	background: #ccc;
 	height: auto; 
 	margin: -20px -15px 1em -15px; 
-	padding:1em;
+	padding: 1em;
 	clear: both; 
 	position: relative;
-	font-size: 16px; line-height: 1;
+	font-size: 16px; 
+	line-height: 1;
 }
 
 .nav-social a {
@@ -262,11 +275,11 @@ body {
 
 .nav-social a.tw:before {content: "w";}
 .nav-social a.vk:before {content: "В"; font-size: 23px;}
-.nav-social a.fb:before {content: "F"; }
+.nav-social a.fb:before {content: "F"; } 
 .nav-social a.ok:before {content: "О"; font-size: 19px;}
 .nav-social a.yt:before {content: "Y"; font-size: 23px;}
 
-/*************MOBILE RULES**********/
+/************* MOBILE RULES (1024) **********/
 
 @media only screen and (max-width: 1024px) {
 	html {overflow-x: hidden;}
@@ -349,47 +362,171 @@ body {
 
 }
 
-#NXadaptiveMenu {
-	display: block; 
-	overflow-y:auto; overflow-x:hidden;
-	position: fixed; z-index:990; 
-	top:50px; bottom: 0; right:100%; left:0; 
-	background: #FBFAF7; 
-	font-size: 15px;
-	color: #000;
-	-webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-	   -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); 
-	    	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-	font-family: "helvetica neue", helvetica, arial sans;
-	-webkit-transition: all 0.3s ease-out;
-	   -moz-transition: all 0.3s ease-out;
-	     -o-transition: all 0.3s ease-out;
-    	-ms-transition: all 0.3s ease-out;
-	        transition: all 0.3s ease-out;
+/*------------ MOBILE STICKY PANEL ------------*/
+
+#NXadaptiveNavigation {
+	width: 100%; 
+	min-width: 320px; 
+	height: 50px; 
+	overflow: hidden;
+	position: fixed; 
+	right: 0; 
+	left: 0; 
+	z-index: 970;
+	background: #fbfaf7;
+	color:#000;
+	font-family: "Helvetica neue", Helvetica, Arial, sans-serif;
+	border:none;
+    -webkit-box-shadow: 0 1px 0 #4D4D4D inset, 0 2px 3px rgba(0, 0, 0, 0.25);
+	   -moz-box-shadow: 0 1px 0 #4D4D4D inset, 0 2px 3px rgba(0, 0, 0, 0.25);
+	        box-shadow: 0 1px 0 #4D4D4D inset, 0 2px 3px rgba(0, 0, 0, 0.25);
+    -webkit-flex-wrap: nowrap;
+    	-ms-flex-wrap: nowrap;
+    		flex-wrap: nowrap;
 }
 
-#NXadaptiveMenu.a-menu-open {display: block; right:30%; }
-body{height: 100%; width: 100%; overflow-x: hidden;}
+#NXadaptiveNavigation .h-logo {
+	height: 100%;
+	text-decoration: none;
+    -webkit-flex-wrap: nowrap;
+    	-ms-flex-wrap: nowrap;
+    		flex-wrap: nowrap;
+}
+
+#NXadaptiveNavigation .h-logo:before {
+	content: "";
+	display: block;
+	height: 100%;
+	text-indent: -1000px;
+	width: 70px;
+	background:url(images/h-nav-logo.png) 10px center no-repeat transparent;
+-webkit-background-size: auto 80%;
+   -moz-background-size: auto 80%;
+        background-size: auto 80%;
+}
+
+#NXadaptiveNavigation .h-nav-title {
+	position: relative;  
+	display: block; 
+	padding: 1em;
+	font-weight: normal; 
+	font-size: 12pt;
+	color: #27A22D;
+	text-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+	font-weight: bolder;
+}
+
+#NXadaptiveNavigation .h-nav {
+	position: relative;
+	padding: 0 1em;
+}
+
+#NXadaptiveNavigation .h-nav-icon {
+	display: block;
+	margin-left: 5px;
+	width: 30px;
+	height: 31px;
+	overflow: hidden; 
+	text-indent: -1000px;	
+	padding: 6px;
+	border: none;
+	background: #fff; 
+	cursor: pointer; 
+-webkit-border-radius: 3px; 
+   -moz-border-radius: 3px; 
+        border-radius: 3px; 
+-webkit-appearance: none;
+   -moz-appearance: none;
+		appearance: none;
+}
+
+#NXadaptiveNavigation .h-nav-gamburger {
+	display: block;
+}
+
+#NXadaptiveNavigation .h-nav-gamburger:before, 
+#NXadaptiveNavigation .h-nav-gamburger:after {
+	content: ""; 
+	display: block; 
+	height: 11px; 
+	border: 3px solid #666; 
+	border-right: none; 
+	border-left: none;
+}
+
+#NXadaptiveNavigation .h-nav-gamburger:after  {
+	height:8px;
+	border-top:none;
+}
+               
+.nxOpenedMenu #NXadaptiveNavigation .h-nav-icon:hover {background: #999;}
+			  #NXadaptiveNavigation .h-nav-icon:hover,
+.nxOpenedMenu #NXadaptiveNavigation .h-nav-icon {background: #666;}
+
+.nxOpenedMenu #NXadaptiveNavigation .h-nav-icon:before, 
+.nxOpenedMenu #NXadaptiveNavigation .h-nav-icon:after,
+#NXadaptiveNavigation .h-nav-icon:hover:before, 
+#NXadaptiveNavigation .h-nav-icon:hover:after {border-color: #fff;}
 
 
+/*------------ MOBILE MENU PANEL ------------*/
+
+#NXadaptiveMenu {
+	display: block; 
+	overflow-y: auto; 
+	overflow-x: hidden;
+	position: fixed; 
+	z-index: 990; 
+	top: 50px; 
+	bottom: 0; 
+	right: 100%; 
+	left: 0; 
+	background: #fbfaf7;
+	color: #000; 
+	font-size: 15px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+-webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+   -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); 
+    	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+-webkit-transition: all 0.3s ease-out;
+   -moz-transition: all 0.3s ease-out;
+     -o-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+}
+
+#NXadaptiveMenu.a-menu-open {
+	display: block; 
+	right: 30%;
+}
+
+#NXadaptiveMenu li span, 
+#NXadaptiveMenu li nobr,
 #NXadaptiveMenu a,
 #NXadaptiveMenu a:hover,
 #NXadaptiveMenu * a, 
-#NXadaptiveMenu * a:hover {
+#NXadaptiveMenu * a:hover,
+#NXadaptiveMenu ul, 
+#NXadaptiveMenu ol, 
+#NXadaptiveMenu menu,
+#NXadaptiveMenu li {
 	display: inline; 
 	padding: 0; 
 	margin: auto; 
-	border:none;  
-	background:transparent; 
+	border: none;  
+	background: transparent; 
 	color: inherit;  
-	text-align:inherit; 
+	text-align: inherit; 
 	text-decoration: none; 
 	text-transform: none; 
 	line-height: inherit; 
-	font-family:inherit; 
-	font-style:normal; 
-	font-weight:normal; 
-	font-size:inherit;}
+	font-family: inherit; 
+	font-style: normal; 
+	font-weight: normal; 
+	font-size: inherit;
+	box-shadow: none;
+	float: none;
+}
 
 #NXadaptiveMenu   a:hover, 
 #NXadaptiveMenu * a:hover {
@@ -397,8 +534,8 @@ body{height: 100%; width: 100%; overflow-x: hidden;}
 	color: #666;
 }
 
-#NXadaptiveMenu a:before, 
-#NXadaptiveMenu a:after,
+#NXadaptiveMenu   a:before, 
+#NXadaptiveMenu   a:after,
 #NXadaptiveMenu * a:before, 
 #NXadaptiveMenu * a:after {display: none;}
 
@@ -406,34 +543,23 @@ body{height: 100%; width: 100%; overflow-x: hidden;}
 
 #NXadaptiveMenu ul, 
 #NXadaptiveMenu ol, 
-#NXadaptiveMenu  menu,
+#NXadaptiveMenu menu,
 #NXadaptiveMenu li {
 	display: block; 
-	float: none;
 	width: 100%; 
 	height: auto;
 	margin: 0; 
-	padding: 0;
 	position: relative; 
 	z-index: 1;
-	top:auto; 
+	top: auto; 
 	right: auto; 
 	bottom: auto; 
-	left: auto;
-	border: none; 
-	list-style:none; 
-	vertical-align: top;
-	background: transparent;  
-	text-align:inherit; 
-	text-decoration: none; 
-	text-transform: none; 
-	line-height: inherit; 
-	font-family:inherit; 
-	font-style:normal; 
-	font-weight:normal; 
-	font-size:inherit;
+	left: auto; 
+	list-style: none; 
+	vertical-align: top; 
 	min-width: 300px;
 }
+
 
 #NXadaptiveMenu li {
 	min-width: 0;
@@ -471,13 +597,13 @@ body{height: 100%; width: 100%; overflow-x: hidden;}
 #NXadaptiveMenu .tab, 
 #NXadaptiveMenu .tab_opened {
 	display: block; 
-	cursor:pointer;
+	cursor: pointer;
 	width: 100%; 
 	height: 0px;
-	position:absolute; 
-	z-index: 10;
 	padding: 0; 
 	margin: 0;
+	position: absolute; 
+	z-index: 10;
 	top: 1em; 
 	right: 0; 
 	bottom: auto; 
@@ -494,10 +620,14 @@ body{height: 100%; width: 100%; overflow-x: hidden;}
 #NXadaptiveMenu .close:after, 
 #NXadaptiveMenu .open:after, 
 #NXadaptiveMenu .tab_opened:after { 
-	display:block; 
-	width:30px; height:30px; 
-	position:absolute; top:0; right: 1em ; z-index:44;  
-	background: url(images/mobile-arrow.svg) center center no-repeat;
+	display: block; 
+	width: 30px; 
+	height:30px; 
+	position: absolute; 
+	top: 0; 
+	right: 1em; 
+	z-index: 44;  
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyI+PGcgc3Ryb2tlPSIjMDAwIj48cGF0aCBkPSJNMCA1bDYgNE02IDlsNi00Ii8+PC9nPjwvc3ZnPg==) center center no-repeat;
 	-webkit-background-size: 70%; 
 	   -moz-background-size: 70%; 
 	        background-size: 70%;
@@ -515,32 +645,21 @@ body{height: 100%; width: 100%; overflow-x: hidden;}
 #NXadaptiveMenu .tab:after {content:"";}
 
 #NXadaptiveMenu .open:after {
-	content:"";  
+	content: "";  
    -moz-transform: rotate(180deg);
      -o-transform: rotate(180deg);
 -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
 }
 
-#NXadaptiveMenu .close:after {content:"";}
+#NXadaptiveMenu .close:after {content: "";}
 
-#NXadaptiveMenu li span, 
-#NXadaptiveMenu li nobr {
-	display:inline; border:none;
-	background:transparent; 
-	padding:0; margin:auto; 
-	font-style:normal; 
-	font-weight:normal;  
-	font-family:inherit; 
-	text-decoration:none; 
-	text-transform: none;
-	box-shadow: none;
-}
-
+/*------------ Mobile Search Form ------------*/
 
 #NXadaptiveSearchForm {
 	display: block; 
-	width: 100%; height: auto; 
+	width: 100%; 
+	height: auto; 
 	overflow: hidden;
 	padding: 1em;
 	border-top: 1px solid #ccc ;
@@ -556,62 +675,115 @@ body{height: 100%; width: 100%; overflow-x: hidden;}
 	font-size: 11pt;
 	padding: 0.5em 1em;
 	border: 1px solid #ccc;
+-webkit-border-radius: 0;
+   -moz-border-radius: 0;
+		border-radius: 0;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 }
-#NXadaptiveSearchForm input[type="text"] {display: block; width: 85%; margin:0;}
+
+#NXadaptiveSearchForm input[type="text"] {
+	display: block; 
+	width: 85%; 
+	margin: 0;
+}
+
 #NXadaptiveSearchForm input[type="submit"] {
-	width: 15%; float: right;
+	width: 15%; 
+	float: right;
 	padding: 0.5em;
 	border-left: none;
 	font-family: nx, Arial, Helvetica, sans-serif;  
-	background: #FBFAF7;
+	background: #fbfaf7;
 	cursor: pointer;
+-webkit-appearance: none;
+   -moz-appearance: none;
+		appearance: none;
 }
+
 #NXadaptiveSearchForm input[type="submit"]:hover,
 #NXadaptiveSearchForm input[type="submit"]:active {
 	background: #ededed;
 }
 
+/*------------ Mobile Menu Phone ------------*/
+
+#NXadaptiveMenu #NXadaptiveTel { 
+	color: #fff; 
+	padding: 15px; 
+	background: #666; 
+	font-size: 23px; 
+	text-decoration: none;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+} 
+
+#NXadaptiveMenu #NXadaptiveTel:after{
+		content: "Т";
+		display: inline-block;
+		width: 1.75em; 
+		height: 1.75em;
+		padding: 5px;
+		border: 2px solid #fff;  
+		font-size: 18px;
+		font-family: nx, Tahoma, Geneva, sans-serif;   
+		line-height: 1; 
+		text-align: center; 
+-webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+	    border-radius: 5px;
+}
+
+#NXadaptiveMenu #NXadaptiveTel:hover:after {
+	color: #ddd;
+	border-color: #ddd;
+}
+
+/*------- Mobile Menu Social Button -------*/
+
+#NXadaptiveSocial, 
+#NXadaptiveSocial * {
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+
 #NXadaptiveSocial {
-	display: block;
 	width: 100%;
 	overflow: hidden;
 	height: auto;
-	padding: 0 0 0 0; margin: 0 0 0 0;
+	padding: 0 0 0 0; 
+	margin: 0 0 0 0;
 	position: relative;
-	top:auto; 
+	top: auto; 
 	left: auto; 
 	right: auto; 
 	bottom: auto; 
 	z-index: 1;
 	border-bottom: 1px solid #ccc ;
 	background: none;
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
 }
 
-#NXadaptiveSocial a, #NXadaptiveSocial a:hover {
-	display: inline-block; 
-	height: 40px; width: 20%;
-	margin: 0; padding: 0; 
+#NXadaptiveSocial a, 
+#NXadaptiveSocial a:hover {
+	display: block; 
+	height: 40px; 
+	width: 20%;
+	margin: 0; 
+	padding: 0; 
 	overflow: hidden; 
 	text-indent: -1000px;
 	position: relative;
 	background: none;
 	opacity: 1;
-	float: left;
 	text-align: center;
-	border-top: 1px solid #ccc ;
 	border: 1px solid #ccc;
 	border-bottom-color: #f5f1e9;
-	border-right-color: #f5f1e9;
+	border-right-color:  #f5f1e9;
 	color: #666;
-	-webkit-box-sizing: border-box; 
-	   -moz-box-sizing: border-box; 
-	   		box-sizing: border-box;
 }
 
 #NXadaptiveSocial a:before {
@@ -621,7 +793,8 @@ body{height: 100%; width: 100%; overflow-x: hidden;}
 	line-height: 40px;
 	position: absolute;
 	z-index: 100;
-	left:50%; top:0;
+	left:50%; 
+	top:0;
 	margin-left: -20px;
 	background: none;
 	text-indent: 0;
@@ -636,135 +809,11 @@ body{height: 100%; width: 100%; overflow-x: hidden;}
 	border-right-color: #ccc;
 }
 
-#NXadaptiveNavigation {
-	display: block;
-	width:100%; 
-	min-width:320px; 
-	height: 50px; 
-	overflow: hidden;
-	position:fixed; right:0; left:0; z-index:970;
-	background: #fbfaf7;
-	color:#000;
-	font-family: "helvetica neue", Helvetica, Arial, sans-serif;
-	border:none;
-    -webkit-box-shadow: 0 1px 0 #4D4D4D inset, 0 2px 3px rgba(0, 0, 0, 0.25);
-	   -moz-box-shadow: 0 1px 0 #4D4D4D inset, 0 2px 3px rgba(0, 0, 0, 0.25);
-	        box-shadow: 0 1px 0 #4D4D4D inset, 0 2px 3px rgba(0, 0, 0, 0.25);  
-}
+/*-----------------------------------*/
 
-#NXadaptiveNavigation .h-nav {
-	position:relative;  
-	display:block; 
-	padding:1em;
-	padding-left: 60px;	
-	font-weight:normal; 
-	font-size:12pt;
-	color:#27A22D;
-	text-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
-	font-weight: bolder;
-}
-
-#NXadaptiveNavigation .nav-icon {
-	position: absolute; 
-	top: 50%; 
-	right: 1em; 
-	z-index: 100;
-	display: block; 
-	width: 30px;
-	height: 31px;
-	overflow: hidden; 
-	text-indent: -1000px;
-	padding: 6px;
-	background: #fff; 
-	cursor: pointer; 
-	margin-top:-15px;
-	-webkit-border-radius:3px; 
-	   -moz-border-radius:3px; 
-	        border-radius:3px; 
-}
-
-#NXadaptiveNavigation .nav-icon:before, 
-#NXadaptiveNavigation .nav-icon:after {
-	content:""; 
-	display:block; 
-	height:11px; 
-	border:3px solid #666; 
-	border-right:none; 
-	border-left:none;
-}
-
-#NXadaptiveNavigation .nav-icon:after  {
-	height:8px;
-	border-top:none;
-}
-               
-.nxOpenedMenu #NXadaptiveNavigation .nav-icon:hover {background:#999;}
-			  #NXadaptiveNavigation .nav-icon:hover,
-.nxOpenedMenu #NXadaptiveNavigation .nav-icon {background:#666;}
-
-.nxOpenedMenu #NXadaptiveNavigation .nav-icon:before, 
-.nxOpenedMenu #NXadaptiveNavigation .nav-icon:after,
-#NXadaptiveNavigation .nav-icon:hover:before, 
-#NXadaptiveNavigation .nav-icon:hover:after {border-color: #fff;}
-
-#NXadaptiveNavigation .h-logo {
-	display: inline-block;
-	position: absolute; 
-	top:0; 
-	bottom:0; 
-	left: 0; 
-	right:80px; 
-	z-index: 200;
-	text-indent: -1000px;
-	background:url(images/h-nav-logo.png) 10px center no-repeat transparent;
--webkit-background-size: auto 80%;
-   -moz-background-size: auto 80%;
-        background-size: auto 80%;
-}
-
-#NXadaptiveNavigation .h-logo:before {
-	content: "";
-	position: absolute;
-	display: block;
-	top:0; 
-	bottom: 0; 
-	left: 0; 
-	z-index: 300;
-	width: 200px;
-}
-
-#NXadaptiveMenu #NXadaptiveTel { 
-	display: block; 
-	color: #fff; 
-	padding: 15px; 
-	background: #666; 
-	font-size: 23px; 
-	text-decoration: none;
-} 
-
-#NXadaptiveMenu #NXadaptiveTel:before{
-		content: "Т";
-		display: inline-block;
-		float:right;
-		width: 1.75em; height: 1.75em;
-		padding: 5px;
-		border: 2px solid #fff;  
-		font-size: 18px;
-		font-family: nx, Tahoma, Geneva, sans-serif;   
-		line-height: 1em; text-align: center; 
--webkit-border-radius: 5px;
-   -moz-border-radius: 5px;
-	    border-radius: 5px;
-}
-#NXadaptiveMenu #NXadaptiveTel:hover:before {
-	color: #ddd;
-	border-color: #ddd;
-}
-
-/**********************************/ 
+/*** MOBILE RULES (less than 1024) ***/
 
 @media only screen and (max-width: 640px) {
-
 	.left, 
 	.right {
 		width: 100%;
@@ -773,7 +822,6 @@ body{height: 100%; width: 100%; overflow-x: hidden;}
 	    -ms-flex: 0 1 100%;
 	    	flex: 0 1 100%;
 	}
-
 }
 
 @media only screen and (max-width: 450px) {

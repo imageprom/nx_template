@@ -8,21 +8,20 @@ function AddNXAdaptiveNavication() {
 
     if(nxNavlen == 0 && nxScreen <= s_width) {
         var navTitle = $('.logo').text(),
+            nxTel = $('#NXTel').data('tel'),
             nxSearchForm = $('#NXsearchForm'),
             nxSocialLink = $('.to-social-nav'),
-            nxTel = $('.logo').attr('data-tel'),
+            
+            nxAdaptiveMenu = '<div id="NXadaptiveMenu"></div>';
+            nxNavigation = '<div class="nx-nav-grad nx-flex-row-btw-c" id="NXadaptiveNavigation">' +
+                                '<a href="/" class="h-logo nx-flex-row-l-c" title="На главную">' +  '<strong class="h-nav-title">' + navTitle + '</strong>' + '</a>' + 
+                                '<span class="h-nav nx-flex-row-btw-c"><button class="h-nav-icon h-nav-gamburger h-close" id="nxGamburger" title="Меню" ></button></strong>' +
+                           '</div>';
 
-           nxNavigation = '<div id="NXadaptiveNavigation" class="nx-nav-grad">' +
-                          '<a href="/" class="h-logo" title="На главную">'+navTitle+'</a>' +
-                          '<strong class="h-nav h-close">'+navTitle+' <span class="nav-icon"></span></strong>' +
-                          '</div>';
-
-        $('body').prepend( nxNavigation);
-        
-        $('body').prepend('<div id="NXadaptiveMenu"></div>');
-
+        $('body').prepend(nxAdaptiveMenu + nxNavigation);
+    
         if (nxTel) {
-             $('#NXadaptiveMenu').append('<a class="tel" id="NXadaptiveTel" href="tel:'+nxTel+'">'+nxTel+'</a>');
+             $('#NXadaptiveMenu').append('<a class="tel nx-flex-row-btw-c" id="NXadaptiveTel" href="tel:'+nxTel+'">'+nxTel+'</a>');
         }
 
         $('.to-nx-nav').each(function() { 
@@ -30,10 +29,10 @@ function AddNXAdaptiveNavication() {
             $(this).hide();
         });
         
-		$('<span class="tab close" data-nxopen="0"></span>' ).insertBefore("#NXadaptiveMenu li ul");
+		$('<span class="tab close" data-nxopen="0"></span>' ).insertBefore('#NXadaptiveMenu li ul');
 
         if(nxSocialLink.length) {
-            $('#NXadaptiveMenu').append('<div id="NXadaptiveSocial"></div>');
+            $('#NXadaptiveMenu').append('<div id="NXadaptiveSocial" class="nx-flex-row-btw-st"></div>');
             $('.to-social-nav').each(function() {
                 $('#NXadaptiveSocial').append($(this).html()).addClass($(this).attr('class'));
                 $(this).hide();
@@ -44,21 +43,29 @@ function AddNXAdaptiveNavication() {
         if(nxSearchForm.length) {
             var searchFormHref = nxSearchForm.attr('action');
             nxSearchForm.hide();
-            $('#NXadaptiveMenu').prepend('<div id="NXadaptiveSearchForm"><form action="'+searchFormHref+'"><input type="text" name="q" placeholder="Поиск" value=""><input type="submit" name="s" value="с" title="Найти"></form></div>');
+            $('#NXadaptiveMenu').prepend('<div id="NXadaptiveSearchForm"><form action="' + searchFormHref+ '"><input type="text" name="q" placeholder="Поиск" value=""><input type="submit" name="s" value="с" title="Найти"></form></div>');
         }
     }
     else if(nxNavlen > 0 &&  nxScreen >= s_width) {
         $('#NXadaptiveNavigation').remove(); 
         $('#NXadaptiveMenu').remove();  
+        
         $('html').removeClass('nxOpenedMenu');
-        $('.to-nx-nav').show();
+        
+        $('.to-nx-nav, .to-social-nav, #NXsearchForm').show();
         $('.to-social-nav').show();
         $('#NXsearchForm').show();
     }
 }
 
-if(Modernizr.mq('only all')){AddNXAdaptiveNavication(); $(window).resize(function() {AddNXAdaptiveNavication();}); }
-$('body').on("click", '.h-nav', function() {
+if(Modernizr.mq('only all')){
+    AddNXAdaptiveNavication(); 
+    $(window).resize(function() {
+        AddNXAdaptiveNavication();
+    }); 
+}
+
+$('body').on('click', '#nxGamburger', function() {
     target = $('#NXadaptiveMenu');
     if(target.hasClass('a-menu-open')) {
         $('html').removeClass('nxOpenedMenu');
@@ -69,50 +76,76 @@ $('body').on("click", '.h-nav', function() {
         target.addClass('a-menu-open');
     }
 });
+
 });})(jQuery);
 
-/*********************TABLE STRIP AND RESIZE*********************/
+/*********************ADAPTIVE TABLE *********************/
 (function(){$(function(){
 $('.tbl').each(function(index, elt) {
-    if(!Modernizr.testAllProps('svg')) {
-        var tr = $(this).find('tbody tr:odd'); tr.addClass("strip"); 
-    }
     $(this).wrap('<div class="tbl-resp"></div>');});
 });})(jQuery);
 
 /*********************TOP SCROLLING*********************/
-(function(){
-$(function(){
-$("body").append('<div id="scroller" class="b-top"><span class="b-top-but">наверх</span></div>');
-$(window).scroll(function () { var scroller = $('#scroller'); if ($(this).scrollTop() > 300) {scroller.fadeIn();} else {scroller.fadeOut();}});
-$('body').on("click", '#scroller', function() {$('body,html').animate({scrollTop: 0}, 400); return false;});
+(function(){$(function(){
+    $('body').append('<div id="NXScroller" class="b-top"><span class="b-top-but">наверх</span></div>');
+    $(window).scroll(function () { 
+        var scroller = $('#NXScroller'); 
+        if ($(this).scrollTop() > 300) {scroller.fadeIn();} 
+        else {scroller.fadeOut();}
+    });
+    $('body').on('click', '#NXScroller', function() {
+        $('body, html').animate({scrollTop: 0}, 400); return false;
+    });
 });})(jQuery);
 
 /*********************СOPYRIGHT DATA*********************/
-(function(){$(function(){var st_data=$(".copy-data").html(); var dt = new Date(); if ((st_data)!=dt.getFullYear()) {$(".copy-data").append("&nbsp;&#150;&nbsp;"+dt.getFullYear());}});})(jQuery);
+(function(){$(function(){
+    var dataObj = $('.copy-data');
+        stData = dataObj.html(), 
+        dt = new Date(); 
+        if ((stData) != dt.getFullYear()) {
+            dataObj.append('&nbsp;&#150;&nbsp;'+dt.getFullYear());
+        }
+});})(jQuery);
 
 /*************************TAB PLUGIN************************/
-(function(){
-$(function(){
-$(".tab_opened").addClass("open").attr({'data-nxopen':1, 'title':'Скрыть'}); 
-$(".tab").addClass("close").attr({'data-nxopen':0, 'title':'Показать'}); 
-$(".tab").next().css("display", "none");
-$('body').on("click", '.tab', function(){                       
-if ($(this).attr("data-nxopen")==0) {$(this).next().animate({height: "show"}, 300); $(this).attr({'data-nxOpen':1, 'title':'Скрыть'}).removeClass("close").addClass("open");} 
-else {$(this).next().animate({height: "hide"}, 300); $(this).attr({'data-nxopen':0, 'title':'Показать'}).removeClass("open").addClass("close");}
-return false;});
-$('body').on("click", '.tab_opened', function(){                       
-if ($(this).attr("data-nxopen")==0) {$(this).next().animate({height: "show"}, 300); $(this).attr({'data-nxOpen':1, 'title':'Скрыть'}).removeClass("close").addClass("open");} 
-else {$(this).next().animate({height: "hide"}, 300); $(this).attr({'data-nxopen':0, 'title':'Показать'}).removeClass("open").addClass("close");}
-return false;});
+function nxTabsInit(targetContaqiner) {
+    if(targetContaqiner) targetContaqiner += ' ';
+    $(targetContaqiner + '.tab_opened').addClass('open').attr({'data-nxopen':1, 'title':'Скрыть'}); 
+    $(targetContaqiner + '.tab').addClass('close').attr({'data-nxopen':0, 'title':'Показать'}).next().css('display', 'none');
+}
+
+function nxTabsAction(targetTab) {
+    if (targetTab.attr('data-nxopen') == 0 ) {
+        targetTab.next().animate({height: 'show'}, 300); 
+        targetTab.attr({'data-nxopen':1, 'title':'Скрыть'}).removeClass('close').addClass('open');
+    } 
+    else {
+        targetTab.next().animate({height: 'hide'}, 300); 
+        targetTab.attr({'data-nxopen':0, 'title':'Показать'}).removeClass('open').addClass('close');
+    }
+    return false;
+}
+
+(function(){$(function(){
+    nxTabsInit(false);
+    $('body').on('click', '.tab', function(){nxTabsAction($(this))});
+    $('body').on('click', '.tab_opened', function(){nxTabsAction($(this))});
 });})(jQuery);
 
 /********************** MODAL ******************************/
-function nx_modalizm() {var nx_modal = $('div.nx-modal');  if (nx_modal.length ) {nx_modal.remove();} $("body").append("<div class='nx-modal'></div>"); $('div.nx-modal').fadeIn().height($(document).height());}
-function nx_no_modalizm() {$('div.nx-modal').fadeOut();}
+function nx_modalizm() {
+    var nx_modal = $('#NXModal');  
+        if (nx_modal.length ) {
+            nx_modal.remove();
+        } 
+        $('body').append('<div class="nx-modal" id="NXModal"></div>'); 
+        $('#NXModal').fadeIn().height($(document).height());
+}
+function nx_no_modalizm() {$('#NXModal').fadeOut();}
 
 /**********************LIGHTBOX PLUGIN**********************/
-var original_size=new Object();
+var original_size = new Object();
 (function(){$(function(){
 function Scaling(my_width, my_height) { var my_res=new Object();
 if((my_width/my_height)>=1 && my_width>($(window).width())) {my_res.width=$(window).width()-100; my_res.height=($(window).width()-100)*my_height/my_width; my_res.scale=1;}
@@ -154,22 +187,28 @@ $(this).hide(); event.stopPropagation();
 
 /****************SEO LINK*******************/
 (function(){$(function(){
-$('.h-link').replaceWith(function(){ var src = $(this); 
-var cl = src.attr('class');  cl = cl.replace('h-link', '');  
-var text = '<a href="'+src.attr('data-link')+'" '; var target = src.attr('data-target'); if(target) {text+='target="'+target+'" ';}  text +=' class="'+cl+'">'+src.text()+'</a>'; 
-console.log(cl);
-return text});
+    $('.h-link').replaceWith(function(){
+        var src = $(this), 
+            cl = src.attr('class');  
+            cl = cl.replace('h-link', '');  
+        var text = '<a href="' + src.attr('data-link') + '" ', 
+            target = src.attr('data-target'); 
+            if(target) text += 'target="' + target + '" '; 
+            text +=' class="' + cl + '">' + src.text() + '</a>'; 
+        return text;
+    });
 });})(jQuery);
 
 /****************CONSOLE LOG PLUGIN*****************/
 (function(){
-var method; var noop = function () {};
-var methods = ['assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+var method, 
+    noop = function () {},
+    methods = ['assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
 'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
 'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-'timeStamp', 'trace', 'warn'];
-var length = methods.length; var console = (window.console = window.console || {});
-while (length--) { method = methods[length]; if (!console[method]) {console[method] = noop;}}
+'timeStamp', 'trace', 'warn'],
+    length = methods.length; var console = (window.console = window.console || {});
+    while (length--) { method = methods[length]; if (!console[method]) {console[method] = noop;}}
 }());
 
 /****************USER CODE*******************/
