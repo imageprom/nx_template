@@ -4,7 +4,7 @@ $(function(){
 var s_width = 1025;
 function AddNXAdaptiveNavication() {
     var nxNavlen = $('#NXadaptiveNavigation').length, 
-        nxScreen = nxScreen = window.innerWidth;
+        nxScreen = window.innerWidth;
 
     if(nxNavlen == 0 && nxScreen <= s_width) {
         var navTitle = $('.logo').text(),
