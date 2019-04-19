@@ -109,10 +109,12 @@ $('.tbl').each(function(index, elt) {
 });})(jQuery);
 
 /*************************TAB PLUGIN************************/
-function nxTabsInit(targetContaqiner) {
-    if(targetContaqiner) targetContaqiner += ' ';
-    $(targetContaqiner + '.tab_opened').addClass('open').attr({'data-nxopen':1, 'title':'Скрыть'}); 
-    $(targetContaqiner + '.tab').addClass('close').attr({'data-nxopen':0, 'title':'Показать'}).next().css('display', 'none');
+function nxTabsInit(targetContainer) {
+    if(targetContainer) targetContainer += ' ';
+	else targetContainer = '';
+	
+    $(targetContainer + '.tab_opened').addClass('open').attr({'data-nxopen':1, 'title':'Скрыть'}); 
+    $(targetContainer + '.tab').addClass('close').attr({'data-nxopen':0, 'title':'Показать'}).next().css('display', 'none');
 }
 
 function nxTabsAction(targetTab) {
