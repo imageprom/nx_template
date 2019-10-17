@@ -22,7 +22,7 @@ body {
 	z-index: 200;
 }
 
-.container {
+#container {
 	display: block; 
 	width: 90%; 
 	max-width: 1260px; 
