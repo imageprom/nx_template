@@ -433,6 +433,33 @@ a .main img {border:none}
   right: 50%; 
 }
 
+/************* TOP SCROLLER **********/
+
+
+.nx-cookie-block {
+  position:fixed;
+  bottom:0;
+  left: 0;
+  right: 0;
+  padding:20px 10px;
+  background:#fff;
+  z-index:50;
+  visibility: hidden;
+}
+
+.nx-cookie-block .nx-flex-row-c-c {display:none}
+.nx-cookie-block.nx-flex-row-c-c.active {
+  visibility: visible;
+}
+
+.nx-cookie-block .btn-red {
+  min-width: 120px;
+  padding:10px;
+}
+.nx-cookie-block .text_cookie {
+  padding-right:20px
+}
+
 /************************ INPUTS ***********************/
 
 input.inpt, 

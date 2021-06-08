@@ -279,6 +279,7 @@ body {
 .nav-social a.ok:before {content: "О"; font-size: 19px;}
 .nav-social a.yt:before {content: "Y"; font-size: 23px;}
 
+
 /************* MOBILE RULES (1024) **********/
 
 @media only screen and (max-width: 1024px) {
