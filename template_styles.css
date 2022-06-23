@@ -38,18 +38,69 @@ body {
 	z-index: 200;
 }
 
-#container {
+.global-outer {
+	overflow: hidden;
+}
+
+.outer {
+	width: 100%;
+	height: auto;
+	padding: 30px 0;
+	display: block;
+}
+
+.outer--gray {
+	background-color: #fcfcfc;
+}
+
+.container {
 	display: block; 
 	width: 90%; 
 	max-width: 1260px; 
 	min-width: 1024px; 
-	height:auto; 
-	min-height:1024px;
+	height:auto;
 	margin: 0 auto; 
 	position: relative;
 	background: transparent; 
 	font-size: 13px;
 }
+
+.inner {
+	width: 100%;
+	position: relative;
+	padding: 20px 0;
+}
+
+.inner::before,
+.inner::after {
+	content: '';
+	display: block;
+	width: 3170px;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: -3170px;
+	z-index: 1;
+}
+
+.inner::after {
+	left: auto;
+	right: -3170px;
+}
+
+.inner--green,
+.inner--green::before,
+.inner--green::after{
+	background-color: #ddfcc8;
+}
+
+.inner--black,
+.inner--black::before,
+.inner--black::after{
+	color: #fff;
+	background-color: #000;
+}
+
 
 /*---------- Header Elements ----------*/
 
@@ -285,8 +336,13 @@ body {
 		display: none;
 	}
 
-	.slogan {font-size: 21px;
+	.slogan {
+		font-size: 21px;
 		padding: 10px;
+	}
+
+	.outer{
+		padding: 0 20px;
 	}
 
 	.container {
@@ -301,6 +357,7 @@ body {
 	 	    -ms-transition: all 0.3s ease-out;
 		        transition: all 0.3s ease-out;
 	}
+
 
 	.nxOpenedMenu .container {left: 70%;}
 
@@ -334,7 +391,6 @@ body {
 	    	 order: 0;	
 	}
 
-	.main-inner {margin-left:0; margin-right:0;}
 
 	.footer {padding: 0;}
 
@@ -347,7 +403,7 @@ body {
 
 /*------------ MOBILE STICKY PANEL ------------*/
 
-#NXadaptiveNavigation {
+#NXAdaptiveNavigation {
 	width: 100%; 
 	min-width: 320px; 
 	height: 50px; 
@@ -368,7 +424,7 @@ body {
     		flex-wrap: nowrap;
 }
 
-#NXadaptiveNavigation .h-logo {
+#NXAdaptiveNavigation .h-logo {
 	height: 100%;
 	text-decoration: none;
     -webkit-flex-wrap: nowrap;
@@ -376,7 +432,7 @@ body {
     		flex-wrap: nowrap;
 }
 
-#NXadaptiveNavigation .h-logo:before {
+#NXAdaptiveNavigation .h-logo:before {
 	content: "";
 	display: block;
 	height: 100%;
@@ -388,7 +444,7 @@ body {
         background-size: auto 80%;
 }
 
-#NXadaptiveNavigation .h-nav-title {
+#NXAdaptiveNavigation .h-nav-title {
 	position: relative;  
 	display: block; 
 	padding: 1em;
@@ -396,15 +452,14 @@ body {
 	font-size: 12pt;
 	color: #27A22D;
 	text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
 }
 
-#NXadaptiveNavigation .h-nav {
+#NXAdaptiveNavigation .h-nav {
 	position: relative;
 	padding: 0 1em;
 }
 
-#NXadaptiveNavigation .h-nav-icon {
+#NXAdaptiveNavigation .h-nav-icon {
 	display: block;
 	margin-left: 5px;
 	width: 30px;
@@ -423,12 +478,12 @@ body {
 		appearance: none;
 }
 
-#NXadaptiveNavigation .h-nav-gamburger {
+#NXAdaptiveNavigation .h-nav-gamburger {
 	display: block;
 }
 
-#NXadaptiveNavigation .h-nav-gamburger:before, 
-#NXadaptiveNavigation .h-nav-gamburger:after {
+#NXAdaptiveNavigation .h-nav-gamburger:before,
+#NXAdaptiveNavigation .h-nav-gamburger:after {
 	content: ""; 
 	display: block; 
 	height: 11px; 
@@ -437,19 +492,19 @@ body {
 	border-left: none;
 }
 
-#NXadaptiveNavigation .h-nav-gamburger:after  {
+#NXAdaptiveNavigation .h-nav-gamburger:after  {
 	height:8px;
 	border-top:none;
 }
                
-.nxOpenedMenu #NXadaptiveNavigation .h-nav-icon:hover {background: #999;}
-			  #NXadaptiveNavigation .h-nav-icon:hover,
-.nxOpenedMenu #NXadaptiveNavigation .h-nav-icon {background: #666;}
+.nxOpenedMenu #NXAdaptiveNavigation .h-nav-icon:hover {background: #999;}
+			  #NXAdaptiveNavigation .h-nav-icon:hover,
+.nxOpenedMenu #NXAdaptiveNavigation .h-nav-icon {background: #666;}
 
-.nxOpenedMenu #NXadaptiveNavigation .h-nav-icon:before, 
-.nxOpenedMenu #NXadaptiveNavigation .h-nav-icon:after,
-#NXadaptiveNavigation .h-nav-icon:hover:before, 
-#NXadaptiveNavigation .h-nav-icon:hover:after {border-color: #fff;}
+.nxOpenedMenu #NXAdaptiveNavigation .h-nav-icon:before,
+.nxOpenedMenu #NXAdaptiveNavigation .h-nav-icon:after,
+#NXAdaptiveNavigation .h-nav-icon:hover:before,
+#NXAdaptiveNavigation .h-nav-icon:hover:after {border-color: #fff;}
 
 
 /*------------ MOBILE MENU PANEL ------------*/

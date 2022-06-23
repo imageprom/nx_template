@@ -69,456 +69,546 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 <!--При интеграции с bitrix убрать комментарий с панельки -->
 <!--<div class="panel"><?=$APPLICATION->ShowPanel();?></div>-->
 
-<div class="container">
-	<!-- HEADER --> 
-	<header class="header">
-
-		<!--Если номер телефона выодится в другом блоке перенести туда кусок id = "NXTel" data-tel="+7 НОМЕР_ТЕЛЕФОНА" -->
-
-		<a class="logo" href="/" id = "NXTel" data-tel="+7 (831) 2960-920">Моя компания</a>
-		<div class="slogan">Универсальный адаптивный макет</div>	
-	</header>
-
-	<!-- CENTRAL BLOCK -->	
-	<div class="main-outer nx-flex-row-btw-st">
-
-	<!-- MAIN -->
-		<main class="main">
-
-			<h1>Инструкции <small>(это - заголовок I уровня)</small></h1>
-			<!-- Заменить на <h1><?=$APPLICATION->ShowTitle(false);?></h1> -->
-
-			<!-- НАЧАЛО ТЕСТОВОГО КОНТЕНТА -->
-			
-				<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сатйы были действительно хороши нужно многое учесть.</p>
-
-				<h2>Оформление элементов <small>(это - заголовок II уровня)</small></h2>
-				<p>В тексте может встречаться много разного - картинки, тексты, цитаты, таблицы, списки и для всего у нас уже сложились некоторые стадарты.</p>
-
-				<figure class="toright">
-					<img src="https://www.imageprom.com/upload/iblock/724/oxhzft%20m%20tiqpdrhsicxpw.jpg" alt="Картинка выроненная по левому краю"  class="with_big" data-big="https://www.imageprom.com/upload/iblock/152/tnvcsz%20i%20cdearbirhcebk.jpg?246925215.87240747"/>
-					<figcaption>Клевая тачка</figcaption>
-				</figure>
-
-				<h3>Вставка изображений (это - заголовок III уровня)</h3>
-				
-
-				<p>В тексте должны быть иллюстарации. Чтобы выравнивать картинки влево или вправо нужно пользоваться классами toleft и toright</p>
-				<p>У картнок обязательно нужно прописывать alt и если нужно title</p>
-				<p>Для логического разбиения текстов на абзацы стоит параграфы   p , а не перенос строк br</p>
-				<blockquote>
-					Это - цитата. Если нам нужно выделить каой нибудь элемент в заметный блок можно и нужно воспользоваться этим элементом.  И соответсвенно не заыбть достойно оформить его в css
-					<p class="author">Так говорил Заратустра</p>
-				</blockquote>
-
-				<p>Вообще, в тексте может встречаться много разного текстовго оформления</p>
-				<dl>
-					<dt><strong>Жирный текст</strong></dt><dd> &ndash; лучше использовать strong а не b</dd>
-					<dt><i>Курсив</i></dt><dd> использовать i или em </dd>
-					<dt><ins>Особый</ins></dt><dd> если не хватает курссива и жирного можно использовать ins </dd>
-					<dt><mark>Выделенный</mark></dt><dd> а если и ins не зватает можно использовать  mark</dd>
-					<dt><dfn>Определение</dfn></dt><dd> оформляется имеено так. </dd>
-					<dt><a href="#">Ссылки</a></dt><dd> просто ссылки в тексте</dd>
-					<dt><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a></dt><dd> если это ссылка на файл то и офрмлять ее соотвествующе</dd>
-					<dt><s class="r">Р</s></dt><dd> если нужен знак рубля  &lt;s class="r"&gt;Р&lt;/s&gt; буковку выбирать выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13">тут</a></dd>
-				</dl>
-
-				<img src="https://www.imageprom.com/upload/iblock/495/3.jpg" alt="Картинка выроненная по правому краю"  class="toleft with_big" data-big="https://www.imageprom.com/upload/iblock/624/3.jpg?246925215.87240747" data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"  />
-
-				<h4>Динамические элементы (это - заголовок IV уровня)</h4>
-				<p>Времена статичного и скучного интернена прошли. В настоящее время элементы могут нести не только смысловую но и функциональную нагрузку. Например картинка, располложенаая справа может увеличивться.
-				В более старыйх сайтах вместо data-big использовался параметр big</p>
-				
-
-				<h5>Вкладки</h5>
-				<p>Некоторые элементы могут своачиваться и разворачиваться</p>
-				
-				<h2 class="tab_opened">Если нажать - свернется)</h2>
-				<div><p>Здесь лежит текст который нужно скрыть не забудьте окружающий div.</p></div>
-
-				<h2 class="tab">Если нажать - развернется</h2>
-				<div><p>Здесь лежит текст который скрыт сразу забудьте окружающий div.</p></div>
-
-				<h6>Таблицы (заголовк VI уровня)</h6>
-
-				<table class="tbl">
-				<caption>Таблица №5. Заголовок таблицы.</caption>
-				<thead>
-				<tr>
-					<td>Параметр</td>
-					<td>Показатель</td>
-					<td>Номер аттестата</td>
-					<td>Аттестат выдан</td>
-					<td>Действителен до</td>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-				  <th rowspan="2">Скидка на уторговывание %</th>
-				  <td>Скидки на цены коммерческих объектов недвижимости</td>
-				  <td>13%</td>
-				  <td>10.09.2012</td>
-
-				  <td>11.08.2013</td>      
-				</tr>
-				  <tr>
-				  <td>Скидки на цены коммерческих объектов недвижимости</td>
-				  <td>13%</td>
-				  <td>10.09.2012</td>
-				  <td>11.08.2013</td>
-
-				</tr>
-				<tr>
-				  <th rowspan="2">Скидка на уторговывание %</th>
-				  <td>Скидки на цены коммерческих объектов недвижимости</td>
-				  <td>13%</td>
-				  <td>10.09.2012</td>
-				  <td>11.08.2013</td>      
-
-				</tr>
-				  <tr>
-				  <td>Скидки на цены коммерческих объектов недвижимости</td>
-				  <td>13%</td>
-				  <td>10.09.2012</td>
-				  <td>11.08.2013</td>
-				</tr>
-				</tbody></table>
-
-			<section>
-				<h6>Списки</h6>
-				<ul>
-					<li>Заголовок должен быть короче трех строк.</li>
-					<li>При названии разделов используйте уже устоявшиеся термины, такие
-						как гостевая книга, чат, ссылка, главная страница и другие.</li>
-					<li>Перед использованием специального термина или слова, решите,
-						будет ли оно понятно читателю.</li>
-				</ul>
-
-				<ol>
-					<li>Заголовок должен быть короче трех строк.</li>
-					<li>При названии разделов используйте уже устоявшиеся термины, такие
-						как гостевая книга, чат, ссылка, главная страница и другие.</li>
-					<li>Перед использованием специального термина или слова, решите,
-						будет ли оно понятно читателю.</li>
-				</ol>
-			</section>
+<div class="global-outer">
 
 
-				<section> 
-					<h6>Макет формы</h6>
-					E-mail<br />
-					<input type="text" placeholder="Ваш e-mail" class="inpt" /><br />
-					<textarea  class="clear-input inpt">Комментарий</textarea><br />
-					<input type="submit" value="Отправить" class="btn" />
+	<div class="container">
+		<!-- HEADER -->
+		<header class="header">
+			<!--Если номер телефона выодится в другом блоке перенести туда кусок id = "NXTel" data-tel="+7 НОМЕР_ТЕЛЕФОНА" -->
 
-					<div class="radio">
-						<p><input id="r1" type="radio" name="gender" value="male"><label for="r1">Male</label></p>
-						<p><input id="r2" type="radio" name="gender" value="female"><label for="r2">Female</label></p>
-					</div>	
+			<a class="logo" href="/" id = "NXTel" data-tel="+7 (831) 2960-920">Моя компания</a>
+			<div class="slogan">Универсальный адаптивный макет</div>
+		</header>
 
-					<div class="checkbox">
-						<p><input id="check1" type="checkbox" name="check" value="check1"><label for="check1">Checkbox No. 1</label></p>
-						<p><input id="check2" type="checkbox" name="check" value="check2"><label for="check2">Checkbox No. 2</label></p>
-					</div>	
+		<!-- CENTRAL BLOCK -->
+		<div class="main-outer nx-flex-row-btw-st">
+
+		<!-- MAIN -->
+			<main class="main">
+
+				<h1>Инструкции <small>(это - заголовок I уровня)</small></h1>
+				<!-- Заменить на <h1><?=$APPLICATION->ShowTitle(false);?></h1> -->
+
+				<!-- НАЧАЛО ТЕСТОВОГО КОНТЕНТА -->
+
+					<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сатйы были действительно хороши нужно многое учесть.</p>
+
+					<h2>Оформление элементов <small>(это - заголовок II уровня)</small></h2>
+					<p>В тексте может встречаться много разного - картинки, тексты, цитаты, таблицы, списки и для всего у нас уже сложились некоторые стадарты.</p>
+
+					<figure class="toright">
+						<img src="https://www.imageprom.com/upload/iblock/724/oxhzft%20m%20tiqpdrhsicxpw.jpg" alt="Картинка выроненная по левому краю"  class="with_big" data-big="https://www.imageprom.com/upload/iblock/152/tnvcsz%20i%20cdearbirhcebk.jpg?246925215.87240747"/>
+						<figcaption>Клевая тачка</figcaption>
+					</figure>
+
+					<h3>Вставка изображений (это - заголовок III уровня)</h3>
+
+
+					<p>В тексте должны быть иллюстарации. Чтобы выравнивать картинки влево или вправо нужно пользоваться классами toleft и toright</p>
+					<p>У картнок обязательно нужно прописывать alt и если нужно title</p>
+					<p>Для логического разбиения текстов на абзацы стоит параграфы   p , а не перенос строк br</p>
+					<blockquote>
+						Это - цитата. Если нам нужно выделить каой нибудь элемент в заметный блок можно и нужно воспользоваться этим элементом.  И соответсвенно не заыбть достойно оформить его в css
+						<p class="author">Так говорил Заратустра</p>
+					</blockquote>
+
+					<p>Вообще, в тексте может встречаться много разного текстовго оформления</p>
+					<dl>
+						<dt><strong>Жирный текст</strong></dt><dd> &ndash; лучше использовать strong а не b</dd>
+						<dt><i>Курсив</i></dt><dd> использовать i или em </dd>
+						<dt><ins>Особый</ins></dt><dd> если не хватает курссива и жирного можно использовать ins </dd>
+						<dt><mark>Выделенный</mark></dt><dd> а если и ins не зватает можно использовать  mark</dd>
+						<dt><dfn>Определение</dfn></dt><dd> оформляется имеено так. </dd>
+						<dt><a href="#">Ссылки</a></dt><dd> просто ссылки в тексте</dd>
+						<dt><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a></dt><dd> если это ссылка на файл то и офрмлять ее соотвествующе</dd>
+						<dt><s class="r">Р</s></dt><dd> если нужен знак рубля  &lt;s class="r"&gt;Р&lt;/s&gt; буковку выбирать выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13">тут</a></dd>
+					</dl>
+
+					<img src="https://www.imageprom.com/upload/iblock/495/3.jpg" alt="Картинка выроненная по правому краю"  class="toleft with_big" data-big="https://www.imageprom.com/upload/iblock/624/3.jpg?246925215.87240747" data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"  />
+
+					<h4>Динамические элементы (это - заголовок IV уровня)</h4>
+					<p>Времена статичного и скучного интернена прошли. В настоящее время элементы могут нести не только смысловую но и функциональную нагрузку. Например картинка, располложенаая справа может увеличивться.
+					В более старыйх сайтах вместо data-big использовался параметр big</p>
+
+
+					<h5>Вкладки</h5>
+					<p>Некоторые элементы могут своачиваться и разворачиваться</p>
+
+					<h2 class="tab_opened">Если нажать - свернется)</h2>
+					<div><p>Здесь лежит текст который нужно скрыть не забудьте окружающий div.</p></div>
+
+					<h2 class="tab">Если нажать - развернется</h2>
+					<div><p>Здесь лежит текст который скрыт сразу забудьте окружающий div.</p></div>
+
+					<h6>Таблицы (заголовк VI уровня)</h6>
+
+					<table class="tbl">
+					<caption>Таблица №5. Заголовок таблицы.</caption>
+					<thead>
+					<tr>
+						<td>Параметр</td>
+						<td>Показатель</td>
+						<td>Номер аттестата</td>
+						<td>Аттестат выдан</td>
+						<td>Действителен до</td>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+					  <th rowspan="2">Скидка на уторговывание %</th>
+					  <td>Скидки на цены коммерческих объектов недвижимости</td>
+					  <td>13%</td>
+					  <td>10.09.2012</td>
+
+					  <td>11.08.2013</td>
+					</tr>
+					  <tr>
+					  <td>Скидки на цены коммерческих объектов недвижимости</td>
+					  <td>13%</td>
+					  <td>10.09.2012</td>
+					  <td>11.08.2013</td>
+
+					</tr>
+					<tr>
+					  <th rowspan="2">Скидка на уторговывание %</th>
+					  <td>Скидки на цены коммерческих объектов недвижимости</td>
+					  <td>13%</td>
+					  <td>10.09.2012</td>
+					  <td>11.08.2013</td>
+
+					</tr>
+					  <tr>
+					  <td>Скидки на цены коммерческих объектов недвижимости</td>
+					  <td>13%</td>
+					  <td>10.09.2012</td>
+					  <td>11.08.2013</td>
+					</tr>
+					</tbody></table>
+
+				<section>
+					<h6>Списки</h6>
+					<ul>
+						<li>Заголовок должен быть короче трех строк.</li>
+						<li>При названии разделов используйте уже устоявшиеся термины, такие
+							как гостевая книга, чат, ссылка, главная страница и другие.</li>
+						<li>Перед использованием специального термина или слова, решите,
+							будет ли оно понятно читателю.</li>
+					</ul>
+
+					<ol>
+						<li>Заголовок должен быть короче трех строк.</li>
+						<li>При названии разделов используйте уже устоявшиеся термины, такие
+							как гостевая книга, чат, ссылка, главная страница и другие.</li>
+						<li>Перед использованием специального термина или слова, решите,
+							будет ли оно понятно читателю.</li>
+					</ol>
 				</section>
-				
-				<h2 class="tab">Иконки</h2>
-				<div>
-					<p>Сгенерить новый иконочный шрифт можно тут http://fontello.com</p>
-					<p class="nx-icon">F T В B L N О G Я V J D Y</p>
-					<p class="nx-icon">f t в b l n о g я v J d Y</p>
-					<p class="nx-icon">W w</p>
-					<p class="nx-icon">S I Т Ч</p>
-					<p class="nx-icon">Д E К П</p>
-					<p class="nx-icon">д e к П</p>
-					<p class="nx-icon">| # _ =</p>
-					<p class="nx-icon">< > ˄ ˅</p>
-					<p class="nx-icon">◀ ▶ ▼ ▲ ±</p>
-					<p class="nx-icon">↓ ← → ↑</p>
-					<p class="nx-icon">₠ Р р P p R r</p>
-					<p class="nx-icon">1 9 A Z a z</p>
-					<p class="nx-icon">? ! i C К U</p>
-					<p class="nx-icon">Ф X x Q с У + -</p>
-					<p class="nx-icon">■ ǁ { [ ] } △ ▷ </p>
-					<p class="nx-icon">⊕ Ю М Щ Ц Й А Г q ⇣</p>
-					<p><span class="nx-load">@</span> <span class="nx-load">O</span> <span class="nx-load">o</span></p>
-				</div>
-
-				<h2 class="tab">Структурные блоки флексбоксов</h2>
-				<div>
-					<style>
-						.nx-flex-demo {border:1px solid #000; padding: 10px; margin-bottom: 10px; height: 200px;}
-						.nx-flex-demo > div { display: -ms-flexbox; display: -webkit-flex; display: flex; width:auto; background: #ccc; margin: 2px; padding: 10px;}
-					</style>
-					
-					<b>.nx-flex-row</b>
-					<div class="nx-flex-demo nx-flex-row" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-					
-					<b>.nx-flex-col</b>
-					<div class="nx-flex-demo nx-flex-col" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-
-					<b>.nx-flex-col-st</b>
-					<div class="nx-flex-demo nx-flex-col-st" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-
-					<b>.nx-flex-row-btw</b>
-					<div class="nx-flex-demo nx-flex-row-btw" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-
-					<b>.nx-flex-col-btw</b>
-					<div class="nx-flex-demo nx-flex-col-btw" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-
-					<b>.nx-flex-row-btw-st</b>
-					<div class="nx-flex-demo nx-flex-row-btw-st" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-
-					<b>.nx-flex-row-btw-c</b>
-					<div class="nx-flex-demo nx-flex-row-btw-c" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-					
-					<b>.nx-flex-col-btw-st</b>
-					<div class="nx-flex-demo nx-flex-col-btw-st" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-
-					<b>.nx-flex-row-c-c</b>
-					<div class="nx-flex-demo nx-flex-row-c-c" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-					
-					<b>.nx-flex-col-c-c</b>
-					<div class="nx-flex-demo nx-flex-col-c-c" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-
-					<b>.nx-flex-row-b-c</b>
-					<div class="nx-flex-demo nx-flex-row-b-c" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-
-					<b>.nx-flex-row-t-c</b>
-					<div class="nx-flex-demo nx-flex-row-t-c" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-					
-					<b>.nx-flex-col-t-c</b>
-					<div class="nx-flex-demo nx-flex-col-t-c" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
 
 
-					<b>.nx-flex-row-t-r</b>
-					<div class="nx-flex-demo nx-flex-row-t-r" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-					
-					<b>.nx-flex-col-t-r</b>
-					<div class="nx-flex-demo nx-flex-col-t-r" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
+					<section>
+						<h6>Макет формы</h6>
+						E-mail<br />
+						<input type="text" placeholder="Ваш e-mail" class="inpt" /><br />
+						<textarea class="clear-input inpt">Комментарий</textarea><br />
+						<input type="submit" value="Отправить" class="btn" />
+
+						<div class="radio">
+							<p><input id="r1" type="radio" name="gender" value="male"><label for="r1">Male</label></p>
+							<p><input id="r2" type="radio" name="gender" value="female"><label for="r2">Female</label></p>
+						</div>
+
+						<div class="checkbox">
+							<p><input id="check1" type="checkbox" name="check" value="check1"><label for="check1">Checkbox No. 1</label></p>
+							<p><input id="check2" type="checkbox" name="check" value="check2"><label for="check2">Checkbox No. 2</label></p>
+						</div>
+					</section>
+
+					<h2 class="tab">Иконки</h2>
+					<div>
+						<p>Сгенерить новый иконочный шрифт можно тут http://fontello.com</p>
+
+						<p><span class="nx-load">@</span> <span class="nx-load">O</span> <span class="nx-load">o</span></p>
+
+						<style>
+							.text-cols span {
+								margin-left: 20px;
+								font-family: 'nx', sans-serif;
+								font-size: 24px;
+							}
+							.text-cols {
+								-webkit-column-count: 6;
+								-moz-column-count: 6;
+								column-count: 6;
+								-webkit-column-gap: 4%;
+								-moz-column-gap: 4%;
+								column-gap: 4%;
+								-webkit-column-rule: solid lightgrey;
+								-moz-column-rule: solid lightgrey;
+								column-rule: solid lightgrey;
+							}
+						</style>
+
+						<div class="text-cols">
+							<p>А<span>А</span></p><p>а<span>а</span></p><p>Б<span>Б</span></p><p>б<span>б</span></p>
+							<p>В<span>В</span></p><p>в<span>в</span></p><p>Г<span>Г</span></p><p>г<span>г</span></p>
+							<p>Д<span>Д</span></p><p>д<span>д</span></p><p>Е<span>Е</span></p><p>е<span>е</span></p>
+							<p>Ё<span>Ё</span></p><p>ё<span>ё</span></p><p>Ж<span>Ж</span></p><p>ж<span>ж</span></p>
+							<p>З<span>З</span></p><p>з<span>з</span></p><p>И<span>И</span></p><p>и<span>и</span></p>
+							<p>Й<span>Й</span></p><p>й<span>й</span></p><p>К<span>К</span></p><p>к<span>к</span></p>
+							<p>Л<span>Л</span></p><p>л<span>л</span></p><p>М<span>М</span></p><p>м<span>м</span></p>
+							<p>Н<span>Н</span></p><p>н<span>н</span></p><p>О<span>О</span></p><p>о<span>о</span></p>
+							<p>П<span>П</span></p><p>п<span>п</span></p><p>Р<span>Р</span></p><p>р<span>р</span></p>
+							<p>С<span>С</span></p><p>с<span>с</span></p><p>Т<span>Т</span></p><p>т<span>т</span></p>
+							<p>У<span>У</span></p><p>у<span>у</span></p><p>Ф<span>Ф</span></p><p>ф<span>ф</span></p>
+							<p>Х<span>Х</span></p><p>х<span>х</span></p><p>Ц<span>Ц</span></p><p>ц<span>ц</span></p>
+							<p>Ч<span>Ч</span></p><p>ч<span>ч</span></p><p>Ш<span>Ш</span></p><p>ш<span>ш</span></p>
+							<p>Щ<span>Щ</span></p><p>щ<span>щ</span></p><p>Ъ<span>Ъ</span></p><p>ъ<span>ъ</span></p>
+							<p>Ы<span>Ы</span></p><p>ы<span>ы</span></p><p>Ь<span>Ь</span></p><p>ь<span>ь</span></p>
+							<p>Э<span>Э</span></p><p>э<span>э</span></p><p>Ю<span>Ю</span></p><p>ю<span>ю</span></p>
+							<p>Я<span>Я</span></p><p>я<span>я</span></p>
+						</div>
+
+						<br /><hr /><br />
+
+						<div class="text-cols">
+							<p>A<span>A</span></p><p>a<span>a</span></p><p>B<span>B</span></p><p>b<span>b</span></p>
+							<p>C<span>C</span></p><p>c<span>c</span></p><p>D<span>D</span></p><p>d<span>d</span></p>
+							<p>E<span>E</span></p><p>e<span>e</span></p><p>F<span>F</span></p><p>f<span>f</span></p>
+							<p>G<span>G</span></p><p>g<span>g</span></p><p>H<span>H</span></p><p>h<span>h</span></p>
+							<p>I<span>I</span></p><p>i<span>i</span></p><p>J<span>J</span></p><p>j<span>j</span></p>
+							<p>K<span>K</span></p><p>k<span>k</span></p><p>L<span>L</span></p><p>l<span>l</span></p>
+							<p>M<span>M</span></p><p>m<span>m</span></p><p>N<span>N</span></p><p>n<span>n</span></p>
+							<p>O<span>O</span></p><p>o<span>o</span></p><p>P<span>P</span></p><p>p<span>p</span></p>
+							<p>Q<span>Q</span></p><p>q<span>q</span></p><p>R<span>R</span></p><p>r<span>r</span></p>
+							<p>S<span>S</span></p><p>s<span>s</span></p><p>T<span>T</span></p><p>t<span>t</span></p>
+							<p>U<span>U</span></p><p>u<span>u</span></p><p>V<span>V</span></p><p>v<span>v</span></p>
+							<p>W<span>W</span></p><p>w<span>w</span></p><p>X<span>X</span></p><p>x<span>x</span></p>
+							<p>Y<span>Y</span></p><p>y<span>y</span></p><p>Z<span>Z</span></p><p>z<span>z</span></p>
+						</div>
+
+						<br /><hr /><br />
+
+						<div class="text-cols">
+							<p>1<span>1</span></p><p>2<span>2</span></p><p>3<span>3</span></p><p>4<span>4</span></p>
+							<p>5<span>5</span></p><p>6<span>6</span></p><p>7<span>7</span></p><p>8<span>8</span></p>
+							<p>9<span>9</span></p><p>0<span>0</span></p><p>!<span>!</span></p><p>@<span>@</span></p>
+							<p>%<span>%</span></p><p>&<span>&</span></p><p>?<span>?</span></p><p>-<span>-</span></p>
+							<p>+<span>+</span></p><p>₠<span>₠</span></p><p>$<span>$</span><p>~<span>~</span></p>
+						</div>
+
+						<br /><hr /><br />
+
+						<div class="text-cols">
+							<p>=<span>=</span></p><p>|<span>|</span></p><p>_<span>_</span></p><p>#<span>#</span></p>
+							<p><<span><</span></p><p>><span>></span></p><p>˄<span>˄</span></p><p>˅<span>˅</span></p>
+							<p>◀<span>◀</span></p><p>▶<span>▶</span></p><p>▼<span>▼</span></p><p>▲<span>▲</span></p>
+							<p>±<span>±</span></p><p>⊕<span>⊕</span></p><p>⭳<span>⭳</span></p>
+							<p>↓<span>↓</span></p><p>←<span>←</span></p><p>→<span>→</span></p><p>↑<span>↑</span></p>
+							<p>■<span>■</span></p><p>ǁ<span>ǁ</span></p><p>{<span>{</span></p><p>}<span>}</span></p>
+							<p>■<span>■</span></p><p>ǁ<span>ǁ</span></p><p>{<span>{</span></p><p>}<span>}</span></p>
+							<p>[<span>[</span></p><p>]<span>]</span></p><p>△<span>△</span></p><p>▷<span>▷</span></p>
+						</div>
+
 					</div>
 
-					<b>.nx-flex-row-l-c</b>
-					<div class="nx-flex-demo nx-flex-row-l-c" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
+					<h2 class="tab">Структурные блоки флексбоксов</h2>
+					<div>
+						<style>
+							.nx-flex-demo {border:1px solid #000; padding: 10px; margin-bottom: 10px; height: 200px;}
+							.nx-flex-demo > div { display: -ms-flexbox; display: -webkit-flex; display: flex; width:auto; background: #ccc; margin: 2px; padding: 10px;}
+						</style>
+
+						<b>.nx-flex-row</b>
+						<div class="nx-flex-demo nx-flex-row" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-col</b>
+						<div class="nx-flex-demo nx-flex-col" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-col-st</b>
+						<div class="nx-flex-demo nx-flex-col-st" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-row-btw</b>
+						<div class="nx-flex-demo nx-flex-row-btw" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-col-btw</b>
+						<div class="nx-flex-demo nx-flex-col-btw" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-row-btw-st</b>
+						<div class="nx-flex-demo nx-flex-row-btw-st" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-row-btw-c</b>
+						<div class="nx-flex-demo nx-flex-row-btw-c" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-col-btw-st</b>
+						<div class="nx-flex-demo nx-flex-col-btw-st" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-row-c-c</b>
+						<div class="nx-flex-demo nx-flex-row-c-c" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-col-c-c</b>
+						<div class="nx-flex-demo nx-flex-col-c-c" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-row-b-c</b>
+						<div class="nx-flex-demo nx-flex-row-b-c" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-row-t-c</b>
+						<div class="nx-flex-demo nx-flex-row-t-c" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-col-t-c</b>
+						<div class="nx-flex-demo nx-flex-col-t-c" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+
+						<b>.nx-flex-row-t-r</b>
+						<div class="nx-flex-demo nx-flex-row-t-r" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-col-t-r</b>
+						<div class="nx-flex-demo nx-flex-col-t-r" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-row-l-c</b>
+						<div class="nx-flex-demo nx-flex-row-l-c" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-col-l-c</b>
+						<div class="nx-flex-demo nx-flex-col-l-c" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-row-r-c</b>
+						<div class="nx-flex-demo nx-flex-row-r-c" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-col-r-c</b>
+						<div class="nx-flex-demo nx-flex-col-r-c" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-col-btw-r</b>
+						<div class="nx-flex-demo nx-flex-col-btw-r" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-col-b-l</b>
+						<div class="nx-flex-demo nx-flex-col-b-l" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-col-b-r</b>
+						<div class="nx-flex-demo nx-flex-col-b-r" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-row-b-l</b>
+						<div class="nx-flex-demo nx-flex-row-b-l" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-row-b-r</b>
+						<div class="nx-flex-demo nx-flex-row-b-r" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
+						<b>.nx-flex-row-btw-b-r</b>
+						<div class="nx-flex-demo nx-flex-row-btw-b-r" >
+							<div>1</div>
+							<div>2eee</div>
+							<div>3fasd asdasd</div>
+						</div>
+
 					</div>
-					
-					<b>.nx-flex-col-l-c</b>
-					<div class="nx-flex-demo nx-flex-col-l-c" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
 
-					<b>.nx-flex-row-r-c</b>
-					<div class="nx-flex-demo nx-flex-row-r-c" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
-					
-					<b>.nx-flex-col-r-c</b>
-					<div class="nx-flex-demo nx-flex-col-r-c" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
+				<!-- КОНЕЦ ТЕСТОВОГО КОНТЕНТА -->
 
-					<b>.nx-flex-col-btw-r</b>
-					<div class="nx-flex-demo nx-flex-col-btw-r" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
+			</main>
 
-					<b>.nx-flex-col-b-l</b>
-					<div class="nx-flex-demo nx-flex-col-b-l" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
+			<!-- LEFT -->
+			<div class="left">
+				<h2>Форма поиска</h2>
+				<!-- Обязательно указать id="NXsearchForm" и заполнить action у формочки, а то в мобильное меню не попадет -->
+				<form action="/search/index.php" id="NXSearchForm">
+					<input type="text"   name="q"   placeholder="Поиск"  value="" />
+					<input type="submit" name="s"   class="sbtn" value="Поиск" />
+				</form>
 
-					<b>.nx-flex-col-b-r</b>
-					<div class="nx-flex-demo nx-flex-col-b-r" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
+				<h2>Меню</h2>
+				<!-- Только меню в контейнерах с классом to-nx-nav попадут в мобильную панель (!!!!) -->
+				<nav class="navigation to-nx-nav">
+				<ul class="nx-menu-bla-bla">
+				  <li><a href="#">Первая ссылка II меню</a>
+					  <ul>
+						  <li><a href="#">Первая ссылка с очень очень длинным названием II меню</a>
+							  <ul>
+								 <li><a href="#">Первая ссылка</a></li>
+								 <li><a href="#">Вторая ссылка с очень очень длинным названием</a></li>
+								 <li><a href="#">Третья ссылка</a></li>
+								 <li><a href="#">Четвертая ссылка</a></li>
+							  </ul>
+						  </li>
+						  <li><a href="#">Вторая ссылка с очень очень длинным названием II меню</a></li>
+						  <li><a href="#">Третья ссылка II меню</a></li>
+						  <li><a href="#">Четвертая ссылка II меню</a></li>
+					  </ul>
+				  </li>
+				  <li><a href="#">Вторая ссылка с очень очень длинным названием II меню</a></li>
+				  <li><a href="#">Третья ссылка II меню</a></li>
+				  <li><a href="#">Четвертая ссылка II меню</a></li>
+				</ul>
+				</nav>
 
-					<b>.nx-flex-row-b-l</b>
-					<div class="nx-flex-demo nx-flex-row-b-l" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
+				<p>Вышеуказанные ссылки демонстрируют базовую структуру навигации с использованием неупорядоченного списка, стилизованного при помощи CSS. Взяв ее за отправную точку и изменяя свойства, можно создать свой неповторимый дизайн. Если нужны выпадающие меню, их можно создать при помощи a Spry menu — мини-приложения menu из Adobe Exchange или ряда других инструментов javascript или CSS.</p>
+				<p>Если нужна навигация вдоль верха, просто перенесите ul.nav в верх страницы и заново создайте стиль.</p>
 
-					<b>.nx-flex-row-b-r</b>
-					<div class="nx-flex-demo nx-flex-row-b-r" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
+			</div>
 
-					<b>.nx-flex-row-btw-b-r</b>
-					<div class="nx-flex-demo nx-flex-row-btw-b-r" >
-						<div>1</div>
-						<div>2eee</div>
-						<div>3fasd asdasd</div>
-					</div>
+			<!-- RIGHT -->
 
-				</div>
+			<div class="right hyphenate" >
+				<aside>
+					<h6>Блок информации 1</h6>
+					<p> Данный текст красво переносится спомощью яваскрипта. Чтобы эффект сработал достаточно у родителя указать класс hyphenate. Переносы важны. Стоит учесть что если мы используем переносы то неплохо бы выровнять текст по ширише используя text-align:justify</p>
+					<p><u>Однако, если текст подчернут то выранивать по ширине нужно аккуратно, иначе получится некрасиво. Как-то вот так.</u></p>
+				</aside>
 
-			<!-- КОНЕЦ ТЕСТОВОГО КОНТЕНТА -->
+				<aside style="text-align:justify">
+					<h6>Блок информации 2</h6>
+					<p> Данный текст красво переносится спомощью яваскрипта. Чтобы эффект сработал достаточно у родителя указать класс hyphenate. Переносы важны. Стоит учесть что если мы используем переносы то неплохо бы выровнять текст по ширише используя text-align:justify</p>
+					<p><u>Однако, если текст подчернут то выранивать по ширине нужно аккуратно, иначе получится некрасиво. Как-то вот так.</u></p>
+				</aside>
+			</div>
 
-		</main>
+		</div>
 
-		<!-- LEFT -->
-		<div class="left">
-			<h2>Форма поиска</h2>
-			<!-- Обязательно указать id="NXsearchForm" и заполнить action у формочки, а то в мобильное меню не попадет -->
-			<form action="/search/index.php" id="NXsearchForm">
-				<input type="text"   name="q"   placeholder="Поиск"  value="" />
-				<input type="submit" name="s"   class="sbtn" value="Поиск" />
-			</form>
-			
-			<h2>Меню</h2>
-			<!-- Только меню в контейнерах с классом to-nx-nav попадут в мобильную панель (!!!!) -->
-			<nav class="navigation to-nx-nav">
-			<ul class="nx-menu-bla-bla">
-			  <li><a href="#">Первая ссылка II меню</a>
-				  <ul>
-					  <li><a href="#">Первая ссылка с очень очень длинным названием II меню</a>
-						  <ul>
-							 <li><a href="#">Первая ссылка</a></li>
-							 <li><a href="#">Вторая ссылка с очень очень длинным названием</a></li>
-							 <li><a href="#">Третья ссылка</a></li>
-							 <li><a href="#">Четвертая ссылка</a></li>
-						  </ul>
-					  </li>
-					  <li><a href="#">Вторая ссылка с очень очень длинным названием II меню</a></li>
-					  <li><a href="#">Третья ссылка II меню</a></li>
-					  <li><a href="#">Четвертая ссылка II меню</a></li>
-				  </ul>
-			  </li>
-			  <li><a href="#">Вторая ссылка с очень очень длинным названием II меню</a></li>
-			  <li><a href="#">Третья ссылка II меню</a></li>
-			  <li><a href="#">Четвертая ссылка II меню</a></li>
-			</ul>
+		<!-- FOOTER -->
+		<footer class="footer bb nx-flex-row-btw-st" itemscope itemtype="http://schema.org/Organization">
+
+			<!-- Только ссылки в контейнерах с классом to-social-nav попадут в мобильную панель (!!!!) -->
+			<nav class="nav-social to-social-nav">
+				<a class="tw" title="Наш Twitter" href="/">Twitter</a>
+				<a class="vk" title="Мы ВКонтакте" href="/">ВКонтакте</a>
+				<a class="fb" title="Мы в Facebook" href="/">Facebook</a>
+				<a class="ok" title="Мы в Однокласниках" href="/">Однокласники</a>
+				<a class="yt" title="Мы на YouTube" href="/">YouTube</a>
 			</nav>
-			
-			<p>Вышеуказанные ссылки демонстрируют базовую структуру навигации с использованием неупорядоченного списка, стилизованного при помощи CSS. Взяв ее за отправную точку и изменяя свойства, можно создать свой неповторимый дизайн. Если нужны выпадающие меню, их можно создать при помощи a Spry menu — мини-приложения menu из Adobe Exchange или ряда других инструментов javascript или CSS.</p>
-			<p>Если нужна навигация вдоль верха, просто перенесите ul.nav в верх страницы и заново создайте стиль.</p>
-			
-		</div>
 
-		<!-- RIGHT -->
+			<address class="copy">
+				<a href="http://www.imageprom.com" target="_blank" class="ip"><strong>Имиджпром</strong> — разработка и поддержка сайтов</a>
+				<!-- Дата для класса copy-data проставляется автоматически, от года внутри до текущего года.  -->
+				<br />© <span class="copy-data">2011</span>, <span itemprop="name">Название компании</span><br />&nbsp;
+			</address>
 
-		<div class="right hyphenate" >
-			<aside>
-				<h6>Блок информации 1</h6>
-				<p> Данный текст красво переносится спомощью яваскрипта. Чтобы эффект сработал достаточно у родителя указать класс hyphenate. Переносы важны. Стоит учесть что если мы используем переносы то неплохо бы выровнять текст по ширише используя text-align:justify</p>
-				<p><u>Однако, если текст подчернут то выранивать по ширине нужно аккуратно, иначе получится некрасиво. Как-то вот так.</u></p>	
-			</aside>	
-			
-			<aside style="text-align:justify">
-				<h6>Блок информации 2</h6>
-				<p> Данный текст красво переносится спомощью яваскрипта. Чтобы эффект сработал достаточно у родителя указать класс hyphenate. Переносы важны. Стоит учесть что если мы используем переносы то неплохо бы выровнять текст по ширише используя text-align:justify</p>
-				<p><u>Однако, если текст подчернут то выранивать по ширине нужно аккуратно, иначе получится некрасиво. Как-то вот так.</u></p>	
-			</aside>	
-		</div>
+			<address class="tele" ><strong>Контакты:</strong>
+				Тел.: <span class="tel" itemprop="telephone">+7 (831) 2960-920</span><br />
+				Факс: <span class="tel" itemprop="faxNumber">+7 (831) 2960-921</span><br />
+				<a class="email" href="mailto:admin@jcnn.ru" itemprop="email">admin@jcnn.ru</a>
+			</address>
 
+			<address class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><strong>Адрес клиента:</strong>
+				<span itemprop="addressCountry">Россия</span>, <span itemprop="postalCode">603000</span>, <span itemprop="addressLocality">г. Нижний Новгород</span>,
+				<br /><span itemprop="streetAddress">ул. Горького 117, офис 1101.</span>
+			</address>
+		</footer>
 	</div>
 
-	<!-- FOOTER --> 
-	<footer class="footer bb nx-flex-row-btw-st" itemscope itemtype="http://schema.org/Organization">
-		
-		<!-- Только ссылки в контейнерах с классом to-social-nav попадут в мобильную панель (!!!!) -->
-		<nav class="nav-social to-social-nav">
-			<a class="tw" title="Наш Twitter" href="/">Twitter</a>
-			<a class="vk" title="Мы ВКонтакте" href="/">ВКонтакте</a>
-			<a class="fb" title="Мы в Facebook" href="/">Facebook</a>
-			<a class="ok" title="Мы в Однокласниках" href="/">Однокласники</a>
-			<a class="yt" title="Мы на YouTube" href="/">YouTube</a>
-		</nav>
+	<!-- Если у вас одноколоночная раскладка с блоками разных цветов -->
+	<div class="outer outer--gray">
+		<div class="container">
+			<section>
+				<h3>Внешний блок со сплошной заливкой</h3>
+				Продвижение и поддержка сайтов становится все более востребованной услугой у нижегородских компаний: как небольших фирм, так и крупных промышленных предприятий. И подобное положение дел представляется нам абсолютно логичным и правильным, поскольку интернет стал таким же медийным каналом как и телевидение по охвату аудитории и плюс ко всему обладает дополнительными преимуществами в виде небывалой интерактивности.
+			</section>
 
-		<address class="copy">
-			<a href="http://www.imageprom.com" target="_blank" class="ip"><strong>Имиджпром</strong> — разработка и поддержка сайтов</a>
-			<!-- Дата для класса copy-data проставляется автоматически, от года внутри до текущего года.  -->
-			<br />© <span class="copy-data">2011</span>, <span itemprop="name">Название компании</span><br />&nbsp;
-		</address>
+			<section class="inner inner--green">
+				<h3>Внешний блок со сплошной заливкой зелёного цвета внутри контейнера</h3>
+				Продвижение и поддержка сайтов становится все более востребованной услугой у нижегородских компаний: как небольших фирм, так и крупных промышленных предприятий. И подобное положение дел представляется нам абсолютно логичным и правильным, поскольку интернет стал таким же медийным каналом как и телевидение по охвату аудитории и плюс ко всему обладает дополнительными преимуществами в виде небывалой интерактивности.
+			</section>
 
-		<address class="tele" ><strong>Контакты:</strong> 
-			Тел.: <span class="tel" itemprop="telephone">+7 (831) 2960-920</span><br />
-			Факс: <span class="tel" itemprop="faxNumber">+7 (831) 2960-921</span><br />
-			<a class="email" href="mailto:admin@jcnn.ru" itemprop="email">admin@jcnn.ru</a>
-		</address>
+			<section class="inner inner--black">
+				<h3>Внешний блок со сплошной заливкой зелёного цвета внутри контейнера</h3>
+				Продвижение и поддержка сайтов становится все более востребованной услугой у нижегородских компаний: как небольших фирм, так и крупных промышленных предприятий. И подобное положение дел представляется нам абсолютно логичным и правильным, поскольку интернет стал таким же медийным каналом как и телевидение по охвату аудитории и плюс ко всему обладает дополнительными преимуществами в виде небывалой интерактивности.
+			</section>
+		</div>
+	</div>
 
-		<address class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><strong>Адрес клиента:</strong> 
-			<span itemprop="addressCountry">Россия</span>, <span itemprop="postalCode">603000</span>, <span itemprop="addressLocality">г. Нижний Новгород</span>,
-			<br /><span itemprop="streetAddress">ул. Горького 117, офис 1101.</span>
-		</address>
-	</footer> 
 </div>
 </body>
 </html>
