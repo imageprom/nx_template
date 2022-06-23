@@ -9,24 +9,35 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><!<![endif]-->
 
 <title><?=$APPLICATION->ShowTitle();?></title>
+<!-- При интеграции с bitrix раскаментить
+// Проверка главной страницы
+<?$isMainPage = false;
+if ($APPLICATION->GetCurPage() == '/') {
+	$isMainPage = true;
+}
+$Asset = \Bitrix\Main\Page\Asset::getInstance();?>
+-->
 
-<!--При интеграции с bitrix заменить конструкции на <?$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/имя_скрипта.js');?>-->
-<script type="text/javascript" src="jquery-3.6.0.min.js" ></script>
-<script type="text/javascript" src="jquery-ui-1.12.1.min.js"></script>
-<script type="text/javascript" src="jquery-migrate-1.4.1.min.js" ></script>
-<script type="text/javascript" src="jquery-migrate-3.3.2.min.js" ></script>
-<script type="text/javascript" src="modernizr.js"></script>
+<!--При интеграции с bitrix заменить конструкции на
+ <?$Asset->addJs(SITE_TEMPLATE_PATH . '/имя_скрипта.js');?>
+-->
+<script type="text/javascript" src="lib/jquery-3.6.0.min.js" ></script>
+<script type="text/javascript" src="lib/jquery-ui-1.12.1.min.js"></script>
+<script type="text/javascript" src="lib/jquery-migrate-1.4.1.min.js" ></script>
+<script type="text/javascript" src="lib/jquery-migrate-3.3.2.min.js" ></script>
+<script type="text/javascript" src="lib/modernizr.js"></script>
 <script type="text/javascript" src="nx_plugins.js"></script>
-<script type="text/javascript" src="hyphenate.js"></script>
+<script type="text/javascript" src="lib/hyphenate.js"></script>
 
 <!--<?=$APPLICATION->ShowHead();?>-->
 
 <!--Если нужен bootsrap и font awessome в Битриксе они уже есть - подключаются так   -->
 
 <!--<?
-	#$APPLICATION->SetAdditionalCSS("/bitrix/css/main/bootstrap.css");
-	#$APPLICATION->SetAdditionalCSS("/bitrix/css/main/font-awesome.css");
+$Asset->addCss('/bitrix/css/main/bootstrap.css');
+$Asset->addCss('/bitrix/css/main/font-awesome.css');
 ?>-->
+
 <!--На момент разработки подключаются так   -->
 <!--<link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/font-awesome.css" rel="stylesheet" type="text/css" />-->
@@ -40,7 +51,7 @@
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <!-- -------------------------------- -->
 
-<!--Сгенерить из svg всю пачку через https://realfavicongenerator.net/ при генерации указать папку /icon -->
+<!--Сгенерить из svg всю пачку через https://realfavicongenerator.net/ при генерации указать папку /local/icon -->
 
 <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
@@ -69,7 +80,7 @@
 	</header>
 
 	<!-- CENTRAL BLOCK -->	
-	<div class="main-outer">
+	<div class="main-outer nx-flex-row-btw-st">
 
 	<!-- MAIN -->
 		<main class="main">
@@ -79,16 +90,15 @@
 
 			<!-- НАЧАЛО ТЕСТОВОГО КОНТЕНТА -->
 			
-				<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сатйы были действительно хороши нужно многое учесть</p>
+				<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сатйы были действительно хороши нужно многое учесть.</p>
 
 				<h2>Оформление элементов <small>(это - заголовок II уровня)</small></h2>
-				<p>В тесте может встречаться много разного - картинки, ьексты. цитаты, таблицы и для всего у нас уже сложились некоторые стадарты</p>
+				<p>В тексте может встречаться много разного - картинки, тексты, цитаты, таблицы, списки и для всего у нас уже сложились некоторые стадарты.</p>
 
 				<figure class="toright">
-					<img src="http://bmnn.ru/tuning/422/GM_img_01.jpg" alt="Картинка выроненная по левому краю"  class="with_big" data-big="http://bmnn.ru/tuning/422/img_01.jpg?246925215.87240747"/> 
+					<img src="https://www.imageprom.com/upload/iblock/724/oxhzft%20m%20tiqpdrhsicxpw.jpg" alt="Картинка выроненная по левому краю"  class="with_big" data-big="https://www.imageprom.com/upload/iblock/152/tnvcsz%20i%20cdearbirhcebk.jpg?246925215.87240747"/>
 					<figcaption>Клевая тачка</figcaption>
 				</figure>
-				
 
 				<h3>Вставка изображений (это - заголовок III уровня)</h3>
 				
@@ -102,18 +112,18 @@
 				</blockquote>
 
 				<p>Вообще, в тексте может встречаться много разного текстовго оформления</p>
-				<ul>
-					<li><strong>Жирный текст</strong> &ndash; лучше использовать strong а не b</li>
-					<li><i>Курсив</i> &ndash; использовать i или em </li>
-					<li><ins>Особый</ins> &ndash; если не хватает курссива и жирного можно использовать ins </li>
-					<li><mark>Выделенный</mark> &ndash; а если и ins не зватает можно использовать  mark</li>
-					<li><dfn>Определение</dfn> &ndash; оформляется имеено так. </li>
-					<li><a href="#">Ссылки</a>  &ndash;  Просто ссылки в тексте</li>
-					<li><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a> &ndash; если это ссылка на файл то и офрмлять ее соотвествующе</li>
-					<li><s class="r">Р</s> &ndash; если нужен знак рубля  &lt;s class="r"&gt;Р&lt;/s&gt; буковку выбирать выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13">тут</a></li> 
-				</ul>
+				<dl>
+					<dt><strong>Жирный текст</strong></dt><dd> &ndash; лучше использовать strong а не b</dd>
+					<dt><i>Курсив</i></dt><dd> использовать i или em </dd>
+					<dt><ins>Особый</ins></dt><dd> если не хватает курссива и жирного можно использовать ins </dd>
+					<dt><mark>Выделенный</mark></dt><dd> а если и ins не зватает можно использовать  mark</dd>
+					<dt><dfn>Определение</dfn></dt><dd> оформляется имеено так. </dd>
+					<dt><a href="#">Ссылки</a></dt><dd> просто ссылки в тексте</dd>
+					<dt><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a></dt><dd> если это ссылка на файл то и офрмлять ее соотвествующе</dd>
+					<dt><s class="r">Р</s></dt><dd> если нужен знак рубля  &lt;s class="r"&gt;Р&lt;/s&gt; буковку выбирать выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13">тут</a></dd>
+				</dl>
 
-				<img src="http://bmnn.ru/tuning/422/GM_img_02.jpg" alt="Картинка выроненная по правому краю"  class="toleft with_big" data-big="http://bmnn.ru/tuning/422/img_02.jpg?246925215.87240747" data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"  />
+				<img src="https://www.imageprom.com/upload/iblock/495/3.jpg" alt="Картинка выроненная по правому краю"  class="toleft with_big" data-big="https://www.imageprom.com/upload/iblock/624/3.jpg?246925215.87240747" data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"  />
 
 				<h4>Динамические элементы (это - заголовок IV уровня)</h4>
 				<p>Времена статичного и скучного интернена прошли. В настоящее время элементы могут нести не только смысловую но и функциональную нагрузку. Например картинка, располложенаая справа может увеличивться.
@@ -128,7 +138,6 @@
 
 				<h2 class="tab">Если нажать - развернется</h2>
 				<div><p>Здесь лежит текст который скрыт сразу забудьте окружающий div.</p></div>
-
 
 				<h6>Таблицы (заголовк VI уровня)</h6>
 
@@ -174,8 +183,27 @@
 				  <td>11.08.2013</td>
 				</tr>
 				</tbody></table>
-				
-				
+
+			<section>
+				<h6>Списки</h6>
+				<ul>
+					<li>Заголовок должен быть короче трех строк.</li>
+					<li>При названии разделов используйте уже устоявшиеся термины, такие
+						как гостевая книга, чат, ссылка, главная страница и другие.</li>
+					<li>Перед использованием специального термина или слова, решите,
+						будет ли оно понятно читателю.</li>
+				</ul>
+
+				<ol>
+					<li>Заголовок должен быть короче трех строк.</li>
+					<li>При названии разделов используйте уже устоявшиеся термины, такие
+						как гостевая книга, чат, ссылка, главная страница и другие.</li>
+					<li>Перед использованием специального термина или слова, решите,
+						будет ли оно понятно читателю.</li>
+				</ol>
+			</section>
+
+
 				<section> 
 					<h6>Макет формы</h6>
 					E-mail<br />
@@ -212,10 +240,9 @@
 					<p class="nx-icon">? ! i C К U</p>
 					<p class="nx-icon">Ф X x Q с У + -</p>
 					<p class="nx-icon">■ ǁ { [ ] } △ ▷ </p>
+					<p class="nx-icon">⊕ Ю М Щ Ц Й А Г q ⇣</p>
 					<p><span class="nx-load">@</span> <span class="nx-load">O</span> <span class="nx-load">o</span></p>
 				</div>
-
-				
 
 				<h2 class="tab">Структурные блоки флексбоксов</h2>
 				<div>
@@ -357,6 +384,49 @@
 						<div>2eee</div>
 						<div>3fasd asdasd</div>
 					</div>
+
+					<b>.nx-flex-col-btw-r</b>
+					<div class="nx-flex-demo nx-flex-col-btw-r" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-b-l</b>
+					<div class="nx-flex-demo nx-flex-col-b-l" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-b-r</b>
+					<div class="nx-flex-demo nx-flex-col-b-r" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-b-l</b>
+					<div class="nx-flex-demo nx-flex-row-b-l" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-b-r</b>
+					<div class="nx-flex-demo nx-flex-row-b-r" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-btw-b-r</b>
+					<div class="nx-flex-demo nx-flex-row-btw-b-r" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
 				</div>
 
 			<!-- КОНЕЦ ТЕСТОВОГО КОНТЕНТА -->
@@ -421,7 +491,7 @@
 	</div>
 
 	<!-- FOOTER --> 
-	<footer class="footer bb" itemscope itemtype="http://schema.org/Organization">
+	<footer class="footer bb nx-flex-row-btw-st" itemscope itemtype="http://schema.org/Organization">
 		
 		<!-- Только ссылки в контейнерах с классом to-social-nav попадут в мобильную панель (!!!!) -->
 		<nav class="nav-social to-social-nav">

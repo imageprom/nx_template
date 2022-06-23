@@ -1,4 +1,17 @@
+*,
+*::before,
+*::after {
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+			box-sizing:border-box;
+}
+
+:root{
+	scroll-behavior: smooth;
+}
+
 html {
+	margin: 0;
 	font-size: 100%; 
 	font-family: sans-serif; 
 -webkit-text-size-adjust: 100%; 
@@ -8,10 +21,13 @@ html {
 }
 
 body {
-	margin: 0; padding: 0;
+	margin: 0;
+	padding: 0;
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 	background: #f1f1f1;
 	color: #000;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .panel {
@@ -72,25 +88,7 @@ body {
 /*---------- Main panel ----------*/
 
 .main-outer {
-	margin: 10px 0; 
-	display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
--webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    	flex-direction: row;   
--webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    	flex-wrap: nowrap;
--webkit-justify-content: space-between;
-    	  -ms-flex-pack: justify;
-    	justify-content: space-between;
--webkit-align-content: stretch;
-   -ms-flex-line-pack: stretch;
-    	align-content: stretch;
-  -webkit-align-items: stretch;
-   	   -ms-flex-align: stretch;
-    	  align-items: stretch;
+	margin: 10px 0;
 }
 
 .left {
@@ -152,7 +150,7 @@ body {
     	 align-self: auto;
 }
 
-/*---------- Footet ----------*/
+/*---------- Footer ----------*/
 
 .footer {
 	width: 100%;
@@ -162,25 +160,7 @@ body {
 	overflow: hidden; 
 	clear: both; 
 	background:#fff;
-	border: 1px solid #e1e1e1;   
-	display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
--webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    	flex-direction: row;   
--webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    	flex-wrap: wrap;
--webkit-justify-content: space-between;
-    	  -ms-flex-pack: justify;
-    	justify-content: space-between;
--webkit-align-content: stretch;
-   -ms-flex-line-pack: stretch;
-    	align-content: stretch;
-  -webkit-align-items: stretch;
-   	   -ms-flex-align: stretch;
-    	  align-items: stretch;
+	border: 1px solid #e1e1e1;
 }
 
 .footer address {
@@ -207,7 +187,9 @@ body {
 
 .footer a.ip {
 	color:#767676; 
-	text-decoration:none;}
+	text-decoration:none;
+}
+
 .footer a.ip  strong {
 	display:inline; 
 	text-decoration:underline;
@@ -312,7 +294,7 @@ body {
 		min-width: 320px; 
 		margin: 0; 
 		padding-top: 60px;  
-		left: 0%;
+		left: 0;
 		-webkit-transition: all 0.3s ease-out;
 		   -moz-transition: all 0.3s ease-out;
 		     -o-transition: all 0.3s ease-out;
@@ -410,11 +392,11 @@ body {
 	position: relative;  
 	display: block; 
 	padding: 1em;
-	font-weight: normal; 
+	font-weight: bolder;
 	font-size: 12pt;
 	color: #27A22D;
-	text-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
-	font-weight: bolder;
+	text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
 }
 
 #NXadaptiveNavigation .h-nav {
@@ -472,7 +454,7 @@ body {
 
 /*------------ MOBILE MENU PANEL ------------*/
 
-#NXadaptiveMenu {
+#NXAdaptiveMenu {
 	display: block; 
 	overflow-y: auto; 
 	overflow-x: hidden;
@@ -496,21 +478,21 @@ body {
         transition: all 0.3s ease-out;
 }
 
-#NXadaptiveMenu.a-menu-open {
+#NXAdaptiveMenu.a-menu-open {
 	display: block; 
 	right: 30%;
 }
 
-#NXadaptiveMenu li span, 
-#NXadaptiveMenu li nobr,
-#NXadaptiveMenu a,
-#NXadaptiveMenu a:hover,
-#NXadaptiveMenu * a, 
-#NXadaptiveMenu * a:hover,
-#NXadaptiveMenu ul, 
-#NXadaptiveMenu ol, 
-#NXadaptiveMenu menu,
-#NXadaptiveMenu li {
+#NXAdaptiveMenu li span,
+#NXAdaptiveMenu li nobr,
+#NXAdaptiveMenu a,
+#NXAdaptiveMenu a:hover,
+#NXAdaptiveMenu * a,
+#NXAdaptiveMenu * a:hover,
+#NXAdaptiveMenu ul,
+#NXAdaptiveMenu ol,
+#NXAdaptiveMenu menu,
+#NXAdaptiveMenu li {
 	display: inline; 
 	padding: 0; 
 	margin: auto; 
@@ -529,23 +511,23 @@ body {
 	float: none;
 }
 
-#NXadaptiveMenu   a:hover, 
-#NXadaptiveMenu * a:hover {
+#NXAdaptiveMenu   a:hover,
+#NXAdaptiveMenu * a:hover {
 	text-decoration: underline; 
 	color: #666;
 }
 
-#NXadaptiveMenu   a:before, 
-#NXadaptiveMenu   a:after,
-#NXadaptiveMenu * a:before, 
-#NXadaptiveMenu * a:after {display: none;}
+#NXAdaptiveMenu   a:before,
+#NXAdaptiveMenu   a:after,
+#NXAdaptiveMenu * a:before,
+#NXAdaptiveMenu * a:after {display: none;}
 
-#NXadaptiveMenu u {display:none;}
+#NXAdaptiveMenu u {display:none;}
 
-#NXadaptiveMenu ul, 
-#NXadaptiveMenu ol, 
-#NXadaptiveMenu menu,
-#NXadaptiveMenu li {
+#NXAdaptiveMenu ul,
+#NXAdaptiveMenu ol,
+#NXAdaptiveMenu menu,
+#NXAdaptiveMenu li {
 	display: block; 
 	width: 100%; 
 	height: auto;
@@ -562,45 +544,43 @@ body {
 }
 
 
-#NXadaptiveMenu li {
+#NXAdaptiveMenu li {
 	min-width: 0;
 }
 
-#NXadaptiveMenu li a, 
-#NXadaptiveMenu li a:hover {
+#NXAdaptiveMenu li a,
+#NXAdaptiveMenu li a:hover {
 	display: block;
-	padding: 1em;
-	padding-right: 40px;
+	padding: 1em 40px 1em 1em;
 	border: 1px solid #ccc ;
 	border-bottom-color: #f5f1e9;
 	border-left: none;
 	border-right: none;
 }
 
-#NXadaptiveMenu li ul {background: #fff;}
+#NXAdaptiveMenu li ul {background: #fff;}
 
-#NXadaptiveMenu li li a, 
-#NXadaptiveMenu li li a:hover {
+#NXAdaptiveMenu li li a,
+#NXAdaptiveMenu li li a:hover {
 	font-size: 90%;
 	padding-left: 30px;
 	border-top-color: #ddd;
 	border-bottom-color: #fdfdfd;
 }
 
-#NXadaptiveMenu li li ul {background: #eeedeb;}
-#NXadaptiveMenu li li li a, 
-#NXadaptiveMenu li li li a:hover {
+#NXAdaptiveMenu li li ul {background: #eeedeb;}
+#NXAdaptiveMenu li li li a,
+#NXAdaptiveMenu li li li a:hover {
 	font-size: 80%;
 	border-bottom-color: #FBFAF7;
 }
 
-
-#NXadaptiveMenu .tab, 
-#NXadaptiveMenu .tab_opened {
+#NXAdaptiveMenu .tab,
+#NXAdaptiveMenu .tab_opened {
 	display: block; 
 	cursor: pointer;
 	width: 100%; 
-	height: 0px;
+	height: 0;
 	padding: 0; 
 	margin: 0;
 	position: absolute; 
@@ -613,14 +593,14 @@ body {
 	border: none;
 }
 
-#NXadaptiveMenu .tab + ul, 
-#NXadaptiveMenu .tab + ol, 
-#NXadaptiveMenu .tab + menu  {display:none;}
+#NXAdaptiveMenu .tab + ul,
+#NXAdaptiveMenu .tab + ol,
+#NXAdaptiveMenu .tab + menu  {display:none;}
 
-#NXadaptiveMenu .tab:after, 
-#NXadaptiveMenu .close:after, 
-#NXadaptiveMenu .open:after, 
-#NXadaptiveMenu .tab_opened:after { 
+#NXAdaptiveMenu .tab:after,
+#NXAdaptiveMenu .close:after,
+#NXAdaptiveMenu .open:after,
+#NXAdaptiveMenu .tab_opened:after {
 	display: block; 
 	width: 30px; 
 	height:30px; 
@@ -635,7 +615,7 @@ body {
 	
 }
 
-#NXadaptiveMenu .tab_opened:after {
+#NXAdaptiveMenu .tab_opened:after {
 	content:"";  
    -moz-transform: rotate(180deg);
      -o-transform: rotate(180deg);
@@ -643,9 +623,9 @@ body {
         transform: rotate(180deg);
 }
 
-#NXadaptiveMenu .tab:after {content:"";}
+#NXAdaptiveMenu .tab:after {content:"";}
 
-#NXadaptiveMenu .open:after {
+#NXAdaptiveMenu .open:after {
 	content: "";  
    -moz-transform: rotate(180deg);
      -o-transform: rotate(180deg);
@@ -653,11 +633,11 @@ body {
         transform: rotate(180deg);
 }
 
-#NXadaptiveMenu .close:after {content: "";}
+#NXAdaptiveMenu .close:after {content: "";}
 
 /*------------ Mobile Search Form ------------*/
 
-#NXadaptiveSearchForm {
+#NXAdaptiveSearchForm {
 	display: block; 
 	width: 100%; 
 	height: auto; 
@@ -669,7 +649,7 @@ body {
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 }
-#NXadaptiveSearchForm input {
+#NXAdaptiveSearchForm input {
 	height: 3em;
 	position: relative;
 	float: left;
@@ -684,13 +664,13 @@ body {
 	        box-sizing: border-box;
 }
 
-#NXadaptiveSearchForm input[type="text"] {
+#NXAdaptiveSearchForm input[type="text"] {
 	display: block; 
 	width: 85%; 
 	margin: 0;
 }
 
-#NXadaptiveSearchForm input[type="submit"] {
+#NXAdaptiveSearchForm input[type="submit"] {
 	width: 15%; 
 	float: right;
 	padding: 0.5em;
@@ -703,14 +683,14 @@ body {
 		appearance: none;
 }
 
-#NXadaptiveSearchForm input[type="submit"]:hover,
-#NXadaptiveSearchForm input[type="submit"]:active {
+#NXAdaptiveSearchForm input[type="submit"]:hover,
+#NXAdaptiveSearchForm input[type="submit"]:active {
 	background: #ededed;
 }
 
 /*------------ Mobile Menu Phone ------------*/
 
-#NXadaptiveMenu #NXadaptiveTel { 
+#NXAdaptiveMenu #NXAdaptiveTel {
 	color: #fff; 
 	padding: 15px; 
 	background: #666; 
@@ -721,7 +701,7 @@ body {
 	display: flex;
 } 
 
-#NXadaptiveMenu #NXadaptiveTel:after{
+#NXAdaptiveMenu #NXAdaptiveTel:after{
 		content: "Т";
 		display: inline-block;
 		width: 1.75em; 
@@ -737,22 +717,22 @@ body {
 	    border-radius: 5px;
 }
 
-#NXadaptiveMenu #NXadaptiveTel:hover:after {
+#NXAdaptiveMenu #NXAdaptiveTel:hover:after {
 	color: #ddd;
 	border-color: #ddd;
 }
 
 /*------- Mobile Menu Social Button -------*/
 
-#NXadaptiveSocial, 
-#NXadaptiveSocial * {
+#NXAdaptiveSocial,
+#NXAdaptiveSocial * {
 -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
         box-sizing: border-box;
 }
 
 
-#NXadaptiveSocial {
+#NXAdaptiveSocial {
 	width: 100%;
 	overflow: hidden;
 	height: auto;
@@ -768,8 +748,8 @@ body {
 	background: none;
 }
 
-#NXadaptiveSocial a, 
-#NXadaptiveSocial a:hover {
+#NXAdaptiveSocial a,
+#NXAdaptiveSocial a:hover {
 	display: block; 
 	height: 40px; 
 	width: 20%;
@@ -787,7 +767,7 @@ body {
 	color: #666;
 }
 
-#NXadaptiveSocial a:before {
+#NXAdaptiveSocial a:before {
 	display: block;
 	height: 40px; 
 	width: 40px;
@@ -803,7 +783,7 @@ body {
 	color: inherit;
 }
 
-#NXadaptiveSocial a:hover {
+#NXAdaptiveSocial a:hover {
 	color: #fff; 
 	background: #666; 
 	border-bottom-color: #ccc;
@@ -826,7 +806,7 @@ body {
 }
 
 @media only screen and (max-width: 450px) {
-	.nxOpenedMenu #NXadaptiveMenu { 
+	.nxOpenedMenu #NXAdaptiveMenu {
 		right: 0;
 	}
 }

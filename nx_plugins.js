@@ -3,17 +3,17 @@
 $(function(){
 var s_width = 1025;
 function AddNXAdaptiveNavication() {
-    var nxNavlen = $('#NXadaptiveNavigation').length, 
+    var nxNavlen = $('#NXAdaptiveNavigation').length,
         nxScreen = window.innerWidth;
 
     if(nxNavlen == 0 && nxScreen <= s_width) {
         var navTitle = $('.logo').text(),
             nxTel = $('#NXTel').data('tel'),
-            nxSearchForm = $('#NXsearchForm'),
+            nxSearchForm = $('#NXSearchForm'),
             nxSocialLink = $('.to-social-nav'),
             
-            nxAdaptiveMenu = '<div id="NXadaptiveMenu"></div>';
-            nxNavigation = '<div class="nx-nav-grad nx-flex-row-btw-c" id="NXadaptiveNavigation">' +
+            nxAdaptiveMenu = '<div id="NXAdaptiveMenu"></div>';
+            nxNavigation = '<div class="nx-nav-grad nx-flex-row-btw-c" id="NXAdaptiveNavigation">' +
                                 '<a href="/" class="h-logo nx-flex-row-l-c" title="На главную">' +  '<strong class="h-nav-title">' + navTitle + '</strong>' + '</a>' + 
                                 '<span class="h-nav nx-flex-row-btw-c"><button class="h-nav-icon h-nav-gamburger h-close" id="nxGamburger" title="Меню" ></button></strong>' +
                            '</div>';
@@ -21,40 +21,40 @@ function AddNXAdaptiveNavication() {
         $('body').prepend(nxAdaptiveMenu + nxNavigation);
     
         if (nxTel) {
-             $('#NXadaptiveMenu').append('<a class="tel nx-flex-row-btw-c" id="NXadaptiveTel" href="tel:'+nxTel+'">'+nxTel+'</a>');
+             $('#NXAdaptiveMenu').append('<a class="tel nx-flex-row-btw-c" id="NXAdaptiveTel" href="tel:'+nxTel+'">'+nxTel+'</a>');
         }
 
         $('.to-nx-nav').each(function() { 
-            $(this).clone().appendTo('#NXadaptiveMenu').end();
+            $(this).clone().appendTo('#NXAdaptiveMenu').end();
             $(this).hide();
         });
         
-		$('<span class="tab close" data-nxopen="0"></span>' ).insertBefore('#NXadaptiveMenu li ul');
+		$('<span class="tab close" data-nxopen="0"></span>' ).insertBefore('#NXAdaptiveMenu li ul');
 
         if(nxSocialLink.length) {
-            $('#NXadaptiveMenu').append('<div id="NXadaptiveSocial" class="nx-flex-row-btw-st"></div>');
+            $('#NXAdaptiveMenu').append('<div id="NXAdaptiveSocial" class="nx-flex-row-btw-st"></div>');
             $('.to-social-nav').each(function() {
-                $('#NXadaptiveSocial').append($(this).html()).addClass($(this).attr('class'));
+                $('#NXAdaptiveSocial').append($(this).html()).addClass($(this).attr('class'));
                 $(this).hide();
             });
-            $('#NXadaptiveSocial').removeClass('to-social-nav');
+            $('#NXAdaptiveSocial').removeClass('to-social-nav');
         }
 
         if(nxSearchForm.length) {
             var searchFormHref = nxSearchForm.attr('action');
             nxSearchForm.hide();
-            $('#NXadaptiveMenu').prepend('<div id="NXadaptiveSearchForm"><form action="' + searchFormHref+ '"><input type="text" name="q" placeholder="Поиск" value=""><input type="submit" name="s" value="с" title="Найти"></form></div>');
+            $('#NXAdaptiveMenu').prepend('<div id="NXAdaptiveSearchForm"><form action="' + searchFormHref+ '"><input type="text" name="q" placeholder="Поиск" value=""><input type="submit" name="s" value="с" title="Найти"></form></div>');
         }
     }
     else if(nxNavlen > 0 &&  nxScreen >= s_width) {
-        $('#NXadaptiveNavigation').remove(); 
-        $('#NXadaptiveMenu').remove();  
+        $('#NXAdaptiveNavigation').remove();
+        $('#NXAdaptiveMenu').remove();
         
         $('html').removeClass('nxOpenedMenu');
         
-        $('.to-nx-nav, .to-social-nav, #NXsearchForm').show();
+        $('.to-nx-nav, .to-social-nav, #NXSearchForm').show();
         $('.to-social-nav').show();
-        $('#NXsearchForm').show();
+        $('#NXSearchForm').show();
     }
 }
 
@@ -66,7 +66,7 @@ if(Modernizr.mq('only all')){
 }
 
 $('body').on('click', '#nxGamburger', function() {
-    target = $('#NXadaptiveMenu');
+    var target = $('#NXAdaptiveMenu');
     if(target.hasClass('a-menu-open')) {
         $('html').removeClass('nxOpenedMenu');
         target.removeClass('a-menu-open');
@@ -144,7 +144,30 @@ function nx_modalizm() {
         $('body').append('<div class="nx-modal" id="NXModal"></div>'); 
         $('#NXModal').fadeIn().height($(document).height());
 }
+
 function nx_no_modalizm() {$('#NXModal').fadeOut();}
+
+function nx_remove_modal() {
+    $('#NXModalContent').remove();
+    nx_no_modalizm();
+}
+
+function nxShowPopUp(data, class_name) {
+    nx_remove_modal();
+
+    var classStr = '';
+    if(class_name != undefined) {
+        classStr = 'class="' + class_name + '"';
+    }
+    var modalTemplate = '<div id="NXModalContent" ' + classStr + '>';
+
+    if(!$(data).hasClass('not-close')) {
+        modalTemplate += '<del class="close-modal"></del>';
+    }
+    modalTemplate += data + '</div>';
+
+    $('body').append(modalTemplate);
+}
 
 /**********************LIGHTBOX PLUGIN**********************/
 var original_size = new Object();
@@ -203,7 +226,7 @@ $(this).hide(); event.stopPropagation();
 
 /****************CONSOLE LOG PLUGIN*****************/
 (function(){
-var method, 
+var method,
     noop = function () {},
     methods = ['assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
 'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
