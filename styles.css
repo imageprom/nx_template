@@ -1,3 +1,12 @@
+/****************** VARS ******************/
+:root {
+  --f-def: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+  --f-icon: nx, Tahoma, Geneva, sans-serif;
+  --c-green: #167926;
+  --txt-c-black: #000;
+  --transition-def: all 0.3s ease-out;
+}
+
 /****************** H1 - H6 ******************/
 h1, .h1,
 h2, .h2,
@@ -47,7 +56,7 @@ h4, .h4 {
 h5, .h5 {
   font-size: 16px; 
   font-weight:normal; 
-  color:#000;
+  color: var(--txt-c-black);
 }
 
 h6, .h6 {
@@ -81,6 +90,7 @@ a.file {
   display: inline-block; 
   padding: 0.1em 0 0.3em 1.7em; 
   position: relative;
+  text-decoration: none;
 }
 
 a.file:before {
@@ -88,8 +98,8 @@ a.file:before {
   top:-0.2em; 
   left:0; 
   z-index: 3; 
-  content: "Ф"; 
-  font-family: nx, Tahoma, Geneva, sans-serif; 
+  content: "Ф";
+  font-family: var(--f-icon);
   color: #666; 
   font-size: 24px;
 }
@@ -105,7 +115,11 @@ a.file:after {
   background: #337ab7;
   font-size: 7px;
   color: #fff;
+}
 
+a.file .size {
+  display: block;
+  font-size: 0.8em;
 }
 
 .back {
@@ -191,7 +205,7 @@ hr {
 
 mark {
   background: #ff0; 
-  color: #000;
+  color: var(--txt-c-black);
 }
 
 code, kbd, pre, samp {
@@ -317,11 +331,13 @@ ul li::marker {
 
 .main ol li:before {
   counter-increment: section;
-  content: counters(section,'');
+  content: counters(section, '.') '.';
   display: inline-block;
   font-weight: bold;
   color: #022e3f;
-  margin-right: 23px;
+  margin-right: 18px;
+  margin-left: -32px;
+  margin-bottom: 0.2em;
 }
 
 .main ul li:before {
@@ -480,9 +496,9 @@ a .main img {border:none}
   color: #333; 
   background:#eaeaea; 
   font-size: 10px;
--webkit-box-shadow: 1px 1px 5px #000; 
-   -moz-box-shadow: 1px 1px 5px #000; 
-        box-shadow: 1px 1px 5px #000;
+-webkit-box-shadow: 1px 1px 5px var(--txt-c-black);
+   -moz-box-shadow: 1px 1px 5px var(--txt-c-black);
+        box-shadow: 1px 1px 5px var(--txt-c-black);
 -webkit-border-radius: 50%; 
    -moz-border-radius: 50%; 
         border-radius: 50%; 
@@ -621,11 +637,11 @@ button.btn,
   line-height: 1.5;
 -webkit-border-radius: 3px;
    -moz-border-radius: 3px;
-		    border-radius: 3px;
+        border-radius: 3px;
   text-shadow: 0 1px 0 #fff;
 -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
-	      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
   background-image: -webkit-linear-gradient(top, #fff 0%, #e0e0e0 100%);
   background-image:      -o-linear-gradient(top, #fff 0%, #e0e0e0 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e0e0e0));
@@ -634,6 +650,7 @@ button.btn,
   border: 1px solid #ccc;
   cursor: pointer;
   font-family: inherit;
+  outline: none;
 -webkit-appearance: none;
    -moz-appearance: none;
         appearance: none;
@@ -650,10 +667,69 @@ input[type=submit].btn:active,
 button.btn:active,
 .btn:active {
 -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+   -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
         box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
   background-color: #e0e0e0;
-  background-position: 0 -15px;}
+  background-position: 0 -15px;
+}
 
+input[type=submit].btn.btn-dark,
+button.btn.btn-dark,
+.btn.btn-dark {
+  text-shadow: none;
+  background-image: -webkit-linear-gradient(top, #1da132 0%, #167926 100%);
+  background-image:      -o-linear-gradient(top, #1da132 0%, #167926 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1da132), to(#167926));
+  background-image:         linear-gradient(to bottom, #1da132 0%, #167926 100%);
+  color: #fff;
+}
+
+input[type=submit].btn.btn-dark:hover,
+button.btn.btn-dark:hover,
+.btn.btn-dark:hover {
+  background-image: -webkit-linear-gradient(top, #e0e0e0 0%, #000 100%);
+  background-image:      -o-linear-gradient(top, #e0e0e0 0%, #000 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e0e0e0), to(#000));
+  background-image:         linear-gradient(to bottom, #e0e0e0 0%, #000 100%);
+  background-color: #000;
+}
+
+input[type=submit].btn.btn-dark:active,
+button.btn.btn-dark:active,
+.btn.btn-dark:active {
+  -webkit-box-shadow: inset 0 3px 5px rgba(255, 255, 255, .25);
+     -moz-box-shadow: inset 0 3px 5px rgba(255, 255, 255, .25);
+          box-shadow: inset 0 3px 5px rgba(255, 255, 255, .25);
+}
+
+input[type=submit].btn.btn-disabled,
+button.btn.btn-disabled,
+.btn.btn-disabled {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-image: -webkit-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background-image:      -o-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f8f8f8));
+  background-image:         linear-gradient(to bottom, #fff 0%, #f8f8f8 100%);
+  cursor: default;
+}
+
+input[type=submit].btn.btn-disabled:hover,
+button.btn.btn-disabled:hover,
+.btn.btn-disabled:hover {
+  background-color: #f8f8f8;
+  background-position: 0;
+}
+
+input[type=submit].btn.btn-disabled:active,
+button.btn.btn-disabled:active,
+.btn.btn-disabled:active {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: #e0e0e0;
+}
 
 .radio label,
 .checkbox label{
@@ -775,7 +851,7 @@ button.btn:active,
 }
 
 .nx-modal {
-  background: #000; 
+  background: var(--txt-c-black);
   display: none; 
   position: absolute; 
   top: 0; 
@@ -798,13 +874,13 @@ button.btn:active,
 }
 
 .nx-icon {
-  font-family: nx, Tahoma, Geneva, sans-serif; 
+  font-family: var(--f-icon);
   font-size: 20px;
 }	
 
 s.r {
   padding-left: 3px; 
-  font-family: nx, Tahoma, Geneva, sans-serif;  
+  font-family: var(--f-icon);
   text-decoration: none; 
   font-size: 16px;
 }
@@ -812,7 +888,7 @@ s.r {
 .nx-load {
   color:#666; 
   font-size: 30px;
-  font-family:nx, Tahoma, Geneva, sans-serif;
+  font-family:var(--f-icon);
   -moz-animation: spin 2s infinite linear;
      -o-animation: spin 2s infinite linear;
 -webkit-animation: spin 2s infinite linear;
@@ -840,6 +916,58 @@ display: inline-block;
 @keyframes spin {
 0% {-moz-transform: rotate(0deg); -o-transform: rotate(0deg); -webkit-transform: rotate(0deg); transform: rotate(0deg);}
 100% {-moz-transform: rotate(359deg); -o-transform: rotate(359deg); -webkit-transform: rotate(359deg); transform: rotate(359deg);}
+}
+
+/****************** DETAILS / SUMMARY ******************/
+
+details {
+  width: 100%;
+}
+
+details summary {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  padding-right: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+details summary:after,
+details[open] summary:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 45%;
+  right: 0;
+  z-index: 44;
+  width: 12px;
+  height: 4px;
+  background: url(images/arrow.svg) top left no-repeat;
+}
+
+details summary:after {
+  background-position: 0 0;
+}
+
+details[open] summary:after {
+  background-position: 0 -3px;
+}
+
+details[open] summary ~ * {
+  -webkit-animation: sweep .5s ease-in-out;
+  -moz-animation: sweep .5s ease-in-out;
+  animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-left: -10px
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0
+  }
 }
 
 /****************** FLEXBOX PRESET ******************/
@@ -1365,6 +1493,10 @@ template {
 	padding: 0;
 	white-space: nowrap;
 }
+.ui-tabs .ui-tabs-nav li:before,
+.ui-tabs .ui-tabs-nav li:after {
+  content: none;
+}
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
 	float: left;
 	padding: .5em 1em;
@@ -1486,14 +1618,14 @@ a.ui-button:focus {
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
-	border: 1px solid #b22764;
-	background: #f0699a;
+	border: 1px solid #c5c5c5;
+	background: var(--c-green);
 	font-weight: normal;
 	color: #ffffff;
 }
 .ui-icon-background,
 .ui-state-active .ui-icon-background {
-	border: #b22764;
+	border: #c5c5c5;
 	background-color: #ffffff;
 }
 .ui-state-active a,

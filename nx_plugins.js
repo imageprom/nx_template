@@ -100,11 +100,13 @@ $('.tbl').each(function(index, elt) {
 
 /*********************СOPYRIGHT DATA*********************/
 (function(){$(function(){
-    var dataObj = $('.copy-data');
+    var dataObj = $('.copy-data'),
         stData = dataObj.html(), 
         dt = new Date(); 
         if ((stData) != dt.getFullYear()) {
             dataObj.append('&nbsp;&#150;&nbsp;'+dt.getFullYear());
+        } else {
+            dataObj.text(dt.getFullYear());
         }
 });})(jQuery);
 
@@ -133,6 +135,11 @@ function nxTabsAction(targetTab) {
     nxTabsInit(false);
     $('body').on('click', '.tab', function(){nxTabsAction($(this))});
     $('body').on('click', '.tab_opened', function(){nxTabsAction($(this))});
+});})(jQuery);
+
+/************************* TAB JQUERY *************************/
+(function(){$(function(){
+    $('.nx-tabs').tabs();
 });})(jQuery);
 
 /********************** MODAL ******************************/
@@ -250,5 +257,4 @@ jQuery.preventDefaultEvent = function(e, options) {
     ) return true;
     e.preventDefault();
     return false;}
-
 });
