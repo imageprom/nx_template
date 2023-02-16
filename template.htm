@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html class="no-js" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>">
+<!--<html class="no-js" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>">-->
+<html class="no-js" xml:lang="ru" lang="ru">
 <head>
 <!--При интеграции с bitrix этот метатег выкинуть -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -21,10 +22,11 @@ $Asset = \Bitrix\Main\Page\Asset::getInstance();?>
 <!--При интеграции с bitrix заменить конструкции на
  <?$Asset->addJs(SITE_TEMPLATE_PATH . '/имя_скрипта.js');?>
 -->
-<script type="text/javascript" src="lib/jquery-3.6.0.min.js" ></script>
+<script type="text/javascript" src="lib/jquery-3.6.3.min.js" ></script>
 <script type="text/javascript" src="lib/jquery-ui-1.13.2.min.js"></script>
 <script type="text/javascript" src="lib/jquery-migrate-1.4.1.min.js" ></script>
-<script type="text/javascript" src="lib/jquery-migrate-3.3.2.min.js" ></script>
+<script type="text/javascript" src="lib/jquery-migrate-3.4.0.min.js" ></script>
+<script type="text/javascript" src="lib/slick.min.js" ></script>
 <script type="text/javascript" src="lib/modernizr.js"></script>
 <script type="text/javascript" src="nx_plugins.js"></script>
 <script type="text/javascript" src="lib/hyphenate.js"></script>
@@ -47,6 +49,7 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 <!--<link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/font-awesome.css" rel="stylesheet" type="text/css" />-->
 
+<link href="lib/slick.css" rel="stylesheet" type="text/css" />
 <link href="template_styles.css" rel="stylesheet" type="text/css" />
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <!-- -------------------------------- -->
@@ -91,7 +94,6 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 				<!-- Заменить на <h1><?=$APPLICATION->ShowTitle(false);?></h1> -->
 
 				<!-- НАЧАЛО ТЕСТОВОГО КОНТЕНТА -->
-
 				<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сайты были действительно хороши нужно многое учесть.</p>
 
 				<h2>Оформление элементов <small>(это - заголовок II уровня)</small></h2>
@@ -103,17 +105,23 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 				</figure>
 
 				<h3>Вставка изображений (это - заголовок III уровня)</h3>
-
-
 				<p>В тексте должны быть иллюстрации. Чтобы выравнивать картинки влево или вправо, нужно пользоваться классами toleft и toright</p>
 				<p>У картинок обязательно нужно прописывать alt и если нужно title</p>
-				<p>Для логического разбиения текстов на абзацы стоит параграфы p, а не перенос строк br</p>
+				<p>Для логического разбиения текстов на абзацы стоит использовать параграфы p, а не перенос строк br</p>
 				<blockquote>
 					Это - цитата. Если нам нужно выделить какой-нибудь элемент в заметный блок можно и нужно воспользоваться этим элементом.  И соответственно не забыть достойно оформить его в css
 					<p class="author">Так говорил Заратустра</p>
 				</blockquote>
 
-				<p>Вообще, в тексте может встречаться много разного текстового оформления</p>
+				<p>
+					<img src="https://www.imageprom.com/upload/iblock/495/3.jpg" alt="Картинка выроненная по правому краю"  class="toleft with_big" data-big="https://www.imageprom.com/upload/iblock/624/3.jpg?246925215.87240747" data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"  />
+
+				<h4>Динамические элементы (это - заголовок IV уровня)</h4>
+				<p>Времена статичного и скучного интернета прошли. В настоящее время элементы могут нести не только смысловую, но и функциональную нагрузку. Например, картинка, расположенная справа может увеличиваться.
+					В более старых сайтах вместо data-big использовался параметр big</p>
+
+				<section>
+					<p>Вообще, в тексте может встречаться много разного текстового оформления</p>
 					<dl>
 						<dt><strong>Жирный текст</strong></dt>
 						<dd> &ndash; лучше использовать strong а не b</dd>
@@ -135,25 +143,24 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 
 						<dt><a href="#">Ссылки</a></dt>
 						<dd> просто ссылки в тексте</dd>
+					</dl>
 
+					<hr />
+
+					<p>Также возможно будут нужны и другие дополнительные элементы</p>
+					<dl>
 						<dt><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a></dt>
-						<dd> если это ссылка на файл, то и оформлять ее соответствующе</dd>
+						<dd> если это ссылка на файл, то и оформлять ее соответствующе &lt;a href="#" class="file"&gt;Файлы (.doc, 24 кб)&lt;/a&gt;</dd>
 
 						<dt><a href="#" class="file">Файлы.doc <span class="size">24 кб</span></a></dt>
-						<dd> если это ссылка на файл с размером на отдельной строке, то и оформлять ее соответствующе</dd>
+						<dd> если это ссылка на файл с размером на отдельной строке, то и оформлять ее соответствующе &lt;a href="#" class="file"&gt;Файлы.doc&lt;span class="size"&gt;24 кб&lt;/span&gt&lt;/a&gt;</dd>
 
 						<dt><s class="r">Р</s></dt>
 						<dd> если нужен знак рубля &lt;s class="r"&gt;Р&lt;/s&gt; буковку выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13">тут</a></dd>
 					</dl>
+				</section>
 
-				<img src="https://www.imageprom.com/upload/iblock/495/3.jpg" alt="Картинка выроненная по правому краю"  class="toleft with_big" data-big="https://www.imageprom.com/upload/iblock/624/3.jpg?246925215.87240747" data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"  />
-
-				<h4>Динамические элементы (это - заголовок IV уровня)</h4>
-				<p>Времена статичного и скучного интернета прошли. В настоящее время элементы могут нести не только смысловую, но и функциональную нагрузку. Например, картинка, расположенная справа может увеличиваться.
-				В более старых сайтах вместо data-big использовался параметр big</p>
-
-
-				<h5>Вкладки</h5>
+				<h5>Вкладки (заголовок V уровня)</h5>
 				<p>Некоторые элементы могут сворачиваться и разворачиваться</p>
 
 				<h2 class="tab_opened">Если нажать - свернется)</h2>
@@ -249,6 +256,12 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 						<li>Заголовок должен быть короче трех строк.</li>
 						<li>При названии разделов используйте уже устоявшиеся термины, такие
 							как гостевая книга, чат, ссылка, главная страница и другие.
+							<ul>
+								<li>Заголовок должен быть короче трех строк.</li>
+								<li>Перед использованием специального термина или слова, решите,
+									будет ли оно понятно читателю.
+								</li>
+							</ul>
 						</li>
 						<li>Перед использованием специального термина или слова, решите,
 							будет ли оно понятно читателю.
@@ -300,6 +313,16 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 						<p><input id="check1" type="checkbox" name="check" value="check1"><label for="check1">Checkbox No. 1</label></p>
 						<p><input id="check2" type="checkbox" name="check" value="check2"><label for="check2">Checkbox No. 2</label></p>
 					</div>
+
+					<label for="select">Выпадающий список</label>
+					<select name="select" id="select" class="select">
+						<option value="">-- No select --</option>
+						<option value="select1">Select No. 1</option>
+						<option value="select2">Select No. 2</option>
+						<option value="select3" disabled>Select No. 3</option>
+						<option value="select4">Select No. 4</option>
+						<option value="select5">Select No. 5</option>
+					</select>
 				</section>
 
 				<section>
@@ -307,7 +330,7 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 
 					<button class="btn">Обычная кнопка</button>
 					<button class="btn btn-dark">Обычная темная кнопка</button>
-					<button class="btn btn-disabled">Неактивная кнопка</button>
+					<button class="btn btn-disabled" >Неактивная кнопка</button>
 				</section>
 
 				<h2 class="tab">Переменные CSS</h2>
@@ -319,8 +342,8 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 <pre><code>:root {
 	--f-def: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 	--f-icon: nx, Tahoma, Geneva, sans-serif;
+	--f-black: #000;
 	--c-green: #167926;
-	--txt-c-black: #000;
 	--transition-def: all 0.3s ease-out;
 }</code></pre>
 					</div>

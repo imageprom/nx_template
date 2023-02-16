@@ -25,7 +25,7 @@ body {
 	padding: 0;
 	font: var(--f-def);
 	background: #f1f1f1;
-	color: var(--txt-c-black);
+	color: var(--f-black);
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -40,6 +40,10 @@ body {
 
 .global-outer {
 	overflow: hidden;
+}
+
+.global-outer.on-scroll {
+	margin-top: 100px;
 }
 
 .outer {
@@ -98,7 +102,7 @@ body {
 .inner--black::before,
 .inner--black::after{
 	color: #fff;
-	background-color: var(--txt-c-black);
+	background-color: var(--f-black);
 }
 
 /*---------- Header Elements ----------*/
@@ -110,7 +114,16 @@ body {
 	height: 100px;
 	background: #fff;
 	border: 1px solid #e1e1e1; 
-	position: relative; 
+	position: relative;
+}
+
+.on-scroll .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 799;
 }
 
 .logo {
@@ -302,8 +315,8 @@ body {
 	font-family: var(--f-icon);
 }
 
-.nav-social a:hover {color: var(--txt-c-black);}
-.nav-social a:hover:before {background: var(--txt-c-black);}
+.nav-social a:hover {color: var(--f-black);}
+.nav-social a:hover:before {background: var(--f-black);}
 
 .nav-social a.tw:before {content: "w";}
 .nav-social a.vk:before {content: "В"; font-size: 23px;}
@@ -412,7 +425,7 @@ body {
 	left: 0; 
 	z-index: 970;
 	background: #fbfaf7;
-	color: var(--txt-c-black);
+	color: var(--f-black);
 	font-family: "Helvetica neue", Helvetica, Arial, sans-serif;
 	border:none;
     -webkit-box-shadow: 0 1px 0 #4D4D4D inset, 0 2px 3px rgba(0, 0, 0, 0.25);
@@ -519,7 +532,7 @@ body {
 	right: 100%; 
 	left: 0; 
 	background: #fbfaf7;
-	color: var(--txt-c-black);
+	color: var(--f-black);
 	font-size: 15px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
