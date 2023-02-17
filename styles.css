@@ -1,3 +1,15 @@
+/****************** FONTS ******************/
+@font-face {
+  font-family: 'nx';
+  src: url('fonts/nx.eot?27685183');
+  src: url('fonts/nx.eot?27685183#iefix') format('embedded-opentype'),
+  url('fonts/nx.woff?27685183') format('woff'),
+  url('fonts/nx.ttf?27685183') format('truetype'),
+  url('fonts/nx.svg?27685183#nx') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /****************** VARS ******************/
 :root {
   --f-def: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
@@ -890,17 +902,6 @@ button:hover:disabled {
   height: 100vh;  
   z-index: 900; 
   opacity: 0.8;
-}
-
-@font-face {
- font-family: 'nx';
-  src: url('fonts/nx.eot?27685183');
-  src: url('fonts/nx.eot?27685183#iefix') format('embedded-opentype'),
-       url('fonts/nx.woff?27685183') format('woff'),
-       url('fonts/nx.ttf?27685183') format('truetype'),
-       url('fonts/nx.svg?27685183#nx') format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
 
 .nx-icon {
