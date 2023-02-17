@@ -26,6 +26,7 @@ $Asset = \Bitrix\Main\Page\Asset::getInstance();?>
 <script type="text/javascript" src="lib/jquery-ui-1.13.2.min.js"></script>
 <script type="text/javascript" src="lib/jquery-migrate-1.4.1.min.js" ></script>
 <script type="text/javascript" src="lib/jquery-migrate-3.4.0.min.js" ></script>
+<script type="text/javascript" src="lib/chosen.jquery.min.js" ></script>
 <script type="text/javascript" src="lib/slick.min.js" ></script>
 <script type="text/javascript" src="lib/modernizr.js"></script>
 <script type="text/javascript" src="nx_plugins.js"></script>
@@ -49,6 +50,7 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 <!--<link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/font-awesome.css" rel="stylesheet" type="text/css" />-->
 
+<link href="lib/chosen.css" rel="stylesheet" type="text/css" />
 <link href="lib/slick.css" rel="stylesheet" type="text/css" />
 <link href="template_styles.css" rel="stylesheet" type="text/css" />
 <link href="styles.css" rel="stylesheet" type="text/css" />
@@ -96,7 +98,16 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 				<!-- НАЧАЛО ТЕСТОВОГО КОНТЕНТА -->
 				<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сайты были действительно хороши нужно многое учесть.</p>
 
-				<h2>Оформление элементов <small>(это - заголовок II уровня)</small></h2>
+				<h1>Заголовок I уровня</h1>
+				<h2>Заголовок II уровня</h2>
+				<h3>Заголовок III уровня</h3>
+				<h4>Заголовок IV уровня</h4>
+				<h5>Заголовок V уровня</h5>
+				<h6>Заголовок VI уровня</h6>
+
+				<hr />
+
+				<h3>Оформление элементов</h3>
 				<p>В тексте может встречаться много разного - картинки, тексты, цитаты, таблицы, списки и для всего у нас уже сложились некоторые стандарты.</p>
 
 				<figure class="toright">
@@ -104,107 +115,108 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 					<figcaption>Клевая тачка</figcaption>
 				</figure>
 
-				<h3>Вставка изображений (это - заголовок III уровня)</h3>
-				<p>В тексте должны быть иллюстрации. Чтобы выравнивать картинки влево или вправо, нужно пользоваться классами toleft и toright</p>
-				<p>У картинок обязательно нужно прописывать alt и если нужно title</p>
-				<p>Для логического разбиения текстов на абзацы стоит использовать параграфы p, а не перенос строк br</p>
-				<blockquote>
-					Это - цитата. Если нам нужно выделить какой-нибудь элемент в заметный блок можно и нужно воспользоваться этим элементом.  И соответственно не забыть достойно оформить его в css
-					<p class="author">Так говорил Заратустра</p>
-				</blockquote>
+				<h5>Вставка изображений</h5>
+
+				<p>В тексте должны быть иллюстрации. Чтобы выравнивать картинки влево или вправо, нужно пользоваться классами toleft и toright.</p>
+				<p>У картинок обязательно нужно прописывать alt и если нужно title.</p>
+				<p>Для логического разбиения текстов на абзацы стоит использовать параграфы p, а не перенос строк br.</p>
 
 				<p>
 					<img src="https://www.imageprom.com/upload/iblock/495/3.jpg" alt="Картинка выроненная по правому краю"  class="toleft with_big" data-big="https://www.imageprom.com/upload/iblock/624/3.jpg?246925215.87240747" data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"  />
 
-				<h4>Динамические элементы (это - заголовок IV уровня)</h4>
-				<p>Времена статичного и скучного интернета прошли. В настоящее время элементы могут нести не только смысловую, но и функциональную нагрузку. Например, картинка, расположенная справа может увеличиваться.
-					В более старых сайтах вместо data-big использовался параметр big</p>
+				<h5>Динамические элементы</h5>
+
+				<p>Времена статичного и скучного интернета прошли. В настоящее время элементы могут нести не только смысловую, но и функциональную нагрузку. Например, картинка, расположенная справа может увеличиваться.</p>
+				<p>В более старых сайтах вместо data-big использовался параметр big.</p>
+
+				<hr />
 
 				<section>
-					<p>Вообще, в тексте может встречаться много разного текстового оформления</p>
+					<h3>Оформление текста</h3>
+
+					<p>Вообще, в тексте может встречаться много разного текстового оформления.</p>
 					<dl>
 						<dt><strong>Жирный текст</strong></dt>
 						<dd> &ndash; лучше использовать strong а не b</dd>
 
 						<dt><i>Курсив</i></dt>
-						<dd> использовать i или em</dd>
+						<dd> &ndash; использовать i или em</dd>
 
 						<dt><ins>Особый</ins></dt>
-						<dd> если не хватает курсива и жирного можно использовать ins</dd>
+						<dd> &ndash; если не хватает курсива и жирного можно использовать ins</dd>
 
 						<dt><mark>Выделенный</mark></dt>
-						<dd> а если и ins не хватает можно использовать mark</dd>
+						<dd> &ndash; а если и ins не хватает можно использовать mark</dd>
 
 						<dt><del>Удаленный</del></dt>
-						<dd> – для удаленного текста можно использовать del</dd>
+						<dd> &ndash; для удаленного текста можно использовать del</dd>
 
 						<dt><dfn>Определение</dfn></dt>
-						<dd> оформляется именно так</dd>
+						<dd> &ndash; оформляется именно так dfn</dd>
 
 						<dt><a href="#">Ссылки</a></dt>
-						<dd> просто ссылки в тексте</dd>
-					</dl>
-
-					<hr />
-
-					<p>Также возможно будут нужны и другие дополнительные элементы</p>
-					<dl>
-						<dt><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a></dt>
-						<dd> если это ссылка на файл, то и оформлять ее соответствующе &lt;a href="#" class="file"&gt;Файлы (.doc, 24 кб)&lt;/a&gt;</dd>
-
-						<dt><a href="#" class="file">Файлы.doc <span class="size">24 кб</span></a></dt>
-						<dd> если это ссылка на файл с размером на отдельной строке, то и оформлять ее соответствующе &lt;a href="#" class="file"&gt;Файлы.doc&lt;span class="size"&gt;24 кб&lt;/span&gt&lt;/a&gt;</dd>
+						<dd> &ndash; просто ссылки в тексте</dd>
 
 						<dt><s class="r">Р</s></dt>
-						<dd> если нужен знак рубля &lt;s class="r"&gt;Р&lt;/s&gt; буковку выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13">тут</a></dd>
+						<dd> &ndash; если нужен знак рубля &lt;s class="r"&gt;Р&lt;/s&gt; буковку выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13">тут</a></dd>
+
+						<dt>Цитата</dt>
+						<dd><blockquote>
+							Это - цитата. Если нам нужно выделить какой-нибудь элемент в заметный блок можно и нужно воспользоваться этим элементом.  И соответственно не забыть достойно оформить его в css
+							<p class="author">Так говорил Заратустра</p>
+						</blockquote></dd>
 					</dl>
 				</section>
 
-				<h5>Вкладки (заголовок V уровня)</h5>
-				<p>Некоторые элементы могут сворачиваться и разворачиваться</p>
-
-				<h2 class="tab_opened">Если нажать - свернется)</h2>
-				<div><p>Здесь лежит текст который нужно скрыть не забудьте окружающий div.</p></div>
-
-				<h2 class="tab">Если нажать - развернется</h2>
-				<div><p>Здесь лежит текст который скрыт сразу забудьте окружающий div.</p></div>
-
-				<h5>Вкладки (вариант без использования JS)</h5>
-				<p>Более новый способ сворачивания и разворачивания элементов без использования JavaScript</p>
-
-				<details open>
-					<summary><h3>Если нажать - свернется)</h3></summary>
-					<p>Здесь лежит текст который нужно скрыть не забудьте окружающий div.</p>
-				</details>
-
-				<details>
-					<summary><h3>Если нажать - развернется</h3></summary>
-					<p>Здесь лежит текст который скрыт сразу забудьте окружающий div.</p>
-				</details>
+				<hr />
 
 				<section>
-					<h6>Вкладки/табы</h6>
+					<h3>Списки</h3>
 
-					<div class="nx-tabs">
-						<ul>
-							<li><a href="#tabs-1">Первая вкладка</a></li>
-							<li><a href="#tabs-2">Вторая вкладка</a></li>
-							<li><a href="#tabs-3">Третья вкладка</a></li>
-						</ul>
-						<div id="tabs-1">
-							<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Со спаржей хуже, нам нужна лапша. У художника одна и та же одежда для тела, работа, которую он делал все время. У меня болит рука, когда я здесь работаю.</p>
-						</div>
-						<div id="tabs-2">
-							<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Клянусь богом, я могу сделать почти все что угодно! Чувствуете ли вы себя виноватым и не стесняетесь скрывать своего бывшего? Самобытный, сложный?</p>
-						</div>
-						<div id="tabs-3">
-							<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Мистер Магдалин, вы не вулкан. Вы хотите перестать пить больше воды? Он, он, она, нанятый. Посоветуйте ей здесь. В целом, истины!</p>
-							<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Я имею в виду, кроме Харви, ты хочешь стать временным поклонником тенниса? Часть боли, которой он помешал уйти, была бы очень полезна вулкану!</p>
-						</div>
-					</div>
+					<h5>Ненумерованный список</h5>
+					<ul>
+						<li>Заголовок должен быть короче трех строк.</li>
+						<li>При названии разделов используйте уже устоявшиеся термины, такие
+							как гостевая книга, чат, ссылка, главная страница и другие.
+						</li>
+						<li>Перед использованием специального термина или слова, решите,
+							будет ли оно понятно читателю.
+						</li>
+					</ul>
+
+					<h5>Нумерованный многоуровневый список</h5>
+					<ol>
+						<li>Заголовок должен быть короче трех строк.</li>
+						<li>При названии разделов используйте уже устоявшиеся термины, такие
+							как гостевая книга, чат, ссылка, главная страница и другие.
+							<ol>
+								<li>Заголовок должен быть короче трех строк.</li>
+							</ol>
+						</li>
+						<li>Перед использованием специального термина или слова, решите,
+							будет ли оно понятно читателю.
+							<ol>
+								<li>Заголовок должен быть короче трех строк.</li>
+								<li>При названии разделов используйте уже устоявшиеся термины, такие
+									как гостевая книга, чат, ссылка, главная страница и другие.
+									<ol>
+										<li>Заголовок должен быть короче трех строк.</li>
+										<li>При названии разделов используйте уже устоявшиеся термины, такие
+											как гостевая книга, чат, ссылка, главная страница и другие.
+										</li>
+									</ol>
+								</li>
+								<li>Перед использованием специального термина или слова, решите,
+									будет ли оно понятно читателю.
+								</li>
+							</ol>
+						</li>
+					</ol>
 				</section>
 
-				<h6>Таблицы (заголовок VI уровня)</h6>
+				<hr />
+
+				<h3>Таблицы</h3>
 
 				<table class="tbl">
 					<caption>Таблица №5. Заголовок таблицы.</caption>
@@ -250,55 +262,11 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 					</tbody>
 				</table>
 
-				<section>
-					<h6>Списки</h6>
-					<ul>
-						<li>Заголовок должен быть короче трех строк.</li>
-						<li>При названии разделов используйте уже устоявшиеся термины, такие
-							как гостевая книга, чат, ссылка, главная страница и другие.
-							<ul>
-								<li>Заголовок должен быть короче трех строк.</li>
-								<li>Перед использованием специального термина или слова, решите,
-									будет ли оно понятно читателю.
-								</li>
-							</ul>
-						</li>
-						<li>Перед использованием специального термина или слова, решите,
-							будет ли оно понятно читателю.
-						</li>
-					</ul>
-
-					<ol>
-						<li>Заголовок должен быть короче трех строк.</li>
-						<li>При названии разделов используйте уже устоявшиеся термины, такие
-							как гостевая книга, чат, ссылка, главная страница и другие.
-							<ol>
-								<li>Заголовок должен быть короче трех строк.</li>
-							</ol>
-						</li>
-						<li>Перед использованием специального термина или слова, решите,
-							будет ли оно понятно читателю.
-							<ol>
-								<li>Заголовок должен быть короче трех строк.</li>
-								<li>При названии разделов используйте уже устоявшиеся термины, такие
-									как гостевая книга, чат, ссылка, главная страница и другие.
-									<ol>
-										<li>Заголовок должен быть короче трех строк.</li>
-										<li>При названии разделов используйте уже устоявшиеся термины, такие
-											как гостевая книга, чат, ссылка, главная страница и другие.
-										</li>
-									</ol>
-								</li>
-								<li>Перед использованием специального термина или слова, решите,
-									будет ли оно понятно читателю.
-								</li>
-							</ol>
-						</li>
-					</ol>
-				</section>
+				<hr />
 
 				<section>
-					<h6>Макет формы</h6>
+					<h3>Макет формы</h3>
+
 					E-mail<br />
 					<input type="text" placeholder="Ваш e-mail" class="inpt" /><br />
 					<textarea class="clear-input inpt">Комментарий</textarea><br />
@@ -307,54 +275,206 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 					<div class="radio">
 						<p><input id="r1" type="radio" name="gender" value="male"><label for="r1">Male</label></p>
 						<p><input id="r2" type="radio" name="gender" value="female"><label for="r2">Female</label></p>
+						<p><input id="r3" type="radio" name="gender" value="female" disabled><label for="r3">Radio disabled</label></p>
 					</div>
 
 					<div class="checkbox">
 						<p><input id="check1" type="checkbox" name="check" value="check1"><label for="check1">Checkbox No. 1</label></p>
 						<p><input id="check2" type="checkbox" name="check" value="check2"><label for="check2">Checkbox No. 2</label></p>
+						<p><input id="check3" type="checkbox" name="check" value="check3" disabled><label for="check3">Checkbox disabled</label></p>
 					</div>
 
-					<label for="select">Выпадающий список</label>
-					<select name="select" id="select" class="select">
-						<option value="">-- No select --</option>
-						<option value="select1">Select No. 1</option>
-						<option value="select2">Select No. 2</option>
-						<option value="select3" disabled>Select No. 3</option>
-						<option value="select4">Select No. 4</option>
-						<option value="select5">Select No. 5</option>
-					</select>
+					<div>
+						<label for="select">Выпадающий список</label>
+						<select name="select" id="select" class="select">
+							<option value="">Ничего не выбрано</option>
+							<option value="select1">Select No. 1</option>
+							<option value="select2">Select No. 2</option>
+							<option value="select3" disabled>Select No. 3</option>
+							<option value="select4">Select No. 4</option>
+							<option value="select5">Select No. 5</option>
+						</select>
+					</div>
+
+					<div>
+						<p>Чтобы использовать выпадающий список с поиском и стилизацией, необходимо к select применить класс nx-select.</p>
+						<label for="nx-select">Выпадающий список c поиском</label>
+						<select name="select" id="nx-select" class="nx-select">
+							<option value="">Ничего не выбрано</option>
+							<option value="select1">Select No. 1</option>
+							<option value="select2">Select No. 2</option>
+							<option value="select3" disabled>Select No. 3</option>
+							<option value="select4">Select No. 4</option>
+							<option value="select5">Select No. 5</option>
+						</select>
+					</div>
 				</section>
 
+				<hr />
+
 				<section>
-					<h6>Оформление кнопок</h6>
+					<h3>Оформление кнопок и других элементов</h3>
+					<p>Кнопки можно использовать как: button, div, span, a, input и др. Не забудьте применить класс btn.</p>
 
 					<button class="btn">Обычная кнопка</button>
 					<button class="btn btn-dark">Обычная темная кнопка</button>
 					<button class="btn btn-disabled" >Неактивная кнопка</button>
+
+					<h5>Вызов popup-окна</h5>
+
+					<button class="btn btn-popup">Popup-окно</button>
+
+					<h5>Файлы для загрузки</h5>
+
+					<dl>
+						<dt><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a></dt>
+						<dd><small>Код: &lt;a href="#" class="file"&gt;Файлы (.doc, 24 кб)&lt;/a&gt;</small></dd>
+
+						<dt><a href="#" class="file">Файлы.doc <span class="size">24 кб</span></a></dt>
+						<dd><small>Код: &lt;a href="#" class="file"&gt;Файлы.doc&lt;span class="size"&gt;24 кб&lt;/span&gt&lt;/a&gt;</small></dd>
+					</dl>
 				</section>
 
-				<h2 class="tab">Переменные CSS</h2>
+				<hr />
 
+				<h2 class="tab">Вкладки</h2>
+				<div>
+					<h3>Вкладки (JS)</h3>
+
+					<h5 class="tab_opened">Описание</h5>
+					<div><p>Некоторые элементы могут сворачиваться и разворачиваться. Используете класс tab и последующий div для скрытия контента, который хотите разместить во вкладке. Или же можно использовать класс tab_opened, чтобы вкладка была открытая.</p></div>
+
+					<h5 class="tab">Код для вставки</h5>
+					<div><p>
+						<pre><code>&lt;h5 class="tab"&gt;Название вкладки&lt;/h5&gt;
+&lt;div&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h5 class="tab_opened"&gt;Название вкладки (вкладка открыта)&lt;/h5&gt;
+&lt;div&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+					</p></div>
+
+					<h5 class="tab">Пример</h5>
+					<div>
+						<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Мистер
+							Магдалин, вы не вулкан. Вы хотите перестать пить больше воды? Он, он, она, нанятый.
+							Посоветуйте ей здесь. В целом, истины!</p>
+						<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Я имею в
+							виду, кроме Харви, ты хочешь стать временным поклонником тенниса? Часть боли,
+							которой он помешал уйти, была бы очень полезна вулкану!</p>
+					</div>
+
+					<h3>Вкладки (вариант без использования JS)</h3>
+
+					<details open>
+						<summary><h5>Описание</h5></summary>
+						<p>Более новый способ сворачивания и разворачивания элементов без использования JavaScript. Используйте теги details и summary. Чтобы вкладка была развернута, добавьте details атрибут open.</p>
+					</details>
+
+					<details>
+						<summary><h5>Код для вставки</h5></summary>
+						<p>
+							<pre><code>&lt;details&gt;
+   &lt;summary&gt;Название вкладки&lt;/summary&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details open&gt;
+   &lt;summary&gt;Название вкладки (вкладка открыта)&lt;/summary&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+						</p>
+					</details>
+
+					<details>
+						<summary><h5>Пример</h5></summary>
+						<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Мистер
+							Магдалин, вы не вулкан. Вы хотите перестать пить больше воды? Он, он, она, нанятый.
+							Посоветуйте ей здесь. В целом, истины!</p>
+						<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Я имею в
+							виду, кроме Харви, ты хочешь стать временным поклонником тенниса? Часть боли,
+							которой он помешал уйти, была бы очень полезна вулкану!</p>
+					</details>
+
+					<section>
+						<h3>Вкладки/табы (jQuery)</h3>
+
+						<div class="nx-tabs">
+							<ul>
+								<li><a href="#tabs-1">Описание</a></li>
+								<li><a href="#tabs-2">Код для вставки</a></li>
+								<li><a href="#tabs-3">Пример</a></li>
+							</ul>
+							<div id="tabs-1">
+								<p>Чтобы использоваться вкладки, необходимо родительскому блоку применить класс nx-tabs.</p>
+							</div>
+							<div id="tabs-2">
+								<p>
+								<pre><code>&lt;div class="nx-tabs"&gt;
+   &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#tabs-1"&gt;Первая вкладка&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#tabs-2"&gt;Вторая вкладка&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#tabs-3"&gt;Третья вкладка&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+   &lt;div id="tabs-1"&gt;
+      &lt;p&gt;Текст первой вкладки.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div id="tabs-2"&gt;
+      &lt;p&gt;Текст второй вкладки.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div id="tabs-3"&gt;
+      &lt;p&gt;Текст третьей вкладки.&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+								</p>
+							</div>
+							<div id="tabs-3">
+								<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Мистер
+									Магдалин, вы не вулкан. Вы хотите перестать пить больше воды? Он, он, она, нанятый.
+									Посоветуйте ей здесь. В целом, истины!</p>
+								<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Я имею в
+									виду, кроме Харви, ты хочешь стать временным поклонником тенниса? Часть боли,
+									которой он помешал уйти, была бы очень полезна вулкану!</p>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<h2 class="tab">Переменные CSS</h2>
 				<div>
 					<p>Почитать про использование переменных в CSS можно на <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties" target="_blank">MDN</a></p>
 
 					<div>
+						<h5>Назначение в CSS (styles.css)</h5>
 <pre><code>:root {
-	--f-def: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-	--f-icon: nx, Tahoma, Geneva, sans-serif;
-	--f-black: #000;
-	--c-green: #167926;
-	--transition-def: all 0.3s ease-out;
+   --f-def: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+   --f-icon: nx, Tahoma, Geneva, sans-serif;
+   --f-black: #000;
+   --c-green: #167926;
+   --transition-def: all 0.3s ease-out;
+   --shadow-def: 0 0 3px #bbb inset;
 }</code></pre>
 					</div>
-					<hr />
+
 					<div>
+						<h5>Использование в CSS</h5>
 <pre><code>.your-class {
-	color: var(--c-green);
-	color: var(--c-green, #ddfcc8); // Резервное значение, если переменная не задана
-	...
-	font-family: var(--f-icon), Arial, Roboto; // Дополнительные значения свойства
-	...
+   color: var(--c-green);
+   color: var(--c-green, #ddfcc8); // Резервное значение, если переменная не задана
+   ...
+   font-family: var(--f-icon), Arial, Roboto; // Дополнительные значения свойства
+   ...
 }</code></pre>
 					</div>
 				</div>
@@ -366,22 +486,8 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 					<p><span class="nx-load">@</span> <span class="nx-load">O</span> <span class="nx-load">o</span></p>
 
 					<style>
-						.text-cols span {
-							margin-left: 20px;
-							font-family: 'nx', sans-serif;
-							font-size: 24px;
-						}
-						.text-cols {
-							-webkit-column-count: 6;
-							-moz-column-count: 6;
-							column-count: 6;
-							-webkit-column-gap: 4%;
-							-moz-column-gap: 4%;
-							column-gap: 4%;
-							-webkit-column-rule: solid lightgrey;
-							-moz-column-rule: solid lightgrey;
-							column-rule: solid lightgrey;
-						}
+						.text-cols span {margin-left: 20px;font-family: 'nx', sans-serif;font-size: 24px;}
+						.text-cols {-webkit-column-count: 6;-moz-column-count: 6;column-count: 6;-webkit-column-gap: 4%;-moz-column-gap: 4%;column-gap: 4%;-webkit-column-rule: solid lightgrey;-moz-column-rule: solid lightgrey;column-rule: solid lightgrey;}
 					</style>
 
 					<div class="text-cols">

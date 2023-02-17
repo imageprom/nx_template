@@ -160,6 +160,11 @@ function nxTabsAction(targetTab) {
     $('.nx-tabs').tabs();
 });})(jQuery);
 
+/************************* TAB JQUERY *************************/
+(function(){$(function(){
+    $('.nx-select').chosen();
+});})(jQuery);
+
 /********************** MODAL ******************************/
 function nx_modalizm() {
     var nx_modal = $('#NXModal');  
@@ -285,16 +290,17 @@ jQuery.preventDefaultEvent = function(e, options) {
     e.preventDefault();
     return false;}
 
-    $('body').on('click', '.btn-dark', function () {
+    $('body').on('click', '.btn-popup', function () {
         // Использование nx-load (эффект загрузки при ожидании ответа)
         /*$.ajax({
             beforeSend: function () {
-                $('body').append('<div class="blur_block"><div class="nx-load">o</div></div>');
+                $('body').append('<div class="blur-block"><div class="nx-load">o</div></div>');
             },
         }).done(function (data) {
-            $('.blur_block').remove();
+            $('.blur-block').remove();
         });*/
 
-        nxShowPopUp();
+        var txt = '<p>Для вызова необходимо на событие повесить функцию nxShowPopUp().</p>'
+        nxShowPopUp(txt);
     });
 });
