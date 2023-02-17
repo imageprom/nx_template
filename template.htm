@@ -96,84 +96,85 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 				<!-- Заменить на <h1><?=$APPLICATION->ShowTitle(false);?></h1> -->
 
 				<!-- НАЧАЛО ТЕСТОВОГО КОНТЕНТА -->
-				<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сайты были действительно хороши нужно многое учесть.</p>
+				<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сатйы были
+					действительно хороши нужно многое учесть.</p>
 
-				<h1>Заголовок I уровня</h1>
-				<h2>Заголовок II уровня</h2>
-				<h3>Заголовок III уровня</h3>
-				<h4>Заголовок IV уровня</h4>
-				<h5>Заголовок V уровня</h5>
-				<h6>Заголовок VI уровня</h6>
+				<h2>Оформление элементов <small>(это - заголовок II уровня)</small></h2>
 
-				<hr />
-
-				<h3>Оформление элементов</h3>
-				<p>В тексте может встречаться много разного - картинки, тексты, цитаты, таблицы, списки и для всего у нас уже сложились некоторые стандарты.</p>
-
+				<p>В тексте может встречаться много разного - картинки, тексты, цитаты, таблицы, списки и для всего у
+					нас уже сложились некоторые стандарты.</p>
 				<figure class="toright">
-					<img src="https://www.imageprom.com/upload/iblock/724/oxhzft%20m%20tiqpdrhsicxpw.jpg" alt="Картинка выроненная по левому краю"  class="with_big" data-big="https://www.imageprom.com/upload/iblock/152/tnvcsz%20i%20cdearbirhcebk.jpg?246925215.87240747"/>
+					<img src="https://www.imageprom.com/upload/iblock/724/oxhzft%20m%20tiqpdrhsicxpw.jpg"
+						 alt="Картинка выроненная по левому краю" class="with_big"
+						 data-big="https://www.imageprom.com/upload/iblock/152/tnvcsz%20i%20cdearbirhcebk.jpg?246925215.87240747"/>
 					<figcaption>Клевая тачка</figcaption>
 				</figure>
 
-				<h5>Вставка изображений</h5>
+				<h3>Вставка изображений (это - заголовок III уровня)</h3>
 
-				<p>В тексте должны быть иллюстрации. Чтобы выравнивать картинки влево или вправо, нужно пользоваться классами toleft и toright.</p>
-				<p>У картинок обязательно нужно прописывать alt и если нужно title.</p>
-				<p>Для логического разбиения текстов на абзацы стоит использовать параграфы p, а не перенос строк br.</p>
+				<p>В тексте должны быть иллюстрации. Чтобы выравнивать картинки влево или вправо, нужно пользоваться
+					классами toleft и toright</p>
+				<p>У картинок обязательно нужно прописывать alt и если нужно title</p>
+				<p>Для логического разбиения текстов на абзацы стоит параграфы p, а не перенос строк br</p>
+				<blockquote>
+					Это - цитата. Если нам нужно выделить какой-нибудь элемент в заметный блок можно и нужно
+					воспользоваться этим элементом. И соответственно не забыть достойно оформить его в css
+					<p class="author">Так говорил Заратустра</p>
+				</blockquote>
+				<p>Вообще, в тексте может встречаться много разного текстового оформления.</p>
 
-				<p>
-					<img src="https://www.imageprom.com/upload/iblock/495/3.jpg" alt="Картинка выроненная по правому краю"  class="toleft with_big" data-big="https://www.imageprom.com/upload/iblock/624/3.jpg?246925215.87240747" data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"  />
+				<dl>
+					<dt><strong>Жирный текст</strong></dt>
+					<dd> &ndash; лучше использовать strong а не b</dd>
 
-				<h5>Динамические элементы</h5>
+					<dt><i>Курсив</i></dt>
+					<dd> &ndash; использовать i или em</dd>
 
-				<p>Времена статичного и скучного интернета прошли. В настоящее время элементы могут нести не только смысловую, но и функциональную нагрузку. Например, картинка, расположенная справа может увеличиваться.</p>
-				<p>В более старых сайтах вместо data-big использовался параметр big.</p>
+					<dt><ins>Особый</ins></dt>
+					<dd> &ndash; если не хватает курсива и жирного можно использовать ins</dd>
 
-				<hr />
+					<dt><mark>Выделенный</mark></dt>
+					<dd> &ndash; а если и ins не хватает можно использовать mark</dd>
 
-				<section>
-					<h3>Оформление текста</h3>
+					<dt><del>Удаленный</del></dt>
+					<dd> &ndash; для удаленного текста можно использовать del</dd>
 
-					<p>Вообще, в тексте может встречаться много разного текстового оформления.</p>
-					<dl>
-						<dt><strong>Жирный текст</strong></dt>
-						<dd> &ndash; лучше использовать strong а не b</dd>
+					<dt><dfn>Определение</dfn></dt>
+					<dd> &ndash; оформляется именно так dfn</dd>
 
-						<dt><i>Курсив</i></dt>
-						<dd> &ndash; использовать i или em</dd>
+					<dt><a href="#">Ссылки</a></dt>
+					<dd> &ndash; просто ссылки в тексте</dd>
 
-						<dt><ins>Особый</ins></dt>
-						<dd> &ndash; если не хватает курсива и жирного можно использовать ins</dd>
+					<dt><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a></dt>
+					<dd> &ndash; если это ссылка на файл, то и оформлять ее соответствующе
+						<br /><small>&lt;a href="#" class="file"&gt;Файлы (.doc, 24 кб)&lt;/a&gt;</small></dd>
 
-						<dt><mark>Выделенный</mark></dt>
-						<dd> &ndash; а если и ins не хватает можно использовать mark</dd>
+					<dt><a href="#" class="file">Файлы.doc <span class="size">24 кб</span></a></dt>
+					<dd> &ndash; если это ссылка на файл с размером под его названием
+						<br /><small>&lt;a href="#" class="file"&gt;Файлы.doc&lt;span class="size"&gt;24 кб&lt;/span&gt&lt;/a&gt;</small></dd>
 
-						<dt><del>Удаленный</del></dt>
-						<dd> &ndash; для удаленного текста можно использовать del</dd>
+					<dt><s class="r">Р</s></dt>
+					<dd> &ndash; если нужен знак рубля буковку выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13" target="_blank">тут</a><br />
+						<small>&lt;s class="r"&gt;Р&lt;/s&gt;</small>
+					</dd>
+				</dl>
 
-						<dt><dfn>Определение</dfn></dt>
-						<dd> &ndash; оформляется именно так dfn</dd>
+				<img src="https://www.imageprom.com/upload/iblock/495/3.jpg" alt="Картинка выроненная по правому краю"
+					 class="toleft with_big"
+					 data-big="https://www.imageprom.com/upload/iblock/624/3.jpg?246925215.87240747"
+					 data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"/>
 
-						<dt><a href="#">Ссылки</a></dt>
-						<dd> &ndash; просто ссылки в тексте</dd>
+				<h4>Динамические элементы (это - заголовок IV уровня)</h4>
 
-						<dt><s class="r">Р</s></dt>
-						<dd> &ndash; если нужен знак рубля &lt;s class="r"&gt;Р&lt;/s&gt; буковку выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13">тут</a></dd>
+				<p>Времена статичного и скучного интернета прошли. В настоящее время элементы могут нести не только
+					смысловую, но и функциональную нагрузку. Например, картинка, расположенная справа может
+					увеличиваться. В более старых сайтах вместо data-big использовался параметр big</p>
 
-						<dt>Цитата</dt>
-						<dd><blockquote>
-							Это - цитата. Если нам нужно выделить какой-нибудь элемент в заметный блок можно и нужно воспользоваться этим элементом.  И соответственно не забыть достойно оформить его в css
-							<p class="author">Так говорил Заратустра</p>
-						</blockquote></dd>
-					</dl>
-				</section>
 
-				<hr />
+				<h3 class="tab_opened">Списки</h3>
 
-				<section>
-					<h3>Списки</h3>
-
-					<h5>Ненумерованный список</h5>
+				<div>
+					<h5>Ненумерованный список (это - заголовок V уровня)</h5>
 					<ul>
 						<li>Заголовок должен быть короче трех строк.</li>
 						<li>При названии разделов используйте уже устоявшиеся термины, такие
@@ -184,7 +185,7 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 						</li>
 					</ul>
 
-					<h5>Нумерованный многоуровневый список</h5>
+					<h6>Нумерованный многоуровневый список (это - заголовок VI уровня)</h6>
 					<ol>
 						<li>Заголовок должен быть короче трех строк.</li>
 						<li>При названии разделов используйте уже устоявшиеся термины, такие
@@ -212,11 +213,9 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 							</ol>
 						</li>
 					</ol>
-				</section>
+				</div>
 
-				<hr />
-
-				<h3>Таблицы</h3>
+				<h3 class="tab_opened">Таблицы</h3>
 
 				<table class="tbl">
 					<caption>Таблица №5. Заголовок таблицы.</caption>
@@ -262,11 +261,9 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 					</tbody>
 				</table>
 
-				<hr />
+				<h3 class="tab_opened">Макет формы</h3>
 
-				<section>
-					<h3>Макет формы</h3>
-
+				<div>
 					E-mail<br />
 					<input type="text" placeholder="Ваш e-mail" class="inpt" /><br />
 					<textarea class="clear-input inpt">Комментарий</textarea><br />
@@ -308,34 +305,17 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 							<option value="select5">Select No. 5</option>
 						</select>
 					</div>
-				</section>
+				</div>
 
-				<hr />
+				<h3 class="tab_opened">Оформление кнопок</h3>
 
-				<section>
-					<h3>Оформление кнопок и других элементов</h3>
-					<p>Кнопки можно использовать как: button, div, span, a, input и др. Не забудьте применить класс btn.</p>
+				<div>
+					<p>Кнопки можно использовать в тегах: button, div, span, a, input и др. Не забудьте применить класс btn.</p>
 
 					<button class="btn">Обычная кнопка</button>
 					<button class="btn btn-dark">Обычная темная кнопка</button>
 					<button class="btn btn-disabled" >Неактивная кнопка</button>
-
-					<h5>Вызов popup-окна</h5>
-
-					<button class="btn btn-popup">Popup-окно</button>
-
-					<h5>Файлы для загрузки</h5>
-
-					<dl>
-						<dt><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a></dt>
-						<dd><small>Код: &lt;a href="#" class="file"&gt;Файлы (.doc, 24 кб)&lt;/a&gt;</small></dd>
-
-						<dt><a href="#" class="file">Файлы.doc <span class="size">24 кб</span></a></dt>
-						<dd><small>Код: &lt;a href="#" class="file"&gt;Файлы.doc&lt;span class="size"&gt;24 кб&lt;/span&gt&lt;/a&gt;</small></dd>
-					</dl>
-				</section>
-
-				<hr />
+				</div>
 
 				<h2 class="tab">Вкладки</h2>
 				<div>
@@ -344,7 +324,7 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 					<h5 class="tab_opened">Описание</h5>
 					<div><p>Некоторые элементы могут сворачиваться и разворачиваться. Используете класс tab и последующий div для скрытия контента, который хотите разместить во вкладке. Или же можно использовать класс tab_opened, чтобы вкладка была открытая.</p></div>
 
-					<h5 class="tab">Код для вставки</h5>
+					<h5 class="tab">Пример кода для вставки</h5>
 					<div><p>
 						<pre><code>&lt;h5 class="tab"&gt;Название вкладки&lt;/h5&gt;
 &lt;div&gt;
@@ -379,7 +359,7 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 					</details>
 
 					<details>
-						<summary><h5>Код для вставки</h5></summary>
+						<summary><h5>Пример кода для вставки</h5></summary>
 						<p>
 							<pre><code>&lt;details&gt;
    &lt;summary&gt;Название вкладки&lt;/summary&gt;
@@ -413,7 +393,7 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 						<div class="nx-tabs">
 							<ul>
 								<li><a href="#tabs-1">Описание</a></li>
-								<li><a href="#tabs-2">Код для вставки</a></li>
+								<li><a href="#tabs-2">Пример кода для вставки</a></li>
 								<li><a href="#tabs-3">Пример</a></li>
 							</ul>
 							<div id="tabs-1">

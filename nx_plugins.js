@@ -160,7 +160,7 @@ function nxTabsAction(targetTab) {
     $('.nx-tabs').tabs();
 });})(jQuery);
 
-/************************* TAB JQUERY *************************/
+/************************* SELECT CHOSEN *************************/
 (function(){$(function(){
     $('.nx-select').chosen();
 });})(jQuery);
@@ -289,18 +289,4 @@ jQuery.preventDefaultEvent = function(e, options) {
     ) return true;
     e.preventDefault();
     return false;}
-
-    $('body').on('click', '.btn-popup', function () {
-        // Использование nx-load (эффект загрузки при ожидании ответа)
-        /*$.ajax({
-            beforeSend: function () {
-                $('body').append('<div class="blur-block"><div class="nx-load">o</div></div>');
-            },
-        }).done(function (data) {
-            $('.blur-block').remove();
-        });*/
-
-        var txt = '<p>Для вызова необходимо на событие повесить функцию nxShowPopUp().</p>'
-        nxShowPopUp(txt);
-    });
 });

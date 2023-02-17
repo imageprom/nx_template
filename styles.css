@@ -707,7 +707,8 @@ input[type=submit].btn.btn-dark:active,
 }
 
 input[type=submit].btn.btn-disabled,
-.btn.btn-disabled {
+.btn.btn-disabled,
+button:disabled {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -719,20 +720,16 @@ input[type=submit].btn.btn-disabled,
   cursor: default;
 }
 
-/*button:disabled {
-  background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3));
-  color: -internal-light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
-  border-color: -internal-light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
-}*/
-
 input[type=submit].btn.btn-disabled:hover,
-.btn.btn-disabled:hover {
+.btn.btn-disabled:hover,
+button:hover:disabled {
   background-color: #f8f8f8;
   background-position: 0;
 }
 
 input[type=submit].btn.btn-disabled:active,
-.btn.btn-disabled:active {
+.btn.btn-disabled:active,
+button:hover:disabled {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -1118,7 +1115,9 @@ details[open] summary ~ * {
 .nx-flex-col-c-c,
 .nx-flex-col-t-c,
 .nx-flex-row-l-c,
-.nx-flex-row-r-c {
+.nx-flex-row-r-c,
+.nx-flex-row-ar-c,
+.nx-flex-col-ar-c {
   -webkit-align-items: center;
        -ms-flex-align: center;
           align-items: center;
@@ -1133,7 +1132,9 @@ details[open] summary ~ * {
 .nx-flex-col-b-r,
 .nx-flex-row-b-l,
 .nx-flex-row-b-r,
-.nx-flex-row-btw-b-r{
+.nx-flex-row-btw-b-r,
+.nx-flex-row-ar-b,
+.nx-flex-col-ar-r {
    -webkit-align-content: flex-end;
       -ms-flex-line-pack: end;
            align-content: flex-end;
