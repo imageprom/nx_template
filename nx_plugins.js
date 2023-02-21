@@ -1,4 +1,4 @@
-/*********************TOP MENU PLUGIN*********************/
+/********************* TOP MENU PLUGIN *********************/
 (function(){
 $(function(){
 var s_width = 1025;
@@ -79,13 +79,13 @@ $('body').on('click', '#nxGamburger', function() {
 
 });})(jQuery);
 
-/*********************ADAPTIVE TABLE *********************/
+/********************* ADAPTIVE TABLE *********************/
 (function(){$(function(){
 $('.tbl').each(function(index, elt) {
     $(this).wrap('<div class="tbl-resp"></div>');});
 });})(jQuery);
 
-/*********************TOP SCROLLING*********************/
+/********************* TOP SCROLLING *********************/
 (function(){$(function(){
     $('body').append('<div id="NXScroller" class="b-top"><span class="b-top-but">наверх</span></div>');
     $(window).scroll(function () { 
@@ -98,17 +98,37 @@ $('.tbl').each(function(index, elt) {
     });
 });})(jQuery);
 
-/*********************СOPYRIGHT DATA*********************/
+/**************** SCROLL HEADER *******************/
 (function(){$(function(){
-    var dataObj = $('.copy-data');
+    var scrollWidthOn = 1025,
+        scrollHeightOn = 100;
+
+    $(window).on('scroll', function () {
+        if ($(window).width() > scrollWidthOn && $(this).scrollTop() > scrollHeightOn) {
+            $('.global-outer').addClass('on-scroll');
+        } else {
+            $('.global-outer').removeClass('on-scroll');
+        }
+    })
+
+    if ($(window).scrollTop() > scrollHeightOn) {
+        $('.global-outer').removeClass('on-scroll');
+    }
+});})(jQuery);
+
+/********************* СOPYRIGHT DATA *********************/
+(function(){$(function(){
+    var dataObj = $('.copy-data'),
         stData = dataObj.html(), 
         dt = new Date(); 
         if ((stData) != dt.getFullYear()) {
             dataObj.append('&nbsp;&#150;&nbsp;'+dt.getFullYear());
+        } else {
+            dataObj.text(dt.getFullYear());
         }
 });})(jQuery);
 
-/*************************TAB PLUGIN************************/
+/************************* TAB PLUGIN ************************/
 function nxTabsInit(targetContainer) {
     if(targetContainer) targetContainer += ' ';
 	else targetContainer = '';
@@ -133,6 +153,16 @@ function nxTabsAction(targetTab) {
     nxTabsInit(false);
     $('body').on('click', '.tab', function(){nxTabsAction($(this))});
     $('body').on('click', '.tab_opened', function(){nxTabsAction($(this))});
+});})(jQuery);
+
+/************************* TAB JQUERY *************************/
+(function(){$(function(){
+    $('.nx-tabs').tabs();
+});})(jQuery);
+
+/************************* SELECT CHOSEN *************************/
+(function(){$(function(){
+    $('.nx-select').chosen();
 });})(jQuery);
 
 /********************** MODAL ******************************/
@@ -162,14 +192,23 @@ function nxShowPopUp(data, class_name) {
     var modalTemplate = '<div id="NXModalContent" ' + classStr + '>';
 
     if(!$(data).hasClass('not-close')) {
-        modalTemplate += '<del class="close-modal"></del>';
+        modalTemplate += '<del class="close-modal" id="NXModalClose"></del>';
     }
     modalTemplate += data + '</div>';
 
+    nx_modalizm();
     $('body').append(modalTemplate);
 }
 
-/**********************LIGHTBOX PLUGIN**********************/
+(function () {
+    $(function () {
+        $('body').on('click', '#NXModalClose, #NXModal', function () {
+            nx_remove_modal();
+        });
+    });
+})(jQuery);
+
+/********************** LIGHTBOX PLUGIN **********************/
 var original_size = new Object();
 (function(){$(function(){
 function Scaling(my_width, my_height) { var my_res=new Object();
@@ -210,7 +249,7 @@ $(this).hide(); event.stopPropagation();
 });
 });})(jQuery);
 
-/****************SEO LINK*******************/
+/**************** SEO LINK *******************/
 (function(){$(function(){
     $('.h-link').replaceWith(function(){
         var src = $(this), 
@@ -224,7 +263,7 @@ $(this).hide(); event.stopPropagation();
     });
 });})(jQuery);
 
-/****************CONSOLE LOG PLUGIN*****************/
+/**************** CONSOLE LOG PLUGIN *****************/
 (function(){
 var method,
     noop = function () {},
@@ -236,7 +275,7 @@ var method,
     while (length--) { method = methods[length]; if (!console[method]) {console[method] = noop;}}
 }());
 
-/****************USER CODE*******************/
+/**************** USER CODE *******************/
 $(document).ready(function(){
 jQuery.preventDefaultEvent = function(e, options) {
     options = options || {shift:1, ctrl:1, alt:1, meta:1};
@@ -250,5 +289,4 @@ jQuery.preventDefaultEvent = function(e, options) {
     ) return true;
     e.preventDefault();
     return false;}
-
 });

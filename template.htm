@@ -21,17 +21,19 @@ $Asset = \Bitrix\Main\Page\Asset::getInstance();?>
 <!--При интеграции с bitrix заменить конструкции на
  <?$Asset->addJs(SITE_TEMPLATE_PATH . '/имя_скрипта.js');?>
 -->
-<script type="text/javascript" src="lib/jquery-3.6.0.min.js" ></script>
-<script type="text/javascript" src="lib/jquery-ui-1.12.1.min.js"></script>
+<script type="text/javascript" src="lib/jquery-3.6.3.min.js" ></script>
+<script type="text/javascript" src="lib/jquery-ui-1.13.2.min.js"></script>
 <script type="text/javascript" src="lib/jquery-migrate-1.4.1.min.js" ></script>
-<script type="text/javascript" src="lib/jquery-migrate-3.3.2.min.js" ></script>
+<script type="text/javascript" src="lib/jquery-migrate-3.4.0.min.js" ></script>
+<script type="text/javascript" src="lib/chosen.jquery.min.js" ></script>
+<script type="text/javascript" src="lib/slick.min.js" ></script>
 <script type="text/javascript" src="lib/modernizr.js"></script>
 <script type="text/javascript" src="nx_plugins.js"></script>
 <script type="text/javascript" src="lib/hyphenate.js"></script>
 
 <!--<?=$APPLICATION->ShowHead();?>-->
 
-<!--Если нужен bootsrap и font awessome в Битриксе они уже есть - подключаются так   -->
+<!--Если нужен bootstrap и font awesome в Битриксе они уже есть - подключаются так   -->
 
 <!--<?
 $Asset->addCss('/bitrix/css/main/bootstrap.css');
@@ -42,11 +44,13 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 <!--<link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/font-awesome.css" rel="stylesheet" type="text/css" />-->
 
-<!--При интеграции с bitrix выкинуть явное обьявление стилей (!!!) -->
+<!--При интеграции с bitrix выкинуть явное объявление стилей (!!!) -->
 
 <!--<link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="http://shagalov.dev.imageprom.ru/bitrix/css/main/font-awesome.css" rel="stylesheet" type="text/css" />-->
 
+<link href="lib/chosen.css" rel="stylesheet" type="text/css" />
+<link href="lib/slick.css" rel="stylesheet" type="text/css" />
 <link href="template_styles.css" rel="stylesheet" type="text/css" />
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <!-- -------------------------------- -->
@@ -61,7 +65,7 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-<!-- конец favico -->
+<!-- конец favicon -->
 
 </head>
 
@@ -75,7 +79,7 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 	<div class="container">
 		<!-- HEADER -->
 		<header class="header">
-			<!--Если номер телефона выодится в другом блоке перенести туда кусок id = "NXTel" data-tel="+7 НОМЕР_ТЕЛЕФОНА" -->
+			<!--Если номер телефона выводится в другом блоке перенести туда кусок id = "NXTel" data-tel="+7 НОМЕР_ТЕЛЕФОНА" -->
 
 			<a class="logo" href="/" id = "NXTel" data-tel="+7 (831) 2960-920">Моя компания</a>
 			<div class="slogan">Универсальный адаптивный макет</div>
@@ -91,59 +95,133 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 				<!-- Заменить на <h1><?=$APPLICATION->ShowTitle(false);?></h1> -->
 
 				<!-- НАЧАЛО ТЕСТОВОГО КОНТЕНТА -->
+				<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сатйы были
+					действительно хороши нужно многое учесть.</p>
 
-					<p>Это волшебный макет, с помощью которого мы будем делать прекрасные сайты. Чтобы сатйы были действительно хороши нужно многое учесть.</p>
+				<h2>Оформление элементов <small>(это - заголовок II уровня)</small></h2>
 
-					<h2>Оформление элементов <small>(это - заголовок II уровня)</small></h2>
-					<p>В тексте может встречаться много разного - картинки, тексты, цитаты, таблицы, списки и для всего у нас уже сложились некоторые стадарты.</p>
+				<p>В тексте может встречаться много разного - картинки, тексты, цитаты, таблицы, списки и для всего у
+					нас уже сложились некоторые стандарты.</p>
+				<figure class="toright">
+					<img src="https://www.imageprom.com/upload/iblock/724/oxhzft%20m%20tiqpdrhsicxpw.jpg"
+						 alt="Картинка выроненная по левому краю" class="with_big"
+						 data-big="https://www.imageprom.com/upload/iblock/152/tnvcsz%20i%20cdearbirhcebk.jpg?246925215.87240747"/>
+					<figcaption>Клевая тачка</figcaption>
+				</figure>
 
-					<figure class="toright">
-						<img src="https://www.imageprom.com/upload/iblock/724/oxhzft%20m%20tiqpdrhsicxpw.jpg" alt="Картинка выроненная по левому краю"  class="with_big" data-big="https://www.imageprom.com/upload/iblock/152/tnvcsz%20i%20cdearbirhcebk.jpg?246925215.87240747"/>
-						<figcaption>Клевая тачка</figcaption>
-					</figure>
+				<h3>Вставка изображений (это - заголовок III уровня)</h3>
 
-					<h3>Вставка изображений (это - заголовок III уровня)</h3>
+				<p>В тексте должны быть иллюстрации. Чтобы выравнивать картинки влево или вправо, нужно пользоваться
+					классами toleft и toright</p>
+				<p>У картинок обязательно нужно прописывать alt и если нужно title</p>
+				<p>Для логического разбиения текстов на абзацы стоит параграфы p, а не перенос строк br</p>
+				<blockquote>
+					Это - цитата. Если нам нужно выделить какой-нибудь элемент в заметный блок можно и нужно
+					воспользоваться этим элементом. И соответственно не забыть достойно оформить его в css
+					<p class="author">Так говорил Заратустра</p>
+				</blockquote>
+				<p>Вообще, в тексте может встречаться много разного текстового оформления.</p>
+
+				<dl>
+					<dt><strong>Жирный текст</strong></dt>
+					<dd> &ndash; лучше использовать strong а не b</dd>
+
+					<dt><i>Курсив</i></dt>
+					<dd> &ndash; использовать i или em</dd>
+
+					<dt><ins>Особый</ins></dt>
+					<dd> &ndash; если не хватает курсива и жирного можно использовать ins</dd>
+
+					<dt><mark>Выделенный</mark></dt>
+					<dd> &ndash; а если и ins не хватает можно использовать mark</dd>
+
+					<dt><del>Удаленный</del></dt>
+					<dd> &ndash; для удаленного текста можно использовать del</dd>
+
+					<dt><dfn>Определение</dfn></dt>
+					<dd> &ndash; оформляется именно так dfn</dd>
+
+					<dt><a href="#">Ссылки</a></dt>
+					<dd> &ndash; просто ссылки в тексте</dd>
+
+					<dt><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a></dt>
+					<dd> &ndash; если это ссылка на файл, то и оформлять ее соответствующе
+						<br /><small>&lt;a href="#" class="file"&gt;Файлы (.doc, 24 кб)&lt;/a&gt;</small></dd>
+
+					<dt><a href="#" class="file">Файлы.doc <span class="size">24 кб</span></a></dt>
+					<dd> &ndash; если это ссылка на файл с размером под его названием
+						<br /><small>&lt;a href="#" class="file"&gt;Файлы.doc&lt;span class="size"&gt;24 кб&lt;/span&gt&lt;/a&gt;</small></dd>
+
+					<dt><s class="r">Р</s></dt>
+					<dd> &ndash; если нужен знак рубля буковку выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13" target="_blank">тут</a><br />
+						<small>&lt;s class="r"&gt;Р&lt;/s&gt;</small>
+					</dd>
+
+					<dt>Подсказка</dt>
+					<dd> &ndash; если нужна <a href="#" data-tooltip="Это всплывающая подсказка">всплывающая подсказка</a>, то добавьте обертке параметр data-tooltip<br />
+						<small>&lt;a href="#" data-tooltip="Это всплывающая подсказка"&gt;Подсказка&lt;/a&gt;</small>
+					</dd>
+				</dl>
+
+				<img src="https://www.imageprom.com/upload/iblock/495/3.jpg" alt="Картинка выроненная по правому краю"
+					 class="toleft with_big"
+					 data-big="https://www.imageprom.com/upload/iblock/624/3.jpg?246925215.87240747"
+					 data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"/>
+
+				<h4>Динамические элементы (это - заголовок IV уровня)</h4>
+
+				<p>Времена статичного и скучного интернета прошли. В настоящее время элементы могут нести не только
+					смысловую, но и функциональную нагрузку. Например, картинка, расположенная справа может
+					увеличиваться. В более старых сайтах вместо data-big использовался параметр big</p>
 
 
-					<p>В тексте должны быть иллюстарации. Чтобы выравнивать картинки влево или вправо нужно пользоваться классами toleft и toright</p>
-					<p>У картнок обязательно нужно прописывать alt и если нужно title</p>
-					<p>Для логического разбиения текстов на абзацы стоит параграфы   p , а не перенос строк br</p>
-					<blockquote>
-						Это - цитата. Если нам нужно выделить каой нибудь элемент в заметный блок можно и нужно воспользоваться этим элементом.  И соответсвенно не заыбть достойно оформить его в css
-						<p class="author">Так говорил Заратустра</p>
-					</blockquote>
+				<h3 class="tab_opened">Списки</h3>
 
-					<p>Вообще, в тексте может встречаться много разного текстовго оформления</p>
-					<dl>
-						<dt><strong>Жирный текст</strong></dt><dd> &ndash; лучше использовать strong а не b</dd>
-						<dt><i>Курсив</i></dt><dd> использовать i или em </dd>
-						<dt><ins>Особый</ins></dt><dd> если не хватает курссива и жирного можно использовать ins </dd>
-						<dt><mark>Выделенный</mark></dt><dd> а если и ins не зватает можно использовать  mark</dd>
-						<dt><dfn>Определение</dfn></dt><dd> оформляется имеено так. </dd>
-						<dt><a href="#">Ссылки</a></dt><dd> просто ссылки в тексте</dd>
-						<dt><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a></dt><dd> если это ссылка на файл то и офрмлять ее соотвествующе</dd>
-						<dt><s class="r">Р</s></dt><dd> если нужен знак рубля  &lt;s class="r"&gt;Р&lt;/s&gt; буковку выбирать выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13">тут</a></dd>
-					</dl>
+				<div>
+					<h5>Ненумерованный список (это - заголовок V уровня)</h5>
+					<ul>
+						<li>Заголовок должен быть короче трех строк.</li>
+						<li>При названии разделов используйте уже устоявшиеся термины, такие
+							как гостевая книга, чат, ссылка, главная страница и другие.
+						</li>
+						<li>Перед использованием специального термина или слова, решите,
+							будет ли оно понятно читателю.
+						</li>
+					</ul>
 
-					<img src="https://www.imageprom.com/upload/iblock/495/3.jpg" alt="Картинка выроненная по правому краю"  class="toleft with_big" data-big="https://www.imageprom.com/upload/iblock/624/3.jpg?246925215.87240747" data-title="Шестеренка" data-desc="Шестеренка пятереночная в масле" data-link="http://bmnn.ru"  />
+					<h6>Нумерованный многоуровневый список (это - заголовок VI уровня)</h6>
+					<ol>
+						<li>Заголовок должен быть короче трех строк.</li>
+						<li>При названии разделов используйте уже устоявшиеся термины, такие
+							как гостевая книга, чат, ссылка, главная страница и другие.
+							<ol>
+								<li>Заголовок должен быть короче трех строк.</li>
+							</ol>
+						</li>
+						<li>Перед использованием специального термина или слова, решите,
+							будет ли оно понятно читателю.
+							<ol>
+								<li>Заголовок должен быть короче трех строк.</li>
+								<li>При названии разделов используйте уже устоявшиеся термины, такие
+									как гостевая книга, чат, ссылка, главная страница и другие.
+									<ol>
+										<li>Заголовок должен быть короче трех строк.</li>
+										<li>При названии разделов используйте уже устоявшиеся термины, такие
+											как гостевая книга, чат, ссылка, главная страница и другие.
+										</li>
+									</ol>
+								</li>
+								<li>Перед использованием специального термина или слова, решите,
+									будет ли оно понятно читателю.
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</div>
 
-					<h4>Динамические элементы (это - заголовок IV уровня)</h4>
-					<p>Времена статичного и скучного интернена прошли. В настоящее время элементы могут нести не только смысловую но и функциональную нагрузку. Например картинка, располложенаая справа может увеличивться.
-					В более старыйх сайтах вместо data-big использовался параметр big</p>
+				<h3 class="tab_opened">Таблицы</h3>
 
-
-					<h5>Вкладки</h5>
-					<p>Некоторые элементы могут своачиваться и разворачиваться</p>
-
-					<h2 class="tab_opened">Если нажать - свернется)</h2>
-					<div><p>Здесь лежит текст который нужно скрыть не забудьте окружающий div.</p></div>
-
-					<h2 class="tab">Если нажать - развернется</h2>
-					<div><p>Здесь лежит текст который скрыт сразу забудьте окружающий div.</p></div>
-
-					<h6>Таблицы (заголовк VI уровня)</h6>
-
-					<table class="tbl">
+				<table class="tbl">
 					<caption>Таблица №5. Заголовок таблицы.</caption>
 					<thead>
 					<tr>
@@ -156,346 +234,493 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 					</thead>
 					<tbody>
 					<tr>
-					  <th rowspan="2">Скидка на уторговывание %</th>
-					  <td>Скидки на цены коммерческих объектов недвижимости</td>
-					  <td>13%</td>
-					  <td>10.09.2012</td>
+						<th rowspan="2">Скидка на уторговывание %</th>
+						<td>Скидки на цены коммерческих объектов недвижимости</td>
+						<td>13%</td>
+						<td>10.09.2012</td>
 
-					  <td>11.08.2013</td>
+						<td>11.08.2013</td>
 					</tr>
-					  <tr>
-					  <td>Скидки на цены коммерческих объектов недвижимости</td>
-					  <td>13%</td>
-					  <td>10.09.2012</td>
-					  <td>11.08.2013</td>
+					<tr>
+						<td>Скидки на цены коммерческих объектов недвижимости</td>
+						<td>13%</td>
+						<td>10.09.2012</td>
+						<td>11.08.2013</td>
 
 					</tr>
 					<tr>
-					  <th rowspan="2">Скидка на уторговывание %</th>
-					  <td>Скидки на цены коммерческих объектов недвижимости</td>
-					  <td>13%</td>
-					  <td>10.09.2012</td>
-					  <td>11.08.2013</td>
+						<th rowspan="2">Скидка на уторговывание %</th>
+						<td>Скидки на цены коммерческих объектов недвижимости</td>
+						<td>13%</td>
+						<td>10.09.2012</td>
+						<td>11.08.2013</td>
 
 					</tr>
-					  <tr>
-					  <td>Скидки на цены коммерческих объектов недвижимости</td>
-					  <td>13%</td>
-					  <td>10.09.2012</td>
-					  <td>11.08.2013</td>
+					<tr>
+						<td>Скидки на цены коммерческих объектов недвижимости</td>
+						<td>13%</td>
+						<td>10.09.2012</td>
+						<td>11.08.2013</td>
 					</tr>
-					</tbody></table>
+					</tbody>
+				</table>
 
-				<section>
-					<h6>Списки</h6>
-					<ul>
-						<li>Заголовок должен быть короче трех строк.</li>
-						<li>При названии разделов используйте уже устоявшиеся термины, такие
-							как гостевая книга, чат, ссылка, главная страница и другие.</li>
-						<li>Перед использованием специального термина или слова, решите,
-							будет ли оно понятно читателю.</li>
-					</ul>
+				<h3 class="tab_opened">Макет формы</h3>
 
-					<ol>
-						<li>Заголовок должен быть короче трех строк.</li>
-						<li>При названии разделов используйте уже устоявшиеся термины, такие
-							как гостевая книга, чат, ссылка, главная страница и другие.</li>
-						<li>Перед использованием специального термина или слова, решите,
-							будет ли оно понятно читателю.</li>
-					</ol>
-				</section>
+				<div>
+					E-mail<br />
+					<input type="text" placeholder="Ваш e-mail" class="inpt" /><br />
+					<textarea class="clear-input inpt">Комментарий</textarea><br />
+					<input type="submit" value="Отправить" class="btn" />
 
+					<div class="radio">
+						<p><input id="r1" type="radio" name="gender" value="male"><label for="r1">Male</label></p>
+						<p><input id="r2" type="radio" name="gender" value="female"><label for="r2">Female</label></p>
+						<p><input id="r3" type="radio" name="gender" value="female" disabled><label for="r3">Radio disabled</label></p>
+					</div>
+
+					<div class="checkbox">
+						<p><input id="check1" type="checkbox" name="check" value="check1"><label for="check1">Checkbox No. 1</label></p>
+						<p><input id="check2" type="checkbox" name="check" value="check2"><label for="check2">Checkbox No. 2</label></p>
+						<p><input id="check3" type="checkbox" name="check" value="check3" disabled><label for="check3">Checkbox disabled</label></p>
+					</div>
+
+					<div>
+						<label for="select">Выпадающий список</label>
+						<select name="select" id="select" class="select">
+							<option value="">Ничего не выбрано</option>
+							<option value="select1">Select No. 1</option>
+							<option value="select2">Select No. 2</option>
+							<option value="select3" disabled>Select No. 3</option>
+							<option value="select4">Select No. 4</option>
+							<option value="select5">Select No. 5</option>
+						</select>
+					</div>
+
+					<div>
+						<p>Чтобы использовать выпадающий список с поиском и стилизацией, необходимо к select применить класс nx-select.</p>
+						<label for="nx-select">Выпадающий список c поиском</label>
+						<select name="select" id="nx-select" class="nx-select">
+							<option value="">Ничего не выбрано</option>
+							<option value="select1">Select No. 1</option>
+							<option value="select2">Select No. 2</option>
+							<option value="select3" disabled>Select No. 3</option>
+							<option value="select4">Select No. 4</option>
+							<option value="select5">Select No. 5</option>
+						</select>
+					</div>
+				</div>
+
+				<h3 class="tab_opened">Оформление кнопок</h3>
+
+				<div>
+					<p>Кнопки можно использовать в тегах: button, div, span, a, input и др. Не забудьте применить класс btn.</p>
+
+					<button class="btn">Обычная кнопка</button>
+					<button class="btn btn-dark">Обычная темная кнопка</button>
+					<button class="btn btn-disabled" >Неактивная кнопка</button>
+				</div>
+
+				<h2 class="tab">Вкладки</h2>
+				<div>
+					<h3>Вкладки (JS)</h3>
+
+					<h5 class="tab_opened">Описание</h5>
+					<div><p>Некоторые элементы могут сворачиваться и разворачиваться. Используете класс tab и последующий div для скрытия контента, который хотите разместить во вкладке. Или же можно использовать класс tab_opened, чтобы вкладка была открытая.</p></div>
+
+					<h5 class="tab">Пример кода для вставки</h5>
+					<div><p>
+						<pre><code>&lt;h5 class="tab"&gt;Название вкладки&lt;/h5&gt;
+&lt;div&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h5 class="tab_opened"&gt;Название вкладки (вкладка открыта)&lt;/h5&gt;
+&lt;div&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+					</p></div>
+
+					<h5 class="tab">Пример</h5>
+					<div>
+						<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Мистер
+							Магдалин, вы не вулкан. Вы хотите перестать пить больше воды? Он, он, она, нанятый.
+							Посоветуйте ей здесь. В целом, истины!</p>
+						<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Я имею в
+							виду, кроме Харви, ты хочешь стать временным поклонником тенниса? Часть боли,
+							которой он помешал уйти, была бы очень полезна вулкану!</p>
+					</div>
+
+					<h3>Вкладки (вариант без использования JS)</h3>
+
+					<details open>
+						<summary><h5>Описание</h5></summary>
+						<p>Более новый способ сворачивания и разворачивания элементов без использования JavaScript. Используйте теги details и summary. Чтобы вкладка была развернута, добавьте details атрибут open.</p>
+					</details>
+
+					<details>
+						<summary><h5>Пример кода для вставки</h5></summary>
+						<p>
+							<pre><code>&lt;details&gt;
+   &lt;summary&gt;Название вкладки&lt;/summary&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details open&gt;
+   &lt;summary&gt;Название вкладки (вкладка открыта)&lt;/summary&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+   &lt;p&gt;Ваш текст&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+						</p>
+					</details>
+
+					<details>
+						<summary><h5>Пример</h5></summary>
+						<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Мистер
+							Магдалин, вы не вулкан. Вы хотите перестать пить больше воды? Он, он, она, нанятый.
+							Посоветуйте ей здесь. В целом, истины!</p>
+						<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Я имею в
+							виду, кроме Харви, ты хочешь стать временным поклонником тенниса? Часть боли,
+							которой он помешал уйти, была бы очень полезна вулкану!</p>
+					</details>
 
 					<section>
-						<h6>Макет формы</h6>
-						E-mail<br />
-						<input type="text" placeholder="Ваш e-mail" class="inpt" /><br />
-						<textarea class="clear-input inpt">Комментарий</textarea><br />
-						<input type="submit" value="Отправить" class="btn" />
+						<h3>Вкладки/табы (jQuery)</h3>
 
-						<div class="radio">
-							<p><input id="r1" type="radio" name="gender" value="male"><label for="r1">Male</label></p>
-							<p><input id="r2" type="radio" name="gender" value="female"><label for="r2">Female</label></p>
-						</div>
-
-						<div class="checkbox">
-							<p><input id="check1" type="checkbox" name="check" value="check1"><label for="check1">Checkbox No. 1</label></p>
-							<p><input id="check2" type="checkbox" name="check" value="check2"><label for="check2">Checkbox No. 2</label></p>
+						<div class="nx-tabs">
+							<ul>
+								<li><a href="#tabs-1">Описание</a></li>
+								<li><a href="#tabs-2">Пример кода для вставки</a></li>
+								<li><a href="#tabs-3">Пример</a></li>
+							</ul>
+							<div id="tabs-1">
+								<p>Чтобы использоваться вкладки, необходимо родительскому блоку применить класс nx-tabs.</p>
+							</div>
+							<div id="tabs-2">
+								<p>
+								<pre><code>&lt;div class="nx-tabs"&gt;
+   &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#tabs-1"&gt;Первая вкладка&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#tabs-2"&gt;Вторая вкладка&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#tabs-3"&gt;Третья вкладка&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+   &lt;div id="tabs-1"&gt;
+      &lt;p&gt;Текст первой вкладки.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div id="tabs-2"&gt;
+      &lt;p&gt;Текст второй вкладки.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div id="tabs-3"&gt;
+      &lt;p&gt;Текст третьей вкладки.&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+								</p>
+							</div>
+							<div id="tabs-3">
+								<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Мистер
+									Магдалин, вы не вулкан. Вы хотите перестать пить больше воды? Он, он, она, нанятый.
+									Посоветуйте ей здесь. В целом, истины!</p>
+								<p>Благодарим вас за проявленный интерес к нашей компании, основному самолету. Я имею в
+									виду, кроме Харви, ты хочешь стать временным поклонником тенниса? Часть боли,
+									которой он помешал уйти, была бы очень полезна вулкану!</p>
+							</div>
 						</div>
 					</section>
+				</div>
 
-					<h2 class="tab">Иконки</h2>
+				<h2 class="tab">Переменные CSS</h2>
+				<div>
+					<p>Почитать про использование переменных в CSS можно на <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties" target="_blank">MDN</a></p>
+
 					<div>
-						<p>Сгенерить новый иконочный шрифт можно тут http://fontello.com</p>
-
-						<p><span class="nx-load">@</span> <span class="nx-load">O</span> <span class="nx-load">o</span></p>
-
-						<style>
-							.text-cols span {
-								margin-left: 20px;
-								font-family: 'nx', sans-serif;
-								font-size: 24px;
-							}
-							.text-cols {
-								-webkit-column-count: 6;
-								-moz-column-count: 6;
-								column-count: 6;
-								-webkit-column-gap: 4%;
-								-moz-column-gap: 4%;
-								column-gap: 4%;
-								-webkit-column-rule: solid lightgrey;
-								-moz-column-rule: solid lightgrey;
-								column-rule: solid lightgrey;
-							}
-						</style>
-
-						<div class="text-cols">
-							<p>А<span>А</span></p><p>а<span>а</span></p><p>Б<span>Б</span></p><p>б<span>б</span></p>
-							<p>В<span>В</span></p><p>в<span>в</span></p><p>Г<span>Г</span></p><p>г<span>г</span></p>
-							<p>Д<span>Д</span></p><p>д<span>д</span></p><p>Е<span>Е</span></p><p>е<span>е</span></p>
-							<p>Ё<span>Ё</span></p><p>ё<span>ё</span></p><p>Ж<span>Ж</span></p><p>ж<span>ж</span></p>
-							<p>З<span>З</span></p><p>з<span>з</span></p><p>И<span>И</span></p><p>и<span>и</span></p>
-							<p>Й<span>Й</span></p><p>й<span>й</span></p><p>К<span>К</span></p><p>к<span>к</span></p>
-							<p>Л<span>Л</span></p><p>л<span>л</span></p><p>М<span>М</span></p><p>м<span>м</span></p>
-							<p>Н<span>Н</span></p><p>н<span>н</span></p><p>О<span>О</span></p><p>о<span>о</span></p>
-							<p>П<span>П</span></p><p>п<span>п</span></p><p>Р<span>Р</span></p><p>р<span>р</span></p>
-							<p>С<span>С</span></p><p>с<span>с</span></p><p>Т<span>Т</span></p><p>т<span>т</span></p>
-							<p>У<span>У</span></p><p>у<span>у</span></p><p>Ф<span>Ф</span></p><p>ф<span>ф</span></p>
-							<p>Х<span>Х</span></p><p>х<span>х</span></p><p>Ц<span>Ц</span></p><p>ц<span>ц</span></p>
-							<p>Ч<span>Ч</span></p><p>ч<span>ч</span></p><p>Ш<span>Ш</span></p><p>ш<span>ш</span></p>
-							<p>Щ<span>Щ</span></p><p>щ<span>щ</span></p><p>Ъ<span>Ъ</span></p><p>ъ<span>ъ</span></p>
-							<p>Ы<span>Ы</span></p><p>ы<span>ы</span></p><p>Ь<span>Ь</span></p><p>ь<span>ь</span></p>
-							<p>Э<span>Э</span></p><p>э<span>э</span></p><p>Ю<span>Ю</span></p><p>ю<span>ю</span></p>
-							<p>Я<span>Я</span></p><p>я<span>я</span></p>
-						</div>
-
-						<br /><hr /><br />
-
-						<div class="text-cols">
-							<p>A<span>A</span></p><p>a<span>a</span></p><p>B<span>B</span></p><p>b<span>b</span></p>
-							<p>C<span>C</span></p><p>c<span>c</span></p><p>D<span>D</span></p><p>d<span>d</span></p>
-							<p>E<span>E</span></p><p>e<span>e</span></p><p>F<span>F</span></p><p>f<span>f</span></p>
-							<p>G<span>G</span></p><p>g<span>g</span></p><p>H<span>H</span></p><p>h<span>h</span></p>
-							<p>I<span>I</span></p><p>i<span>i</span></p><p>J<span>J</span></p><p>j<span>j</span></p>
-							<p>K<span>K</span></p><p>k<span>k</span></p><p>L<span>L</span></p><p>l<span>l</span></p>
-							<p>M<span>M</span></p><p>m<span>m</span></p><p>N<span>N</span></p><p>n<span>n</span></p>
-							<p>O<span>O</span></p><p>o<span>o</span></p><p>P<span>P</span></p><p>p<span>p</span></p>
-							<p>Q<span>Q</span></p><p>q<span>q</span></p><p>R<span>R</span></p><p>r<span>r</span></p>
-							<p>S<span>S</span></p><p>s<span>s</span></p><p>T<span>T</span></p><p>t<span>t</span></p>
-							<p>U<span>U</span></p><p>u<span>u</span></p><p>V<span>V</span></p><p>v<span>v</span></p>
-							<p>W<span>W</span></p><p>w<span>w</span></p><p>X<span>X</span></p><p>x<span>x</span></p>
-							<p>Y<span>Y</span></p><p>y<span>y</span></p><p>Z<span>Z</span></p><p>z<span>z</span></p>
-						</div>
-
-						<br /><hr /><br />
-
-						<div class="text-cols">
-							<p>1<span>1</span></p><p>2<span>2</span></p><p>3<span>3</span></p><p>4<span>4</span></p>
-							<p>5<span>5</span></p><p>6<span>6</span></p><p>7<span>7</span></p><p>8<span>8</span></p>
-							<p>9<span>9</span></p><p>0<span>0</span></p><p>!<span>!</span></p><p>@<span>@</span></p>
-							<p>%<span>%</span></p><p>&<span>&</span></p><p>?<span>?</span></p><p>-<span>-</span></p>
-							<p>+<span>+</span></p><p>₠<span>₠</span></p><p>$<span>$</span><p>~<span>~</span></p>
-						</div>
-
-						<br /><hr /><br />
-
-						<div class="text-cols">
-							<p>=<span>=</span></p><p>|<span>|</span></p><p>_<span>_</span></p><p>#<span>#</span></p>
-							<p><<span><</span></p><p>><span>></span></p><p>˄<span>˄</span></p><p>˅<span>˅</span></p>
-							<p>◀<span>◀</span></p><p>▶<span>▶</span></p><p>▼<span>▼</span></p><p>▲<span>▲</span></p>
-							<p>±<span>±</span></p><p>⊕<span>⊕</span></p><p>⭳<span>⭳</span></p>
-							<p>↓<span>↓</span></p><p>←<span>←</span></p><p>→<span>→</span></p><p>↑<span>↑</span></p>
-							<p>■<span>■</span></p><p>ǁ<span>ǁ</span></p><p>{<span>{</span></p><p>}<span>}</span></p>
-							<p>■<span>■</span></p><p>ǁ<span>ǁ</span></p><p>{<span>{</span></p><p>}<span>}</span></p>
-							<p>[<span>[</span></p><p>]<span>]</span></p><p>△<span>△</span></p><p>▷<span>▷</span></p>
-						</div>
-
+						<h5>Назначение в CSS (styles.css)</h5>
+<pre><code>:root {
+   --f-def: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+   --f-icon: nx, Tahoma, Geneva, sans-serif;
+   --f-black: #000;
+   --c-green: #167926;
+   --transition-def: all 0.3s ease-out;
+   --shadow-def: 0 0 3px #bbb inset;
+}</code></pre>
 					</div>
 
-					<h2 class="tab">Структурные блоки флексбоксов</h2>
 					<div>
-						<style>
-							.nx-flex-demo {border:1px solid #000; padding: 10px; margin-bottom: 10px; height: 200px;}
-							.nx-flex-demo > div { display: -ms-flexbox; display: -webkit-flex; display: flex; width:auto; background: #ccc; margin: 2px; padding: 10px;}
-						</style>
-
-						<b>.nx-flex-row</b>
-						<div class="nx-flex-demo nx-flex-row" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-col</b>
-						<div class="nx-flex-demo nx-flex-col" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-col-st</b>
-						<div class="nx-flex-demo nx-flex-col-st" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-row-btw</b>
-						<div class="nx-flex-demo nx-flex-row-btw" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-col-btw</b>
-						<div class="nx-flex-demo nx-flex-col-btw" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-row-btw-st</b>
-						<div class="nx-flex-demo nx-flex-row-btw-st" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-row-btw-c</b>
-						<div class="nx-flex-demo nx-flex-row-btw-c" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-col-btw-st</b>
-						<div class="nx-flex-demo nx-flex-col-btw-st" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-row-c-c</b>
-						<div class="nx-flex-demo nx-flex-row-c-c" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-col-c-c</b>
-						<div class="nx-flex-demo nx-flex-col-c-c" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-row-b-c</b>
-						<div class="nx-flex-demo nx-flex-row-b-c" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-row-t-c</b>
-						<div class="nx-flex-demo nx-flex-row-t-c" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-col-t-c</b>
-						<div class="nx-flex-demo nx-flex-col-t-c" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-
-						<b>.nx-flex-row-t-r</b>
-						<div class="nx-flex-demo nx-flex-row-t-r" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-col-t-r</b>
-						<div class="nx-flex-demo nx-flex-col-t-r" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-row-l-c</b>
-						<div class="nx-flex-demo nx-flex-row-l-c" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-col-l-c</b>
-						<div class="nx-flex-demo nx-flex-col-l-c" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-row-r-c</b>
-						<div class="nx-flex-demo nx-flex-row-r-c" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-col-r-c</b>
-						<div class="nx-flex-demo nx-flex-col-r-c" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-col-btw-r</b>
-						<div class="nx-flex-demo nx-flex-col-btw-r" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-col-b-l</b>
-						<div class="nx-flex-demo nx-flex-col-b-l" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-col-b-r</b>
-						<div class="nx-flex-demo nx-flex-col-b-r" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-row-b-l</b>
-						<div class="nx-flex-demo nx-flex-row-b-l" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-row-b-r</b>
-						<div class="nx-flex-demo nx-flex-row-b-r" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
-						<b>.nx-flex-row-btw-b-r</b>
-						<div class="nx-flex-demo nx-flex-row-btw-b-r" >
-							<div>1</div>
-							<div>2eee</div>
-							<div>3fasd asdasd</div>
-						</div>
-
+						<h5>Использование в CSS</h5>
+<pre><code>.your-class {
+   color: var(--c-green);
+   color: var(--c-green, #ddfcc8); // Резервное значение, если переменная не задана
+   ...
+   font-family: var(--f-icon), Arial, Roboto; // Дополнительные значения свойства
+   ...
+}</code></pre>
 					</div>
+				</div>
+
+				<h2 class="tab">Иконки</h2>
+				<div>
+					<p>Сгенерить новый иконочный шрифт можно тут http://fontello.com</p>
+
+					<p><span class="nx-load">@</span> <span class="nx-load">O</span> <span class="nx-load">o</span></p>
+
+					<style>
+						.text-cols span {margin-left: 20px;font-family: 'nx', sans-serif;font-size: 24px;}
+						.text-cols {-webkit-column-count: 6;-moz-column-count: 6;column-count: 6;-webkit-column-gap: 4%;-moz-column-gap: 4%;column-gap: 4%;-webkit-column-rule: solid lightgrey;-moz-column-rule: solid lightgrey;column-rule: solid lightgrey;}
+					</style>
+
+					<div class="text-cols">
+						<p>А<span>А</span></p><p>а<span>а</span></p><p>Б<span>Б</span></p><p>б<span>б</span></p>
+						<p>В<span>В</span></p><p>в<span>в</span></p><p>Г<span>Г</span></p><p>г<span>г</span></p>
+						<p>Д<span>Д</span></p><p>д<span>д</span></p><p>Е<span>Е</span></p><p>е<span>е</span></p>
+						<p>Ё<span>Ё</span></p><p>ё<span>ё</span></p><p>Ж<span>Ж</span></p><p>ж<span>ж</span></p>
+						<p>З<span>З</span></p><p>з<span>з</span></p><p>И<span>И</span></p><p>и<span>и</span></p>
+						<p>Й<span>Й</span></p><p>й<span>й</span></p><p>К<span>К</span></p><p>к<span>к</span></p>
+						<p>Л<span>Л</span></p><p>л<span>л</span></p><p>М<span>М</span></p><p>м<span>м</span></p>
+						<p>Н<span>Н</span></p><p>н<span>н</span></p><p>О<span>О</span></p><p>о<span>о</span></p>
+						<p>П<span>П</span></p><p>п<span>п</span></p><p>Р<span>Р</span></p><p>р<span>р</span></p>
+						<p>С<span>С</span></p><p>с<span>с</span></p><p>Т<span>Т</span></p><p>т<span>т</span></p>
+						<p>У<span>У</span></p><p>у<span>у</span></p><p>Ф<span>Ф</span></p><p>ф<span>ф</span></p>
+						<p>Х<span>Х</span></p><p>х<span>х</span></p><p>Ц<span>Ц</span></p><p>ц<span>ц</span></p>
+						<p>Ч<span>Ч</span></p><p>ч<span>ч</span></p><p>Ш<span>Ш</span></p><p>ш<span>ш</span></p>
+						<p>Щ<span>Щ</span></p><p>щ<span>щ</span></p><p>Ъ<span>Ъ</span></p><p>ъ<span>ъ</span></p>
+						<p>Ы<span>Ы</span></p><p>ы<span>ы</span></p><p>Ь<span>Ь</span></p><p>ь<span>ь</span></p>
+						<p>Э<span>Э</span></p><p>э<span>э</span></p><p>Ю<span>Ю</span></p><p>ю<span>ю</span></p>
+						<p>Я<span>Я</span></p><p>я<span>я</span></p>
+					</div>
+
+					<br /><hr /><br />
+
+					<div class="text-cols">
+						<p>A<span>A</span></p><p>a<span>a</span></p><p>B<span>B</span></p><p>b<span>b</span></p>
+						<p>C<span>C</span></p><p>c<span>c</span></p><p>D<span>D</span></p><p>d<span>d</span></p>
+						<p>E<span>E</span></p><p>e<span>e</span></p><p>F<span>F</span></p><p>f<span>f</span></p>
+						<p>G<span>G</span></p><p>g<span>g</span></p><p>H<span>H</span></p><p>h<span>h</span></p>
+						<p>I<span>I</span></p><p>i<span>i</span></p><p>J<span>J</span></p><p>j<span>j</span></p>
+						<p>K<span>K</span></p><p>k<span>k</span></p><p>L<span>L</span></p><p>l<span>l</span></p>
+						<p>M<span>M</span></p><p>m<span>m</span></p><p>N<span>N</span></p><p>n<span>n</span></p>
+						<p>O<span>O</span></p><p>o<span>o</span></p><p>P<span>P</span></p><p>p<span>p</span></p>
+						<p>Q<span>Q</span></p><p>q<span>q</span></p><p>R<span>R</span></p><p>r<span>r</span></p>
+						<p>S<span>S</span></p><p>s<span>s</span></p><p>T<span>T</span></p><p>t<span>t</span></p>
+						<p>U<span>U</span></p><p>u<span>u</span></p><p>V<span>V</span></p><p>v<span>v</span></p>
+						<p>W<span>W</span></p><p>w<span>w</span></p><p>X<span>X</span></p><p>x<span>x</span></p>
+						<p>Y<span>Y</span></p><p>y<span>y</span></p><p>Z<span>Z</span></p><p>z<span>z</span></p>
+					</div>
+
+					<br /><hr /><br />
+
+					<div class="text-cols">
+						<p>1<span>1</span></p><p>2<span>2</span></p><p>3<span>3</span></p><p>4<span>4</span></p>
+						<p>5<span>5</span></p><p>6<span>6</span></p><p>7<span>7</span></p><p>8<span>8</span></p>
+						<p>9<span>9</span></p><p>0<span>0</span></p><p>!<span>!</span></p><p>@<span>@</span></p>
+						<p>%<span>%</span></p><p>&<span>&</span></p><p>?<span>?</span></p><p>-<span>-</span></p>
+						<p>+<span>+</span></p><p>₠<span>₠</span></p><p>$<span>$</span><p>~<span>~</span></p>
+					</div>
+
+					<br /><hr /><br />
+
+					<div class="text-cols">
+						<p>=<span>=</span></p><p>|<span>|</span></p><p>_<span>_</span></p><p>#<span>#</span></p>
+						<p><<span><</span></p><p>><span>></span></p><p>˄<span>˄</span></p><p>˅<span>˅</span></p>
+						<p>◀<span>◀</span></p><p>▶<span>▶</span></p><p>▼<span>▼</span></p><p>▲<span>▲</span></p>
+						<p>±<span>±</span></p><p>⊕<span>⊕</span></p><p>⭳<span>⭳</span></p>
+						<p>↓<span>↓</span></p><p>←<span>←</span></p><p>→<span>→</span></p><p>↑<span>↑</span></p>
+						<p>■<span>■</span></p><p>ǁ<span>ǁ</span></p><p>{<span>{</span></p><p>}<span>}</span></p>
+						<p>■<span>■</span></p><p>ǁ<span>ǁ</span></p><p>{<span>{</span></p><p>}<span>}</span></p>
+						<p>[<span>[</span></p><p>]<span>]</span></p><p>△<span>△</span></p><p>▷<span>▷</span></p>
+					</div>
+
+				</div>
+
+				<h2 class="tab">Структурные блоки флексбоксов</h2>
+				<div>
+					<style>
+						.nx-flex-demo {border:1px solid #000; padding: 10px; margin-bottom: 10px; height: 200px;}
+						.nx-flex-demo > div { display: -ms-flexbox; display: -webkit-flex; display: flex; width:auto; background: #ccc; margin: 2px; padding: 10px;}
+					</style>
+
+					<b>.nx-flex-row</b>
+					<div class="nx-flex-demo nx-flex-row" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col</b>
+					<div class="nx-flex-demo nx-flex-col" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-st</b>
+					<div class="nx-flex-demo nx-flex-col-st" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-btw</b>
+					<div class="nx-flex-demo nx-flex-row-btw" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-btw</b>
+					<div class="nx-flex-demo nx-flex-col-btw" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-btw-st</b>
+					<div class="nx-flex-demo nx-flex-row-btw-st" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-btw-c</b>
+					<div class="nx-flex-demo nx-flex-row-btw-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-btw-st</b>
+					<div class="nx-flex-demo nx-flex-col-btw-st" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-c-c</b>
+					<div class="nx-flex-demo nx-flex-row-c-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-c-c</b>
+					<div class="nx-flex-demo nx-flex-col-c-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-b-c</b>
+					<div class="nx-flex-demo nx-flex-row-b-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-t-c</b>
+					<div class="nx-flex-demo nx-flex-row-t-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-t-c</b>
+					<div class="nx-flex-demo nx-flex-col-t-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+
+					<b>.nx-flex-row-t-r</b>
+					<div class="nx-flex-demo nx-flex-row-t-r" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-t-r</b>
+					<div class="nx-flex-demo nx-flex-col-t-r" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-l-c</b>
+					<div class="nx-flex-demo nx-flex-row-l-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-l-c</b>
+					<div class="nx-flex-demo nx-flex-col-l-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-r-c</b>
+					<div class="nx-flex-demo nx-flex-row-r-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-r-c</b>
+					<div class="nx-flex-demo nx-flex-col-r-c" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-btw-r</b>
+					<div class="nx-flex-demo nx-flex-col-btw-r" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-b-l</b>
+					<div class="nx-flex-demo nx-flex-col-b-l" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-col-b-r</b>
+					<div class="nx-flex-demo nx-flex-col-b-r" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-b-l</b>
+					<div class="nx-flex-demo nx-flex-row-b-l" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-b-r</b>
+					<div class="nx-flex-demo nx-flex-row-b-r" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+					<b>.nx-flex-row-btw-b-r</b>
+					<div class="nx-flex-demo nx-flex-row-btw-b-r" >
+						<div>1</div>
+						<div>2eee</div>
+						<div>3fasd asdasd</div>
+					</div>
+
+				</div>
 
 				<!-- КОНЕЦ ТЕСТОВОГО КОНТЕНТА -->
 
@@ -545,14 +770,14 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 			<div class="right hyphenate" >
 				<aside>
 					<h6>Блок информации 1</h6>
-					<p> Данный текст красво переносится спомощью яваскрипта. Чтобы эффект сработал достаточно у родителя указать класс hyphenate. Переносы важны. Стоит учесть что если мы используем переносы то неплохо бы выровнять текст по ширише используя text-align:justify</p>
-					<p><u>Однако, если текст подчернут то выранивать по ширине нужно аккуратно, иначе получится некрасиво. Как-то вот так.</u></p>
+					<p> Данный текст красиво переносится с помощью яваскрипта. Чтобы эффект сработал достаточно у родителя указать класс hyphenate. Переносы важны. Стоит учесть что если мы используем переносы то неплохо бы выровнять текст по ширине используя text-align:justify</p>
+					<p><u>Однако, если текст подчеркнут то выравнивать по ширине нужно аккуратно, иначе получится некрасиво. Как-то вот так.</u></p>
 				</aside>
 
 				<aside style="text-align:justify">
 					<h6>Блок информации 2</h6>
-					<p> Данный текст красво переносится спомощью яваскрипта. Чтобы эффект сработал достаточно у родителя указать класс hyphenate. Переносы важны. Стоит учесть что если мы используем переносы то неплохо бы выровнять текст по ширише используя text-align:justify</p>
-					<p><u>Однако, если текст подчернут то выранивать по ширине нужно аккуратно, иначе получится некрасиво. Как-то вот так.</u></p>
+					<p> Данный текст красиво переносится с помощью яваскрипта. Чтобы эффект сработал достаточно у родителя указать класс hyphenate. Переносы важны. Стоит учесть что если мы используем переносы то неплохо бы выровнять текст по ширине используя text-align:justify</p>
+					<p><u>Однако, если текст подчеркнут то выравнивать по ширине нужно аккуратно, иначе получится некрасиво. Как-то вот так.</u></p>
 				</aside>
 			</div>
 
@@ -566,7 +791,7 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 				<a class="tw" title="Наш Twitter" href="/">Twitter</a>
 				<a class="vk" title="Мы ВКонтакте" href="/">ВКонтакте</a>
 				<a class="fb" title="Мы в Facebook" href="/">Facebook</a>
-				<a class="ok" title="Мы в Однокласниках" href="/">Однокласники</a>
+				<a class="ok" title="Мы в Однокласниках" href="/">Одноклассники</a>
 				<a class="yt" title="Мы на YouTube" href="/">YouTube</a>
 			</nav>
 
