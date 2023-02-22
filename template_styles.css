@@ -95,7 +95,7 @@ body.on-scroll {
 .inner--green,
 .inner--green::before,
 .inner--green::after{
-	background-color: #ddfcc8;
+	background-color: var(--c-light-green);
 }
 
 .inner--black,
@@ -113,7 +113,7 @@ body.on-scroll {
 	margin: 0; 
 	height: 100px;
 	background: #fff;
-	border: 1px solid #e1e1e1; 
+	border: var(--b-light-gray);
 	position: relative;
 }
 
@@ -161,7 +161,7 @@ body.on-scroll {
 	position: relative;  
 	padding: 15px; 
 	background:#fff;
-	border: 1px solid #e1e1e1;
+	border: var(--b-light-gray);
  -webkit-order: 0;
 -ms-flex-order: 0;
     	 order: 0;
@@ -180,7 +180,7 @@ body.on-scroll {
 	padding: 15px; 
 	position: relative; 
 	background:#fff;
-	border: 1px solid #e1e1e1; 
+	border: var(--b-light-gray);
  -webkit-order: 2;
 -ms-flex-order: 2;
     	 order: 2;
@@ -201,7 +201,7 @@ body.on-scroll {
 	position: relative; 
 	padding: 15px;
 	background:#fff;
-	border: 1px solid #e1e1e1;  
+	border: var(--b-light-gray);
  -webkit-order: 1;
 -ms-flex-order: 1;
     	 order: 1;
@@ -223,7 +223,7 @@ body.on-scroll {
 	overflow: hidden; 
 	clear: both; 
 	background:#fff;
-	border: 1px solid #e1e1e1;
+	border: var(--b-light-gray);
 }
 
 .footer address {
@@ -234,7 +234,7 @@ body.on-scroll {
 	padding: 15px; 
 	margin: 0;
 	background: #fcfcfc;
-	border: 1px solid #ccc;  
+	border: var(--b-gray);
 	font-style: normal;
     -webkit-flex: 0 1 auto;
         -ms-flex: 0 1 auto;
@@ -608,7 +608,7 @@ body.on-scroll {
 #NXAdaptiveMenu li a:hover {
 	display: block;
 	padding: 1em 40px 1em 1em;
-	border: 1px solid #ccc ;
+	border: var(--b-gray);
 	border-bottom-color: #f5f1e9;
 	border-left: none;
 	border-right: none;
@@ -699,7 +699,7 @@ body.on-scroll {
 	height: auto; 
 	overflow: hidden;
 	padding: 1em;
-	border-top: 1px solid #ccc ;
+	border-top: var(--b-gray);
 	background: #eeedeb; 
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
@@ -711,7 +711,7 @@ body.on-scroll {
 	float: left;
 	font-size: 11pt;
 	padding: 0.5em 1em;
-	border: 1px solid #ccc;
+	border: var(--b-gray);
 -webkit-border-radius: 0;
    -moz-border-radius: 0;
 		border-radius: 0;
@@ -800,7 +800,7 @@ body.on-scroll {
 	right: auto; 
 	bottom: auto; 
 	z-index: 1;
-	border-bottom: 1px solid #ccc ;
+	border-bottom: var(--b-gray);
 	background: none;
 }
 
@@ -817,7 +817,7 @@ body.on-scroll {
 	background: none;
 	opacity: 1;
 	text-align: center;
-	border: 1px solid #ccc;
+	border: var(--b-gray);
 	border-bottom-color: #f5f1e9;
 	border-right-color:  #f5f1e9;
 	color: #666;
