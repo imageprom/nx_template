@@ -105,14 +105,14 @@ $('.tbl').each(function(index, elt) {
 
     $(window).on('scroll', function () {
         if ($(window).width() > scrollWidthOn && $(this).scrollTop() > scrollHeightOn) {
-            $('.global-outer').addClass('on-scroll');
+            $('body').addClass('on-scroll');
         } else {
-            $('.global-outer').removeClass('on-scroll');
+            $('body').removeClass('on-scroll');
         }
     })
 
     if ($(window).scrollTop() > scrollHeightOn) {
-        $('.global-outer').removeClass('on-scroll');
+        $('body').removeClass('on-scroll');
     }
 });})(jQuery);
 

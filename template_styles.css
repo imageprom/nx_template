@@ -30,6 +30,10 @@ body {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+body.on-scroll {
+	margin-top: 100px;
+}
+
 .panel {
 	width: 100%; 
 	position: absolute; 
@@ -42,10 +46,6 @@ body {
 	overflow: hidden;
 }
 
-.global-outer.on-scroll {
-	margin-top: 100px;
-}
-
 .outer {
 	width: 100%;
 	height: auto;
@@ -54,7 +54,7 @@ body {
 }
 
 .outer--gray {
-	background-color: #fcfcfc;
+	background-color: var(--c-light-gray);
 }
 
 .container {
@@ -62,11 +62,11 @@ body {
 	width: 90%; 
 	max-width: 1260px; 
 	min-width: 1024px; 
-	height:auto;
+	height: auto;
 	margin: 0 auto; 
 	position: relative;
 	background: transparent; 
-	font-size: 13px;
+	font-size: clamp(12px, 1.7vw, 13px);
 }
 
 .inner {
@@ -95,14 +95,14 @@ body {
 .inner--green,
 .inner--green::before,
 .inner--green::after{
-	background-color: #ddfcc8;
+	background-color: var(--c-light-green);
 }
 
 .inner--black,
 .inner--black::before,
 .inner--black::after{
 	color: #fff;
-	background-color: var(--f-black);
+	background-color: var(--c-dark-gray);
 }
 
 /*---------- Header Elements ----------*/
@@ -113,7 +113,7 @@ body {
 	margin: 0; 
 	height: 100px;
 	background: #fff;
-	border: 1px solid #e1e1e1; 
+	border: var(--b-light-gray);
 	position: relative;
 }
 
@@ -161,7 +161,7 @@ body {
 	position: relative;  
 	padding: 15px; 
 	background:#fff;
-	border: 1px solid #e1e1e1;
+	border: var(--b-light-gray);
  -webkit-order: 0;
 -ms-flex-order: 0;
     	 order: 0;
@@ -180,7 +180,7 @@ body {
 	padding: 15px; 
 	position: relative; 
 	background:#fff;
-	border: 1px solid #e1e1e1; 
+	border: var(--b-light-gray);
  -webkit-order: 2;
 -ms-flex-order: 2;
     	 order: 2;
@@ -201,7 +201,7 @@ body {
 	position: relative; 
 	padding: 15px;
 	background:#fff;
-	border: 1px solid #e1e1e1;  
+	border: var(--b-light-gray);
  -webkit-order: 1;
 -ms-flex-order: 1;
     	 order: 1;
@@ -223,7 +223,7 @@ body {
 	overflow: hidden; 
 	clear: both; 
 	background:#fff;
-	border: 1px solid #e1e1e1;
+	border: var(--b-light-gray);
 }
 
 .footer address {
@@ -234,7 +234,7 @@ body {
 	padding: 15px; 
 	margin: 0;
 	background: #fcfcfc;
-	border: 1px solid #ccc;  
+	border: var(--b-gray);
 	font-style: normal;
     -webkit-flex: 0 1 auto;
         -ms-flex: 0 1 auto;
@@ -267,7 +267,7 @@ body {
 	width: -webkit-calc(100% + 30px);
 	width: -moz-calc(100% + 30px);
 	width: calc(100% + 30px);
-	background: #ccc;
+	background: var(--c-gray);
 	height: auto; 
 	margin: -20px -15px 1em -15px; 
 	padding: 1em;
@@ -329,18 +329,7 @@ body {
 
 @media only screen and (max-width: 1024px) {
 	html {overflow-x: hidden;}
-
-	.nxOpenedMenu {
-		overflow: hidden; 
-		height: 100%; 
-		width: 100%;
-	}
-
-	.nxOpenedMenu body {
-		overflow: hidden; 
-		height: 100%; 
-		width: 100%;
-	}
+	html.nxOpenedMenu {overflow-y: hidden;}
 
 	.header {height: auto;}
 
@@ -371,7 +360,7 @@ body {
 	}
 
 
-	.nxOpenedMenu .container {left: 70%;}
+	.nxOpenedMenu .container {left: 0;}
 
 	.main-outer {
 	-webkit-flex-wrap: wrap;
@@ -619,7 +608,7 @@ body {
 #NXAdaptiveMenu li a:hover {
 	display: block;
 	padding: 1em 40px 1em 1em;
-	border: 1px solid #ccc ;
+	border: var(--b-gray);
 	border-bottom-color: #f5f1e9;
 	border-left: none;
 	border-right: none;
@@ -710,7 +699,7 @@ body {
 	height: auto; 
 	overflow: hidden;
 	padding: 1em;
-	border-top: 1px solid #ccc ;
+	border-top: var(--b-gray);
 	background: #eeedeb; 
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
@@ -722,7 +711,7 @@ body {
 	float: left;
 	font-size: 11pt;
 	padding: 0.5em 1em;
-	border: 1px solid #ccc;
+	border: var(--b-gray);
 -webkit-border-radius: 0;
    -moz-border-radius: 0;
 		border-radius: 0;
@@ -811,7 +800,7 @@ body {
 	right: auto; 
 	bottom: auto; 
 	z-index: 1;
-	border-bottom: 1px solid #ccc ;
+	border-bottom: var(--b-gray);
 	background: none;
 }
 
@@ -828,7 +817,7 @@ body {
 	background: none;
 	opacity: 1;
 	text-align: center;
-	border: 1px solid #ccc;
+	border: var(--b-gray);
 	border-bottom-color: #f5f1e9;
 	border-right-color:  #f5f1e9;
 	color: #666;
