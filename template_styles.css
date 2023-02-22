@@ -30,6 +30,10 @@ body {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+body.on-scroll {
+	margin-top: 100px;
+}
+
 .panel {
 	width: 100%; 
 	position: absolute; 
@@ -42,10 +46,6 @@ body {
 	overflow: hidden;
 }
 
-.global-outer.on-scroll {
-	margin-top: 100px;
-}
-
 .outer {
 	width: 100%;
 	height: auto;
@@ -54,7 +54,7 @@ body {
 }
 
 .outer--gray {
-	background-color: #fcfcfc;
+	background-color: var(--c-light-gray);
 }
 
 .container {
@@ -62,11 +62,11 @@ body {
 	width: 90%; 
 	max-width: 1260px; 
 	min-width: 1024px; 
-	height:auto;
+	height: auto;
 	margin: 0 auto; 
 	position: relative;
 	background: transparent; 
-	font-size: 13px;
+	font-size: clamp(12px, 1.7vw, 13px);
 }
 
 .inner {
@@ -102,7 +102,7 @@ body {
 .inner--black::before,
 .inner--black::after{
 	color: #fff;
-	background-color: var(--f-black);
+	background-color: var(--c-dark-gray);
 }
 
 /*---------- Header Elements ----------*/
@@ -267,7 +267,7 @@ body {
 	width: -webkit-calc(100% + 30px);
 	width: -moz-calc(100% + 30px);
 	width: calc(100% + 30px);
-	background: #ccc;
+	background: var(--c-gray);
 	height: auto; 
 	margin: -20px -15px 1em -15px; 
 	padding: 1em;
@@ -329,18 +329,7 @@ body {
 
 @media only screen and (max-width: 1024px) {
 	html {overflow-x: hidden;}
-
-	.nxOpenedMenu {
-		overflow: hidden; 
-		height: 100%; 
-		width: 100%;
-	}
-
-	.nxOpenedMenu body {
-		overflow: hidden; 
-		height: 100%; 
-		width: 100%;
-	}
+	html.nxOpenedMenu {overflow-y: hidden;}
 
 	.header {height: auto;}
 
@@ -371,7 +360,7 @@ body {
 	}
 
 
-	.nxOpenedMenu .container {left: 70%;}
+	.nxOpenedMenu .container {left: 0;}
 
 	.main-outer {
 	-webkit-flex-wrap: wrap;

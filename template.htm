@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html class="no-js" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>">
+<!--<html class="no-js" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>">-->
+<html class="no-js" xml:lang="ru" lang="ru">
 <head>
 <!--При интеграции с bitrix этот метатег выкинуть -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -158,8 +159,8 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 					</dd>
 
 					<dt>Подсказка</dt>
-					<dd> &ndash; если нужна <a href="#" data-tooltip="Это всплывающая подсказка">всплывающая подсказка</a>, то добавьте обертке параметр data-tooltip<br />
-						<small>&lt;a href="#" data-tooltip="Это всплывающая подсказка"&gt;Подсказка&lt;/a&gt;</small>
+					<dd> &ndash; если нужна <dfn data-tooltip="Это всплывающая подсказка">всплывающая подсказка</dfn>, то добавьте обертке параметр data-tooltip<br />
+						<small>&lt;dfn data-tooltip="Это всплывающая подсказка"&gt;Подсказка&lt;/dfn&gt;</small>
 					</dd>
 				</dl>
 
@@ -183,6 +184,15 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 						<li>Заголовок должен быть короче трех строк.</li>
 						<li>При названии разделов используйте уже устоявшиеся термины, такие
 							как гостевая книга, чат, ссылка, главная страница и другие.
+							<ul>
+								<li>Заголовок должен быть короче трех строк.</li>
+								<li>При названии разделов используйте уже устоявшиеся термины, такие
+									как гостевая книга, чат, ссылка, главная страница и другие.
+								</li>
+								<li>Перед использованием специального термина или слова, решите,
+									будет ли оно понятно читателю.
+								</li>
+							</ul>
 						</li>
 						<li>Перед использованием специального термина или слова, решите,
 							будет ли оно понятно читателю.
@@ -446,7 +456,10 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
    --f-icon: nx, Tahoma, Geneva, sans-serif;
    --f-black: #000;
    --c-green: #167926;
-   --transition-def: all 0.3s ease-out;
+   --c-light-gray: #fcfcfc;
+   --c-gray: #ccc;
+   --c-dark-gray: #2d2d2d;
+   --transition-def: all .3s ease-out;
    --shadow-def: 0 0 3px #bbb inset;
 }</code></pre>
 					</div>
@@ -541,7 +554,7 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 				<div>
 					<style>
 						.nx-flex-demo {border:1px solid #000; padding: 10px; margin-bottom: 10px; height: 200px;}
-						.nx-flex-demo > div { display: -ms-flexbox; display: -webkit-flex; display: flex; width:auto; background: #ccc; margin: 2px; padding: 10px;}
+						.nx-flex-demo > div { display: -ms-flexbox; display: -webkit-flex; display: flex; width:auto; background: var(--c-gray); margin: 2px; padding: 10px;}
 					</style>
 
 					<b>.nx-flex-row</b>
@@ -817,7 +830,7 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 	<!-- Если у вас одноколоночная раскладка с блоками разных цветов -->
 	<div class="outer outer--gray">
 		<div class="container">
-			<section>
+			<section class="inner">
 				<h3>Внешний блок со сплошной заливкой</h3>
 				Продвижение и поддержка сайтов становится все более востребованной услугой у нижегородских компаний: как небольших фирм, так и крупных промышленных предприятий. И подобное положение дел представляется нам абсолютно логичным и правильным, поскольку интернет стал таким же медийным каналом как и телевидение по охвату аудитории и плюс ко всему обладает дополнительными преимуществами в виде небывалой интерактивности.
 			</section>
