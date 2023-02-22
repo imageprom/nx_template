@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--<html class="no-js" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>">-->
-<html class="no-js" xml:lang="ru" lang="ru">
+<html class="no-js" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>">
 <head>
 <!--При интеграции с bitrix этот метатег выкинуть -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -146,21 +145,28 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 					<dd> &ndash; просто ссылки в тексте</dd>
 
 					<dt><a href="#" class="file" data-src="doc">Файлы (.doc, 24 кб)</a></dt>
-					<dd> &ndash; если это ссылка на файл, то и оформлять ее соответствующе
-						<br /><small>&lt;a href="#" class="file"&gt;Файлы (.doc, 24 кб)&lt;/a&gt;</small></dd>
+					<dd> &ndash; если это ссылка на файл, то и оформлять ее соответствующе<br />
+						<small>&lt;a href="#" class="file"&gt;Файлы (.doc, 24 кб)&lt;/a&gt;</small>
+					</dd>
 
 					<dt><a href="#" class="file">Файлы.doc <span class="size">24 кб</span></a></dt>
 					<dd> &ndash; если это ссылка на файл с размером под его названием
-						<br /><small>&lt;a href="#" class="file"&gt;Файлы.doc&lt;span class="size"&gt;24 кб&lt;/span&gt&lt;/a&gt;</small></dd>
+						<br /><small>&lt;a href="#" class="file"&gt;Файлы.doc&lt;span class="size"&gt;24 кб&lt;/span&gt&lt;/a&gt;</small>
+					</dd>
 
 					<dt><s class="r">Р</s></dt>
 					<dd> &ndash; если нужен знак рубля буковку выбирать в зависимости от шрифта подробнее <a href="http://www.artlebedev.ru/kovodstvo/sections/159/#13" target="_blank">тут</a><br />
 						<small>&lt;s class="r"&gt;Р&lt;/s&gt;</small>
 					</dd>
 
-					<dt>Подсказка</dt>
+					<dt><dfn data-tooltip="Это всплывающая подсказка">Подсказка</dfn></dt>
 					<dd> &ndash; если нужна <dfn data-tooltip="Это всплывающая подсказка">всплывающая подсказка</dfn>, то добавьте обертке параметр data-tooltip<br />
 						<small>&lt;dfn data-tooltip="Это всплывающая подсказка"&gt;Подсказка&lt;/dfn&gt;</small>
+					</dd>
+
+					<dt><abbr title="Аббревиатура">Аббревиатура</abbr></dt>
+					<dd> &ndash; если в тексте используются сокращения <abbr title="Это расшифровка аббревиатуры">аббр.</abbr>, то используйте abbr с параметром title, который задает расшифровку и индексируется поисковыми системами<br />
+						<small>&lt;abbr title="Это расшифровка аббревиатуры"&gt;аббр.&lt;/abbr&gt;</small>
 					</dd>
 				</dl>
 
