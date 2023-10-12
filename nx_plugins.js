@@ -99,21 +99,32 @@ $('.tbl').each(function(index, elt) {
 });})(jQuery);
 
 /**************** SCROLL HEADER *******************/
-(function(){$(function(){
-    var scrollWidthOn = 1025,
-        scrollHeightOn = 100;
+function NXScroll() {
+    var scrollWidthOff = 1025,
+        scrollHeightOn = 100,
+        currentScreenWidth = window.innerWidth;
 
     $(window).on('scroll', function () {
-        if ($(window).width() > scrollWidthOn && $(this).scrollTop() > scrollHeightOn) {
+        if ($(window).width() > scrollWidthOff && $(this).scrollTop() > scrollHeightOn) {
             $('body').addClass('on-scroll');
         } else {
             $('body').removeClass('on-scroll');
         }
-    })
+    });
 
-    if ($(window).scrollTop() > scrollHeightOn) {
+    if ($(window).scrollTop() > scrollHeightOn && currentScreenWidth >= scrollWidthOff) {
+        $('body').addClass('on-scroll');
+    } else {
         $('body').removeClass('on-scroll');
     }
+}
+
+(function(){$(function(){
+    NXScroll();
+
+    $(window).resize(function () {
+        NXScroll();
+    });
 });})(jQuery);
 
 /********************* СOPYRIGHT DATA *********************/
