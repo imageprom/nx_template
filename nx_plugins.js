@@ -15,7 +15,7 @@ function AddNXAdaptiveNavication() {
             nxAdaptiveMenu = '<div id="NXAdaptiveMenu"></div>',
             nxNavigation = '<div class="nx-nav-grad nx-flex-row-btw-c" id="NXAdaptiveNavigation">' +
                                 '<a href="/" class="h-logo nx-flex-row-l-c" title="На главную">' +  '<strong class="h-nav-title">' + navTitle + '</strong>' + '</a>' + 
-                                '<span class="h-nav nx-flex-row-btw-c"><button class="h-nav-icon h-nav-gamburger h-close" id="nxGamburger" title="Меню" ></button></span>' +
+                                '<span class="h-nav nx-flex-row-btw-c"><button type="button" class="h-nav-icon h-nav-gamburger h-close" id="nxGamburger" title="Меню" aria-controls="NXAdaptiveMenu" aria-expanded="false"></button></span>' +
                            '</div>';
 
         $('body').prepend(nxAdaptiveMenu + nxNavigation);
@@ -40,7 +40,9 @@ function AddNXAdaptiveNavication() {
             $('#NXAdaptiveSocial').removeClass('to-social-nav');
         }
 
-        if(nxSearchForm.length) {
+        // В мобильное меню копируется только <form id="NXSearchForm">.
+        // Чтобы не копировать (например, живой поиск Битрикса), не ставьте этот id на форму.
+        if(nxSearchForm.is('form')) {
             var searchFormHref = nxSearchForm.attr('action');
             nxSearchForm.hide();
             $('#NXAdaptiveMenu').prepend('<div id="NXAdaptiveSearchForm"><form action="' + searchFormHref+ '"><input type="text" name="q" placeholder="Поиск" value=""><input type="submit" name="s" value="с" title="Найти"></form></div>');
@@ -66,15 +68,11 @@ if(Modernizr.mq('only all')){
 }
 
 $('body').on('click', '#nxGamburger', function() {
-    var target = $('#NXAdaptiveMenu');
-    if(target.hasClass('a-menu-open')) {
-        $('html').removeClass('nxOpenedMenu');
-        target.removeClass('a-menu-open');
-    }
-    else {
-        $('html').addClass('nxOpenedMenu');
-        target.addClass('a-menu-open');
-    }
+    var target = $('#NXAdaptiveMenu'),
+        isOpen = !target.hasClass('a-menu-open'); // каким меню станет после клика
+    $('html').toggleClass('nxOpenedMenu', isOpen);
+    target.toggleClass('a-menu-open', isOpen);
+    $(this).attr('aria-expanded', String(isOpen));
 });
 
 });})(jQuery);

@@ -795,7 +795,8 @@ $Asset->addCss('/bitrix/css/main/font-awesome.css');
 			<!-- LEFT -->
 			<div class="left">
 				<h2>Форма поиска</h2>
-				<!-- Обязательно указать id="NXsearchForm" и заполнить action у формочки, а то в мобильное меню не попадет -->
+				<!-- Чтобы форма попала в мобильное меню, id="NXSearchForm" ставится на сам тег <form>, и у формы обязательно заполнен action.
+				     Если форму копировать не нужно (например, живой поиск Битрикса), не ставьте этот id на форму. -->
 				<form method="get" action="/search/index.php" id="NXSearchForm">
 					<input type="text"   name="q"   placeholder="Поиск"  value="" />
 					<input type="submit" name="s"   class="sbtn" value="Поиск" />
