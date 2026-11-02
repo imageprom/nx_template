@@ -12,10 +12,10 @@ function AddNXAdaptiveNavication() {
             nxSearchForm = $('#NXSearchForm'),
             nxSocialLink = $('.to-social-nav'),
             
-            nxAdaptiveMenu = '<div id="NXAdaptiveMenu"></div>';
+            nxAdaptiveMenu = '<div id="NXAdaptiveMenu"></div>',
             nxNavigation = '<div class="nx-nav-grad nx-flex-row-btw-c" id="NXAdaptiveNavigation">' +
                                 '<a href="/" class="h-logo nx-flex-row-l-c" title="На главную">' +  '<strong class="h-nav-title">' + navTitle + '</strong>' + '</a>' + 
-                                '<span class="h-nav nx-flex-row-btw-c"><button class="h-nav-icon h-nav-gamburger h-close" id="nxGamburger" title="Меню" ></button></strong>' +
+                                '<span class="h-nav nx-flex-row-btw-c"><button class="h-nav-icon h-nav-gamburger h-close" id="nxGamburger" title="Меню" ></button></span>' +
                            '</div>';
 
         $('body').prepend(nxAdaptiveMenu + nxNavigation);
@@ -211,6 +211,9 @@ function nxShowPopUp(data, class_name) {
 /********************** LIGHTBOX PLUGIN **********************/
 var original_size = new Object();
 (function(){$(function(){
+// Одна метка на загрузку страницы: обновлённая на сервере картинка подтянется при следующем заходе,
+// а повторные открытия в рамках страницы берут файл из кэша браузера.
+var nxBigVersion = Math.round(Math.random()*1000000000);
 function Scaling(my_width, my_height) { var my_res=new Object();
 if((my_width/my_height)>=1 && my_width>($(window).width())) {my_res.width=$(window).width()-100; my_res.height=($(window).width()-100)*my_height/my_width; my_res.scale=1;}
 else {if ((my_width/my_height)<1 && my_height>($(window).height())){my_res.width=my_width/my_height*($(window).height()-100); my_res.height=$(window).height()-100; my_res.scale=1;}
@@ -220,16 +223,16 @@ return my_res;}
 $('body').on("click", '.with_big', function(){var screen_width=$(window).width(); var screen_height=$(window).height();
 if ($('div.drag').length ) {$('div.drag').remove();}
 $("body").append("<div class='drag'></div>"); $(".drag").draggable();
-var src=$(this).attr("data-big")+"?"+Math.random()*1000000000;
+var big_src=$(this).attr("data-big"); var src=big_src+(big_src.indexOf("?")===-1 ? "?" : "&")+"nxv="+nxBigVersion;
 var alt_text=$(this).attr("alt"); var title_text=$(this).attr("data-title"); var desc_text=$(this).attr("data-desc"); var link_text=$(this).attr("data-link");
 var decription = ""; if(title_text) decription  += "<b>"+title_text+"</b>"; if(desc_text) decription += "<p>"+desc_text+"</p>"; if(link_text) decription += "<a href='"+link_text+"'>узнать больше...</a>";
 if(decription != '') decription = '<div class="IDESCRIPTION">'+decription+'</div>';
 $(".drag").animate({ opacity: "hide" }, 100 , "linear", function(){$(this).html("<img src='"+src+"' alt='"+alt_text+"' class='IBIG' title='Закрыть' /><span class='IRESIZER'>Увеличить</span>"+decription );});
 $(".current").attr("data-nxOpen", "0");
-$(".drag img").load(function() {$(".drag").css({"width":"auto", "height":"auto"});
+$(".drag img").on("load", function() {$(".drag").css({"width":"auto", "height":"auto"});
 $(this).removeAttr("width").removeAttr("height").css({ width: "", height: "" });
 var img_width=$(".drag").width(); var img_height=$(".drag").height();
-original_size.width=img_width; original_size.heigh=img_height;
+original_size.width=img_width; original_size.height=img_height;
 var size = Scaling(img_width, img_height);
 $(".IBIG").width(size.width); 
 if(original_size.width>size.width) {$(".IRESIZER").show();}
@@ -240,12 +243,12 @@ $('.IDESCRIPTION').css('max-width', size.width+'px').show();
 var isrc = $(".IBIG").attr('src'); $(".IBIG").attr('src', ''); $(".IBIG").attr('src', isrc);
 });	
 $('body').on("click", '.drag img', function(){if ($(this).attr("data-nxDrag")!=1) {$(this).parent(".drag").fadeOut(); $(".current").attr("data-nxOpen", "0");} else {$(this).attr("data-nxDrag", "0");} });
-$('body').on('click', '.IRESIZER', function(){$(".IBIG").width(original_size.width);
+$('body').on('click', '.IRESIZER', function(e){$(".IBIG").width(original_size.width);
 var screen_width=$(window).width(); var screen_height=$(window).height();
 var nx_top  = $(window).scrollTop()+screen_height/2-original_size.height/2+"px";
 var nx_left = $(window).scrollLeft()+screen_width/2-original_size.width/2+"px";
 $(".drag").css({"margin-left":"0px", "left":nx_left, "top":nx_top});
-$(this).hide(); event.stopPropagation();
+$(this).hide(); e.stopPropagation();
 });
 });})(jQuery);
 
