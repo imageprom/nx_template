@@ -120,7 +120,7 @@ $('.tbl').each(function(index, elt) {
         stData = dataObj.html(), 
         dt = new Date(); 
         if ((stData) != dt.getFullYear()) {
-            dataObj.append('&nbsp;&#150;&nbsp;'+dt.getFullYear());
+            dataObj.append('&nbsp;&ndash;&nbsp;'+dt.getFullYear());
         } else {
             dataObj.text(dt.getFullYear());
         }
